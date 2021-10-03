@@ -1,0 +1,10 @@
+.sign-up {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    margin-left: 180px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
+  

@@ -1,0 +1,75 @@
+.collection-item {
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    align-items: center;  
+    overflow: hidden;
+   }
+
+   .collection-item .image {
+      width: 100%;
+      height: 95%;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 7px; 
+    }
+
+    .image:hover {
+      background-size: cover;
+      transform: scale(1.060);
+      transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+.collection-footer {
+      width: 100%;
+      height: 5%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 19px;
+      margin: 7px 0px;
+     }
+ 
+.name {
+    width: 90%;
+    margin-bottom: 15px;
+    color: rgb(97, 81, 81);
+  }
+
+.collection-item:hover .name{
+    transform: translateX(3rem);
+    animation:  parth 0.4s ease;
+  }
+
+.collection-item:hover .price{
+    transform: translateX(-3rem);
+    animation:  parthu 0.4s ease;
+  }  
+
+.price {
+      width: 14%;
+    }
+    
+@keyframes parth {
+  0% {
+      transform:translateX(0rem);
+   }
+  65% {
+     transform : translateX(4rem);
+  }
+  100% {
+      transform : translateX(3rem);
+  }
+}
+
+@keyframes parthu {
+  0% {
+        transform:translateX(0rem);
+   }
+  65% {
+     transform : translateX(-4rem);
+  }
+  100% {
+      transform : translateX(-3rem);
+  }
+}

@@ -1,0 +1,16 @@
+.butt {
+  font-family:"cursive";
+  transform: rotate(-90deg);
+  border-radius: 10px;
+  width: 240px;
+  height: 35px;
+  border: none;
+  background-color: rgb(168, 168, 124);
+  position: relative;
+  right: -1310px;
+  top: 255px
+}
+
+.butt:hover{
+    transform: rotate(-90deg) scale(1.088);
+}

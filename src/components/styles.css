@@ -1,0 +1,39 @@
+.collection-preview {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    }
+  
+  .title {
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+  
+    .preview1 {
+        display: flex;
+        margin-bottom: 100px;
+        justify-content: space-between;
+      }
+  
+      .onHovering{
+        visibility: hidden;
+    }
+    
+    .select:hover .onHovering{
+        visibility: visible;
+        width: 150px;
+        background-color: hotpink;
+        margin-left: 5px;
+        animation:  parthudi 0.2s ;
+        background-color: rgb(225, 243, 225);
+    }
+    
+    @keyframes parthudi {
+        0% {
+            width: 0px;        
+        }
+        100% {
+            width: 150px;
+        }
+      } 
+  
