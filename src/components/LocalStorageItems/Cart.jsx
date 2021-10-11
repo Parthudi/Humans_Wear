@@ -74,7 +74,7 @@ export const removeItemCart = (id) => {
         }
     })
     localStorage.setItem("bag" , JSON.stringify(bag));
-    window.location.reload();
+    // window.location.reload();
     return bag; 
 }
 

@@ -78,7 +78,7 @@ export const removeAddress = (id) => {
         }
     })
     localStorage.setItem("address" , JSON.stringify(address));
-    window.location.reload();
+    // window.location.reload();
     return address; 
 }
 

@@ -6,6 +6,7 @@ import {wishListAddItems,wishListRemoveItem} from "./LocalStorageItems/Wishlist"
 import {addItem} from "./LocalStorageItems/Cart";
 import {Link} from "react-router-dom";
 import {FavoriteBorderOutlined, CancelOutlined} from "@material-ui/icons";
+import AlertMessage from './AlertMessage'; 
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -66,9 +67,14 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...props}) => {
-    const classes = useStyles();
     const [quantity, setQuantity] = useState(props.products.count);
+    const [showalertwishlist, setShowAlertWishList] = useState(false);
+    const [showalertbag, setShowAlertBag] = useState(false);
+    const [showalertremove, setShowAlertRemove] = useState(false);
+
     const [show, setShow] = useState();
+
+    const classes = useStyles();
 
     const handleOnChange = (e) => {
         const value = e.target.value;
@@ -84,19 +90,38 @@ const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...
         return(
             wishListAddItems({id: props.products.id, image: props.imag, name: props.products.name, price: props.products.price} , () => {
                 console.log("Item Pushed To WishList");
-                window.location.reload();
+                setTimeout(() => {
+                    setShowAlertWishList(false);
+                    window.location.reload();
+                  }, 2000);
+                  setShowAlertWishList(true);
             })
         )
     }
+
+    const removeItemFromBag = async() => {
+        const remove = await removeItemCart(props.products.id);
+            setTimeout(() => {
+                setShowAlertRemove(false);
+                window.location.reload();
+              }, 2000);
+              setShowAlertRemove(true);
+            }
 
     const addItemsFromWhishListToBag = () => {
         return(
             addItem({id: props.products.id, image: props.imag, name: props.products.name, price: props.products.price} , () => {
                 wishListRemoveItem(props.products.id);
-                window.location.reload();
+                setTimeout(() => {
+                    setShowAlertBag(false);
+                    window.location.reload();
+                  }, 2000);
+                  setShowAlertBag(true);
+                
             })
         )
     }
+
 
     const showFullProuct = () => {
         return `/shop/product/${props.products.name}/${props.products.id}`;
@@ -104,6 +129,10 @@ const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...
 
     return(
         <Card className={classes.card} m={2} pt={3} onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+            {showalertwishlist && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message="Product Added To WishList" />}
+            {showalertbag && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message="Product Added To Bag" />}
+            {showalertremove && <AlertMessage shouldDisplay={"dontShow"} severity="warning" pinCodeInvalid={false} message="Product Removed To Bag" />}
+
             <Link to={() => showFullProuct()} className={classes.removeLinkColors}>
                 {showBag && <CancelOutlined className={classes.cancelIcon} onClick={() => wishListRemoveItem(props.products.id)}/>}
                 <CardMedia
@@ -127,7 +156,7 @@ const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...
                 <CardActions className={classes.showButtonCenter}>
                    {whishlist && <Button size="medium" className={classes.wishList} style={{visibility: show ? "visible" : "hidden"}} fullWidth={true} onClick={() => addToWishList()} startIcon={<FavoriteBorderOutlined />}> Move To WishList </Button>} 
                    {showBag && <Button size="medium" style={{display: showBag ? "inherit" : "none"}} className={classes.success} fullWidth={true} onClick={() => addItemsFromWhishListToBag()}> Move To Bag </Button>}
-                   {showQuantity && <Button size="medium" style={{display: showQuantity ? "inherit" : "none"}} className={classes.fail} fullWidth={true} onClick={() =>  removeItemCart(props.products.id)}> Remove From Bag </Button>}
+                   {showQuantity && <Button size="medium" style={{display: showQuantity ? "inherit" : "none"}} className={classes.fail} fullWidth={true} onClick={() => removeItemFromBag()}> Remove From Bag </Button>}
                 </CardActions>
         </Card> 
     )}

@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Bag = (props) => {
     const [product, setProduct] = useState([]);
+
     const classes = useStyles();
 
     useEffect(() => {
@@ -25,13 +26,13 @@ const Bag = (props) => {
 
     return(
         <Checkout showHighlight="bag">
-            <Grid container item xs={12} sm={11} md={9}>
+            <Grid container item xs={12} sm={12} md={9}>
                 {product && product.map((picture,i) => {
                     return (
                         <ShowProducts imag={picture.image} alt="product not found" key={i} products={picture} showQuantity={true}/>
                 )})} 
             </Grid>
-            <Grid container item xs={12} sm={11} md={3}>
+            <Grid container item xs={12} sm={12} md={3}>
                 <Card className={classes.card}>
                     <PriceDetails products={product} buttonText="PLACE ORDER" />
                 </Card>

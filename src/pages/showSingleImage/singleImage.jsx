@@ -26,11 +26,15 @@ import exchange from "../../assets/exchange.png";
 import delivery from "../../assets/deliveryPerson.jpg"; 
 import deliveryService from "../../assets/deliveryService.jpg"; 
 import refund from "../../assets/refund.png"; 
-import {addItem, itemTotal, getCart, updateCart} from "../../components/LocalStorageItems/Cart";
-import {withRouter,useParams} from "react-router-dom"
+import {addItem} from "../../components/LocalStorageItems/Cart";
+import {wishListAddItems} from "../../components/LocalStorageItems/Wishlist";
+import {withRouter} from "react-router-dom"
 import SHOP_DATA from "../Shop/ShopData";
+import AlertMessage from "../../components/AlertMessage";
 
 const ShowSingleImage = (props) => {
+    const [showalertwishlist, setShowAlertWishList] = useState(false);
+    const [showalertbag, setShowAlertBag] = useState(false);
     const [rating, setRating] = useState();
     const [s, sets] = useState("grey");
     const [m, setm] = useState("grey");
@@ -207,9 +211,10 @@ const ShowSingleImage = (props) => {
             setShowIncorrectPincode(false);
           }, 4000);
         return(
-            <div style={{display: buttonColor === "grey" ? "" : "none"}} className="pinCodeInvalid">
-                <ErrorOutlineIcon /> Please enter a valid pincode.
-            </div>
+            <AlertMessage severity="error" shouldDisplay={buttonColor === "grey" ? "dontShow" : "none"} pinCodeInvalid={true} icon={<ErrorOutlineIcon />} message="Please enter a valid pincode" />
+            // <div style={{display: buttonColor === "grey" ? "" : "none"}} className="pinCodeInvalid">
+            //     <ErrorOutlineIcon /> Please enter a valid pincode.
+            // </div>
             );  
         }
 
@@ -366,10 +371,26 @@ const ShowSingleImage = (props) => {
     }
     const addItemsToBag = () => {
         return(
-            // if("rgb(230, 25, 110)"
             addItem({id: productdetails[0].id, image: productdetails[0].imageUrl, name: productdetails[0].name, price: productdetails[0].price} , () => {
                 console.log("Item Pushed To Cart");
-                window.location.reload();
+                setTimeout(() => {
+                    setShowAlertBag(false);
+                    window.location.reload();
+                  }, 2000);
+                  setShowAlertBag(true);
+            })
+        )
+    }
+
+    const addItemsToWishList = () => {
+        return(
+            wishListAddItems({id: productdetails[0].id, image:productdetails[0].imageUrl, name: productdetails[0].name, price: productdetails[0].price} , () => {
+                console.log("Item Pushed To WishList");
+                setTimeout(() => {
+                    setShowAlertWishList(false);
+                    window.location.reload();
+                  }, 2000);
+                  setShowAlertWishList(true);
             })
         )
     }
@@ -379,6 +400,9 @@ const ShowSingleImage = (props) => {
         {productdetails && productdetails.length > 0 ? (
         <div className="row" style={{justifyContent:"space-between"}}>
             {showincorrectpincode && pinCodeCheck()}
+            {showalertwishlist && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message="Product Added To WishList" />}
+            {showalertbag && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message="Product Added To Bag" />}
+            
             <div className="collection-item1">
                 <div className="background-image" style={{backgroundImage : `url(${productdetails[0].imageUrl})` }} /> 
             </div>    
@@ -411,7 +435,7 @@ const ShowSingleImage = (props) => {
                 </div>
 
                 <button className="addToCart" onClick={() => addItemsToBag()}> <ShoppingBasketIcon style={{marginRight: "5px"}}/>  ADD TO BAG </button>
-                <button className="wishList"> <FavoriteBorderIcon style={{marginRight: "5px"}}/> WISHLIST </button>
+                <button className="wishList" onClick={() => addItemsToWishList()}> <FavoriteBorderIcon style={{marginRight: "5px"}}/> WISHLIST </button>
                 <hr />
 
                 <span className="smallerPrice"> $ {productdetails[0].price} </span>  

@@ -74,7 +74,7 @@ export const wishListRemoveItem = (id) => {
         }
     })
     localStorage.setItem("wishlist" , JSON.stringify(wishlist));
-    window.location.reload();
+    // window.location.reload();
     return wishlist; 
 }
 
