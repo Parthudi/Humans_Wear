@@ -18,24 +18,24 @@ const CartHeader = (props) => {
     const classes = useStyles();
     
     return(
-        <Box mb={4}>
+        <Box mb={5} mt={5}>
             <Typography variant="body1" align="center" gutterBottom>
                 <span className={props.bag ? classes.currentSlide : classes.none}> 
-                    <Fab size="small" disableRipple color={`${props.bag ? "secondary" : "default"}`}>
+                    <Fab size="small" disableRipple color={`${props.bag === "bag" ? "secondary" : "default"}`}>
                         <ShoppingCartOutlined fontSize="small"/>
                     </Fab> 
                     BAG 
                 </span> 
                     ----------------- 
                 <span className={props.address ? classes.currentSlide : classes.none}> 
-                    <Fab size="small" disableRipple color={`${props.address ? "secondary" : "default"}`}>
+                    <Fab size="small" disableRipple color={`${props.bag === "address" ? "secondary" : "default"}`}>
                         <HomeOutlined fontSize="small"/>
                     </Fab> 
                     ADDRESS 
                 </span>
-                    -------------- 
+                    ---------------- 
                 <span className={props.payment ? classes.currentSlide : classes.none}> 
-                    <Fab size="small" disableRipple color={`${props.payment ? "secondary" : "default"}`}>
+                    <Fab size="small" disableRipple color={`${props.bag === "payment" ? "secondary" : "default"}`}>
                         <ShoppingCartOutlined fontSize="small"/>
                     </Fab> 
                     PAYMENT 

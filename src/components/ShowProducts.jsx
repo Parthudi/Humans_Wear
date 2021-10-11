@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Card,CardActions,CardContent,Typography,Button,CardMedia, Grid} from '@material-ui/core';
 import {makeStyles,TextField,Box} from '@material-ui/core';
 import {updateCart,removeItemCart} from "./LocalStorageItems/Cart";
@@ -58,6 +58,10 @@ const useStyles = makeStyles((theme) => ({
             textDecoration: "none",
             color: "black",
         }
+    },
+    setPerfectImage: {
+        height: "224px",
+        width: "250px"
     }
 }))
 
@@ -97,16 +101,16 @@ const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...
     const showFullProuct = () => {
         return `/shop/product/${props.products.name}/${props.products.id}`;
     }
-console.log(props.imag)
+
     return(
         <Card className={classes.card} m={2} pt={3} onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
             <Link to={() => showFullProuct()} className={classes.removeLinkColors}>
                 {showBag && <CancelOutlined className={classes.cancelIcon} onClick={() => wishListRemoveItem(props.products.id)}/>}
                 <CardMedia
                     component="img"
-                    height="224"
                     image={props.imag}
                     alt={props.alt}
+                    className={classes.setPerfectImage}
                 />
             </Link>
                 <CardContent>
@@ -125,7 +129,6 @@ console.log(props.imag)
                    {showBag && <Button size="medium" style={{display: showBag ? "inherit" : "none"}} className={classes.success} fullWidth={true} onClick={() => addItemsFromWhishListToBag()}> Move To Bag </Button>}
                    {showQuantity && <Button size="medium" style={{display: showQuantity ? "inherit" : "none"}} className={classes.fail} fullWidth={true} onClick={() =>  removeItemCart(props.products.id)}> Remove From Bag </Button>}
                 </CardActions>
-            
         </Card> 
     )}
 

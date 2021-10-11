@@ -1,9 +1,7 @@
 import React, { Component, Suspense } from 'react';
-import {Route, Switch} from 'react-router-dom'
-import HeaderCompo from './components/header/header'
-import { auth, CreateUserProfileDocument } from './firebase.utility/firebase.utility'
-import Boot from './footer/footer'
-import { Divider,CircularProgress,Backdrop } from '@material-ui/core';
+import {Route,Switch} from 'react-router-dom'
+import {auth,CreateUserProfileDocument } from './firebase.utility/firebase.utility'
+import {CircularProgress,Backdrop } from '@material-ui/core';
 import Layout from "./components/Layout";
 import './App.css'
 
@@ -19,6 +17,7 @@ const ShowSingleImage = React.lazy(() => import("./pages/showSingleImage/singleI
 const Bag = React.lazy(() => import("./pages/Bag"))
 const Address = React.lazy(() => import("./pages/Address"))
 const WishList = React.lazy(() => import("./pages/WishList"))
+const Payment = React.lazy(() => import("./pages/Payment"))
 
 class App extends Component {
 
@@ -56,12 +55,14 @@ class App extends Component {
       this.unSubscribeFromAuth()
     }
   render() {
+
     const loader =  () => {
       return(
         <Backdrop
-          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 10 }}
-          open={true}>
-            <CircularProgress color="inherit" />
+          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 100000000 }}
+          open={true}
+          style={{zIndex:"1"}}>
+            <CircularProgress  color="secondary" />
        </Backdrop>
       )
     }
@@ -129,7 +130,7 @@ class App extends Component {
                 </Suspense>
                 )}/>
 
-                <Route path='/checkout/Address' exact render={() => (
+                <Route path='/checkout/address' exact render={() => (
                 <Suspense fallback= {loader()}>
                   <Address /> 
                 </Suspense>
@@ -138,6 +139,12 @@ class App extends Component {
                 <Route path='/whistlist' exact render={() => (
                 <Suspense fallback= {loader()}>
                   <WishList /> 
+                </Suspense>
+                )}/>
+
+                <Route path='/checkout/payment' exact render={() => (
+                <Suspense fallback= {loader()}>
+                  <Payment /> 
                 </Suspense>
                 )}/>
 

@@ -18,6 +18,7 @@ import ShowItemsCarousol from "./CarouselImages";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import {Container, Box, Grid, Button, Slide} from "@material-ui/core";
+import Skeleton from '@mui/material/Skeleton';
 
 const ShowCarousel = () => {
     const [checked, setChecked] = useState(false);
@@ -36,12 +37,12 @@ const ShowCarousel = () => {
     return(
         <Container>
             <Box mt={4}>
-                <Grid container item xs={12} sm={8} md={12} >
-                    <AliceCarousel autoPlay playButtonEnabled={"keyup" ? true: false} onKeyUp={() => showTransition()} fadeOutAnimation={true} infinite autoPlayInterval="6000">
+                <Grid container item xs={12} sm={8} md={12}>
+                    {imageUrls.length == 15 ? <AliceCarousel autoPlay playButtonEnabled={"keyup" ? true: false} onKeyUp={() => showTransition()} fadeOutAnimation={true} infinite autoPlayInterval="6000">
                         {imageUrls && imageUrls.map((image,i) => (
                             <ShowItemsCarousol imag={image} identifier={i} key={i} alt="Procuct Not Available"/>
                         ))}
-                    </AliceCarousel>
+                    </AliceCarousel> : <Skeleton variant="rectangular" width={1310} height={428} style={{marginBottom: "50px"}} /> }
                 </Grid>
             </Box>
         </Container>
