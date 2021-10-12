@@ -21,28 +21,35 @@ import {Container, Box, Grid, Button, Slide} from "@material-ui/core";
 import Skeleton from '@mui/material/Skeleton';
 
 const ShowCarousel = () => {
-    const [checked, setChecked] = useState(false);
-    const imageUrls = [hats1,hats2,hats3,jackets1,jackets2,jackets3,mens1,mens2,mens3,sneakers1,sneakers2,sneakers3,womens1,womens2,womens3]
+    // const [checked, setChecked] = useState(false);
+    const imageUrls = [{name: "Brown Black Strip Hat",imageurl: hats1},{name:"Shaddy Green Hat", imageurl: hats2} ,{name: "Stylish Blues Hat" , imageurl: hats3},
+            {name: "Awesome Jackets", imageurl: jackets1},{name: "Brown hams Jackets", imageurl: jackets2},{name: "Chexi Black Jackets", imageurl: jackets3},
+            {name: "Casual Tees", imageurl: mens1}, {name: "Full Sleeves Pink Tees", imageurl: mens2},{name: "Rowing Browni Coat", imageurl: mens3},
+            {name: "Brown Cherry Shoes", imageurl: sneakers1},{name: "Colorous Sneakers", imageurl: sneakers2},{name: "Casual Loafers", imageurl: sneakers3},
+            {name: "All Time Wears", imageurl: womens1},{name: "Casual Wedding Skirt", imageurl: womens2},{name: "Stripper Blowsom Pants", imageurl: womens3}];
 
-    const showTransition = () => {
-        <Box sx={{ width: `calc(100px + 16px)` }}>
-            <Slide direction="up" in={checked} mountOnEnter unmountOnExit>
-                <Button variant="outlined">
-                    images
-                </Button>
-            </Slide>
-        </Box>
-    }
+    // const showTransition = () => {
+    //     <Box sx={{ width: `calc(100px + 16px)` }}>
+    //         <Slide direction="up" in={checked} mountOnEnter unmountOnExit>
+    //             <Button variant="outlined" color="secondary">
+    //                 images
+    //             </Button>
+    //         </Slide>
+    //     </Box>
+    // }
+    // onMouseEnter={() => setChecked(true)} onMouseLeave={() => setChecked(false)} 
 
     return(
         <Container>
             <Box mt={4}>
                 <Grid container item xs={12} sm={8} md={12}>
-                    {imageUrls.length == 15 ? <AliceCarousel autoPlay playButtonEnabled={"keyup" ? true: false} onKeyUp={() => showTransition()} fadeOutAnimation={true} infinite autoPlayInterval="6000">
-                        {imageUrls && imageUrls.map((image,i) => (
-                            <ShowItemsCarousol imag={image} identifier={i} key={i} alt="Procuct Not Available"/>
-                        ))}
-                    </AliceCarousel> : <Skeleton variant="rectangular" width={1310} height={428} style={{marginBottom: "50px"}} /> }
+                    {imageUrls.length == 15 ?
+                        <AliceCarousel autoPlay playButtonEnabled={"keyup" ? true: false} fadeOutAnimation={true} infinite autoPlayInterval="6000">
+                            {imageUrls && imageUrls.map((image,i) => (
+                                <ShowItemsCarousol imag={image.imageurl} name={image.name} identifier={i} key={i} alt="Procuct Not Available"/>
+                            ))}
+                        </AliceCarousel> : 
+                    <Skeleton variant="rectangular" width={1310} height={428} style={{marginBottom: "50px"}} /> }
                 </Grid>
             </Box>
         </Container>

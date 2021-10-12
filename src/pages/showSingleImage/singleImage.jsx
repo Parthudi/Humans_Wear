@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from "react"
 import "./singleImage.css"
-import StarRatings from 'react-star-ratings';
+// import StarRatings from 'react-star-ratings';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import LocalShippingOutlinedIcon from '@material-ui/icons/LocalShippingOutlined';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import LocalOfferOutlinedIcon from '@material-ui/icons/LocalOfferOutlined';
-import Modal from '@material-ui/core/Modal';
+import ModalCompo from "../../components/Modal";
 import CloseIcon from '@material-ui/icons/Close';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -31,16 +31,33 @@ import {wishListAddItems} from "../../components/LocalStorageItems/Wishlist";
 import {withRouter} from "react-router-dom"
 import SHOP_DATA from "../Shop/ShopData";
 import AlertMessage from "../../components/AlertMessage";
+import Rating from '@mui/material/Rating';
+import Box from '@mui/material/Box';
+import StarIcon from '@mui/icons-material/Star';
+import {Avatar} from "@material-ui/core";
+import Stack from '@mui/material/Stack';
+
+const labels = {
+  0.5: 'Useless',
+  1: 'Useless+',
+  1.5: 'Poor',
+  2: 'Poor+',
+  2.5: 'Ok',
+  3: 'Ok+',
+  3.5: 'Good',
+  4: 'Good+',
+  4.5: 'Excellent',
+  5: 'Excellent+',
+};
 
 const ShowSingleImage = (props) => {
     const [showalertwishlist, setShowAlertWishList] = useState(false);
     const [showalertbag, setShowAlertBag] = useState(false);
-    const [rating, setRating] = useState();
-    const [s, sets] = useState("grey");
-    const [m, setm] = useState("grey");
-    const [l, setl] = useState("grey");
-    const [xl, setxl] = useState("grey");
-    const [xxl ,setxxl] = useState("grey");
+    const [s, sets] = useState("black");
+    const [m, setm] = useState("black");
+    const [l, setl] = useState("black");
+    const [xl, setxl] = useState("black");
+    const [xxl ,setxxl] = useState("black");
     const [pincode, setPincode] = useState("");
     const [showincorrectpincode, setShowIncorrectPincode] = useState(false);
     const [buttonColor, setButtonColor] = useState("grey");
@@ -50,6 +67,10 @@ const ShowSingleImage = (props) => {
     const [showdetailmodal , setShowDetailModal] = useState(false);
     const [showmore, setShowMore] = useState(false);
     const [productdetails, setProductDetails] = useState([]);
+    const [value, setValue] = useState(4);
+    const [hover, setHover] = useState(-1);
+    const [selectsize, setSelectSize] = useState(false);
+
     const [bankcolor, setBankColor] = useState({
         HDFC: "grey",
         ICICI : "grey",
@@ -63,9 +84,6 @@ const ShowSingleImage = (props) => {
     });
 
     const {HDFC,ICICI, CITY, SBI, KOTAK, AMEX, HSBC, INDUSIND, RBL} = bankcolor;
-    const changeRating = ( newRating, name ) => {
-        setRating(newRating);
-    }
 
     useEffect(() => {
         const route = props.location;
@@ -83,11 +101,11 @@ const ShowSingleImage = (props) => {
     }, []);
 
     const changeColor = (index) => {
-        sets("grey");
-        setm("grey");
-        setl("grey");
-        setxl("grey");
-        setxxl("grey");
+        sets("black");
+        setm("black");
+        setl("black");
+        setxl("black");
+        setxxl("black");
         if(index === "1"){
             sets("rgb(230, 25, 110)");
         }
@@ -187,13 +205,9 @@ const ShowSingleImage = (props) => {
 
     const model = () => {
         return(
-            <Modal
-                open={open}
-                // onClose={() => setOpen(false)}
-                aria-labelledby="simple-modal-title"
-                aria-describedby="simple-modal-description">
+            <ModalCompo showModal={open}>
                 {dataForModel()}
-            </Modal>
+            </ModalCompo>
         )
     }
 
@@ -212,9 +226,6 @@ const ShowSingleImage = (props) => {
           }, 4000);
         return(
             <AlertMessage severity="error" shouldDisplay={buttonColor === "grey" ? "dontShow" : "none"} pinCodeInvalid={true} icon={<ErrorOutlineIcon />} message="Please enter a valid pincode" />
-            // <div style={{display: buttonColor === "grey" ? "" : "none"}} className="pinCodeInvalid">
-            //     <ErrorOutlineIcon /> Please enter a valid pincode.
-            // </div>
             );  
         }
 
@@ -348,51 +359,53 @@ const ShowSingleImage = (props) => {
 
     const showExchangeModal = () => {
         return(
-            <Modal
-                open={showinfoforexchange}
-                onClose={() => setShowInfoForExchange(false)}
-                aria-labelledby="simple-modal-title"
-                aria-describedby="simple-modal-description">
-                    {productExchangeDetails()}
-            </Modal>
+            <ModalCompo showModal={showinfoforexchange} closeModal={() => setShowInfoForExchange(false)}>
+                {productExchangeDetails()}
+            </ModalCompo>
         )
     }
 
     const detailmodel = () => {
         return(
-            <Modal
-                open={showdetailmodal}
-                onClose={() => setShowDetailModal(false)}
-                aria-labelledby="simple-modal-title"
-                aria-describedby="simple-modal-description">
-                    {details()}
-            </Modal>
+            <ModalCompo showModal={showdetailmodal} closeModal={() => setShowDetailModal(false)}>
+                {details()}
+            </ModalCompo>
         )
     }
     const addItemsToBag = () => {
-        return(
-            addItem({id: productdetails[0].id, image: productdetails[0].imageUrl, name: productdetails[0].name, price: productdetails[0].price} , () => {
+        if(s === "rgb(230, 25, 110)" || m === "rgb(230, 25, 110)" || l === "rgb(230, 25, 110)" || xl === "rgb(230, 25, 110)" || xxl ==="rgb(230, 25, 110)"){
+            return(addItem({id: productdetails[0].id, image: productdetails[0].imageUrl, name: productdetails[0].name, price: productdetails[0].price} , () => {
                 console.log("Item Pushed To Cart");
                 setTimeout(() => {
                     setShowAlertBag(false);
                     window.location.reload();
                   }, 2000);
                   setShowAlertBag(true);
-            })
-        )
+            }));
+        }else{
+              setTimeout(() => {
+                setSelectSize(false);
+                }, 3000);
+            setSelectSize(true);
+        }
     }
 
     const addItemsToWishList = () => {
-        return(
-            wishListAddItems({id: productdetails[0].id, image:productdetails[0].imageUrl, name: productdetails[0].name, price: productdetails[0].price} , () => {
+        if(s === "rgb(230, 25, 110)" || m === "rgb(230, 25, 110)" || l === "rgb(230, 25, 110)" || xl === "rgb(230, 25, 110)" || xxl ==="rgb(230, 25, 110)"){
+            return(wishListAddItems({id: productdetails[0].id, image:productdetails[0].imageUrl, name: productdetails[0].name, price: productdetails[0].price} , () => {
                 console.log("Item Pushed To WishList");
                 setTimeout(() => {
                     setShowAlertWishList(false);
                     window.location.reload();
                   }, 2000);
                   setShowAlertWishList(true);
-            })
-        )
+            }))
+        }else{
+            setTimeout(() => {
+                setSelectSize(false);
+                }, 3000);
+            setSelectSize(true);
+        }
     }
 
     return(
@@ -400,6 +413,7 @@ const ShowSingleImage = (props) => {
         {productdetails && productdetails.length > 0 ? (
         <div className="row" style={{justifyContent:"space-between"}}>
             {showincorrectpincode && pinCodeCheck()}
+            {selectsize && <AlertMessage severity="error" shouldDisplay={"dontShow"} pinCodeInvalid={true} icon={<ErrorOutlineIcon />} message="Please Select Size First" />}
             {showalertwishlist && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message="Product Added To WishList" />}
             {showalertbag && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message="Product Added To Bag" />}
             
@@ -411,13 +425,35 @@ const ShowSingleImage = (props) => {
                 <div className="name1"> HRX by Parth The Human </div>
                 <span className="productName"> {productdetails[0].name} &nbsp; <strong></strong> </span> 
                 <div className="rating">
-                    <StarRatings
+                <Box
+                    sx={{
+                        width: 200,
+                        display: 'flex',
+                        alignItems: 'center',
+                    }}>
+                        <Rating
+                            name="hover-feedback"
+                            value={value}
+                            precision={0.5}
+                            onChange={(event, newValue) => {
+                            setValue(newValue);
+                            }}
+                            onChangeActive={(event, newHover) => {
+                            setHover(newHover);
+                            }}
+                            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+                        />
+                        {value !== null && (
+                            <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
+                        )}
+                    </Box>
+                    {/* <StarRatings
                         rating={rating}
                         starRatedColor="lightyellow"
                         changeRating={changeRating}
                         numberOfStars={5}
                         name="rating"
-                        />
+                        /> */}
                 </div>
                 <hr/>
                 <span> $ {productdetails[0].price} </span>  
@@ -426,13 +462,18 @@ const ShowSingleImage = (props) => {
                 <div className="tax"> Inclusive Of All Taxs </div>
                 <span className="clothSizing"> Select Size </span> 
                 <span className="sizeChart"> Size Chart {'>'} </span>
-                <div className="sizingArea">
-                    <span className="size"  style={{color: `${s}`, border:`1px solid ${s}`}} onClick={() => changeColor("1")}> S </span>  
-                    <span className="size"  style={{color: `${m}`, border:`1px solid ${m}`}} onClick={() => changeColor("2")} > M </span>  
+                <Stack direction="row" spacing={3} mt={3} mb={3}>
+                    <Avatar style={{color: `${s}`,backgroundColor:"white", border:`1px solid ${s}`, fontWeight: "normal"}} onClick={() => changeColor("1")}> S </Avatar>
+                    <Avatar style={{color: `${m}`,backgroundColor:"white", border:`1px solid ${m}`, fontWeight: "normal"}} onClick={() => changeColor("2")}> M </Avatar>
+                    <Avatar style={{color: `${l}`,backgroundColor:"white", border:`1px solid ${l}`, fontWeight: "normal"}} onClick={() => changeColor("3")}> L </Avatar>
+                    <Avatar style={{color: `${xl}`,backgroundColor:"white", border:`1px solid ${xl}`, fontWeight: "normal"}} onClick={() => changeColor("4")}> XL </Avatar>
+                    <Avatar style={{color: `${xxl}`,backgroundColor:"white", border:`1px solid ${xxl}`, fontWeight: "normal"}} onClick={() => changeColor("5")}> XXL </Avatar>
+                </Stack>
+                    {/* <span className="size"  style={{color: `${s}`, border:`1px solid ${s}`}} onClick={() => changeColor("1")}> S </span>   */}
+                    {/* <span className="size"  style={{color: `${m}`, border:`1px solid ${m}`}} onClick={() => changeColor("2")} > M </span>  
                     <span className="size"  style={{color: `${l}`, border:`1px solid ${l}`}} onClick={() => changeColor("3")} > L </span>  
                     <span className="size"  style={{color: `${xl}`,border:`1px solid ${xl}`}} onClick={() => changeColor("4")} > XL </span>  
-                    <span className="size"  style={{color: `${xxl}`,border:`1px solid ${xxl}`}} onClick={() => changeColor("5")} > XXL </span>  
-                </div>
+                    <span className="size"  style={{color: `${xxl}`,border:`1px solid ${xxl}`}} onClick={() => changeColor("5")} > XXL </span>   */}
 
                 <button className="addToCart" onClick={() => addItemsToBag()}> <ShoppingBasketIcon style={{marginRight: "5px"}}/>  ADD TO BAG </button>
                 <button className="wishList" onClick={() => addItemsToWishList()}> <FavoriteBorderIcon style={{marginRight: "5px"}}/> WISHLIST </button>

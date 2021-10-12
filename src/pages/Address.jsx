@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {makeStyles,Typography,Container,Divider,Button,Grid,Card,Box,TextField,FormControl,InputLabel,OutlinedInput} from "@material-ui/core";
+import {makeStyles,Typography,Container,Divider,Button,Grid,Card,Box,TextField,FormControl,InputLabel,Modal} from "@material-ui/core";
 import CartHeader from "../components/CartHeader";
 import ModalCompo from "../components/Modal";
 import {CloseOutlined} from "@material-ui/icons";
@@ -73,11 +73,7 @@ const Address = () => {
         setCartProds(cartProducts)
         setAddress(fetchedAddress);
     }, [address.length, cartprods.length]);
-
-    useEffect(() => {
-        
-    }, []);
-    
+ 
     const handleOnChange = (e) => {
         setFormValues({...formvalues, [e.target.name] : e.target.value});
     }
@@ -112,7 +108,6 @@ const Address = () => {
         //         alert(JSON.stringify(values, null, 2));
         //     },
         // });
-
     const addAddressForm = () => {
         return(
             <Box m={5} align="center" className={classes.modeling}>
@@ -120,8 +115,8 @@ const Address = () => {
                     <Grid item xs={6} sm={8} md={11}>
                         <Typography variant="body2" align="left" color="inherit" gutterBottom> ADD NEW ADDRESS </Typography>
                     </Grid>
-                    <Grid item xs={6} sm={4} md={1}>
-                        <CloseOutlined onClick={() => closeModal()} />
+                    <Grid item xs={6} sm={4} md={1} >
+                        <CloseOutlined onClick={() => setOpen(false)} style={{cursor: "pointer"}} />
                     </Grid>
                 </Grid>
                 <Divider width={500}/>
@@ -293,57 +288,58 @@ const Address = () => {
         )
     }
 
-    const closeModal = () => {
-        setOpen(false)
-    }
-
     const sideCartImages = () => {
         return(cartprods && cartprods.map((product,i) => {
             return <AddressImages imag={product.image} alt={product.alt} product = {product}/>
         }));
     }
 
+    const model = () => {
+        return(
+            <ModalCompo showModal={open} >
+                {addAddressForm()}
+            </ModalCompo>)
+    }
+
     return(
         <Checkout showHighlight="address">
-             <Grid container item xs={12} sm={11} md={8}>
-                    <Grid container direction="row" alignItems="center">
-                        <Grid item xs={6} sm={8} md={9}>
-                            <Typography variant="h6" gutterBottom> <b> Select Delivery Address </b> </Typography>
-                        </Grid>
-                        <Grid item xs={6} sm={4} md={3}>
-                            <Box>  
-                                <Button variant="outlined" size="medium" onClick={() => setOpen(true)}> Add New Address </Button> 
-                            </Box>
-                        </Grid>
+            <Grid container item xs={12} sm={11} md={8}>
+                <Grid container direction="row" alignItems="center">
+                    <Grid item xs={6} sm={8} md={9}>
+                        <Typography variant="h6" gutterBottom> <b> Select Delivery Address </b> </Typography>
                     </Grid>
-                    <Box mr={5}>
-                        <Typography variant="body2" gutterBottom display="block" noWrap>
-                            DEFAULT ADDRESS
-                        </Typography>
-
-                        <RadioOption options={address} name="Address" radioFor="Address" />
-                        
-                        <Card style={{cursor: "pointer"}} onClick={() => setOpen(true)}>
-                            <Typography className={classes.cardLeft} variant="subtitle1" color="secondary">
-                                <b> + Add New Address </b> 
-                            </Typography>
-                            <ModalCompo showModal={open} closeModal={() => closeModal()}>
-                                {addAddressForm()}
-                            </ModalCompo>
-                        </Card>
-                    </Box>
-                </Grid>
-                <Grid container item xs={12} sm={11} md={4}>
-                    <Card className={classes.cardRight}>
-                        <Typography style={{fontSize:"12px"}} align="left" gutterBottom>
-                           <b> DELIVERY ESTIMATES </b>
-                        </Typography>
-                        {sideCartImages()}
-                        <Box mt={5}>
-                            <ProductDetails products={cartprods} buttonText="CONTINUE" />
+                    <Grid item xs={6} sm={4} md={3}>
+                        <Box>  
+                            <Button variant="outlined" size="medium" onClick={() => setOpen(true)}> Add New Address </Button> 
                         </Box>
-                    </Card>
+                    </Grid>
                 </Grid>
+                <Box mr={5}>
+                    <Typography variant="body2" gutterBottom display="block" noWrap>
+                        DEFAULT ADDRESS
+                    </Typography>
+
+                    <RadioOption options={address} name="Address" radioFor="Address" />
+                        
+                    <Card style={{cursor: "pointer"}} onClick={() => setOpen(true)}>
+                        <Typography className={classes.cardLeft} variant="subtitle1" color="secondary">
+                            <b> + Add New Address </b> 
+                        </Typography>
+                    </Card>
+                    {model()}
+                </Box>
+            </Grid>
+            <Grid container item xs={12} sm={11} md={4}>
+                <Card className={classes.cardRight}>
+                    <Typography style={{fontSize:"12px"}} align="left" gutterBottom>
+                        <b> DELIVERY ESTIMATES </b>
+                    </Typography>
+                    {sideCartImages()}
+                    <Box mt={5}>
+                        <ProductDetails products={cartprods} buttonText="CONTINUE" />
+                    </Box>
+                </Card>
+            </Grid>
         </Checkout>
     );
 }

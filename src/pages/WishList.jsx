@@ -34,7 +34,7 @@ const WishList = () => {
                     <Typography variant="h4" align="left" className={classes.textHeading} gutterBottom>
                         <b> My WishList </b>
                     </Typography>
-                    <Grid container item xs={12} sm={8} md={12} >
+                    <Grid container item xs={12} sm={8} md={12}>
                         {product && product.map((picture,i) => {
                             return (
                                 <ImageItems imag={picture.image} alt="product not available" key={i} products={picture} showBag={true} showCard={true}/>
