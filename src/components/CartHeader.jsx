@@ -20,21 +20,21 @@ const CartHeader = (props) => {
     return(
         <Box mb={5} mt={5}>
             <Typography variant="body1" align="center" gutterBottom>
-                <span className={props.bag ? classes.currentSlide : classes.none}> 
+                <span className={props.bag === "bag" ? classes.currentSlide : classes.none}> 
                     <Fab size="small" disableRipple color={`${props.bag === "bag" ? "secondary" : "default"}`}>
                         <ShoppingCartOutlined fontSize="small"/>
                     </Fab> 
                     BAG 
                 </span> 
                     ----------------- 
-                <span className={props.address ? classes.currentSlide : classes.none}> 
+                <span className={props.bag === "address" ? classes.currentSlide : classes.none}> 
                     <Fab size="small" disableRipple color={`${props.bag === "address" ? "secondary" : "default"}`}>
                         <HomeOutlined fontSize="small"/>
                     </Fab> 
                     ADDRESS 
                 </span>
                     ---------------- 
-                <span className={props.payment ? classes.currentSlide : classes.none}> 
+                <span className={props.bag === "payment" ? classes.currentSlide : classes.none}> 
                     <Fab size="small" disableRipple color={`${props.bag === "payment" ? "secondary" : "default"}`}>
                         <ShoppingCartOutlined fontSize="small"/>
                     </Fab> 

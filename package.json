@@ -13,6 +13,7 @@
     "cra-template": "1.1.2",
     "firebase": "^8.9.1",
     "formik": "^2.2.9",
+    "formik-material-ui": "*",
     "howler": "^2.2.3",
     "moment": "^2.29.1",
     "react": "^17.0.2",

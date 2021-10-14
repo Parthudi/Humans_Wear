@@ -3,9 +3,10 @@ import {withRouter} from "react-router-dom";
 import ShowProducts from "../components/ShowProducts";
 import {Grid,Card,makeStyles} from '@material-ui/core';
 import {getCart} from "../components/LocalStorageItems/Cart";
-import CartHeader from "../components/CartHeader";
 import PriceDetails from "../components/PriceDetails";
 import Checkout from "../components/CheckoutLayout";
+import {getUser} from "../components/LocalStorageItems/User";
+import _ from "lodash";
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -16,13 +17,15 @@ const useStyles = makeStyles((theme) => ({
 
 const Bag = (props) => {
     const [product, setProduct] = useState([]);
-
+    const [user, setUser] = useState({});
     const classes = useStyles();
 
     useEffect(() => {
+        const user = getUser();
         const cart = getCart();
+        setUser(user);
         setProduct(cart);
-    }, [product.length]);
+    }, [product.length, user.is_authorized]);
 
     return(
         <Checkout showHighlight="bag">
@@ -34,7 +37,7 @@ const Bag = (props) => {
             </Grid>
             <Grid container item xs={12} sm={12} md={3}>
                 <Card className={classes.card}>
-                    <PriceDetails products={product} buttonText="PLACE ORDER" />
+                    <PriceDetails products={product} unAuthenticatedUser={_.isEmpty(user) ? true: false} buttonText="PLACE ORDER" />
                 </Card>
             </Grid>
         </Checkout>

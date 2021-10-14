@@ -3,36 +3,31 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import SkipNextIcon from '@mui/icons-material/SkipNext';
 import moment from "moment";
-// import { makeStyles } from "@material-ui/core";
-
-// const useStyles = makeStyles((theme) => ({
-//     setPerfectImage: {
-//         height: 100, 
-//         width: 50,
-//     }
-// }));
+import {NavLink, withRouter} from "react-router-dom";
 
 const AddressImages = (props) => {
-    // const classes = useStyles();
 
     const getRandomNumbers = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1) + min)
     }
 
+    const showImage = () => {
+       return `/shop/product/${props.product.name}/${props.product.id}` ;
+    }
+
     return(
         <Card sx={{ display: 'flex', marginTop: 2}}>
+            <NavLink to={() => showImage()}>
              <CardMedia
                     component="img"
-                    height= "100"
+                    sx={{width: 150}}
+                    height= "90"
                     image={props.imag}
                     alt={props.alt}
                 />
+            </NavLink>
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <CardContent sx={{ flex: '1 0 auto' }}>
                         <Typography component="div" variant="body2">
@@ -44,4 +39,4 @@ const AddressImages = (props) => {
     )
 }
 
-export default AddressImages;
+export default withRouter(AddressImages);

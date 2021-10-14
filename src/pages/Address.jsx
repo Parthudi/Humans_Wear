@@ -30,7 +30,7 @@ const useStyle = makeStyles((theme) => ({
     },
     cardLeft: {
         width: "45vw",
-        padding: theme.spacing(3,4),
+        padding: theme.spacing(2,2),
     },
     modeling: {
         border: "1px solid white",
@@ -198,90 +198,6 @@ const Address = () => {
                                 />
                                 <Button variant="contained" type="submit" onClick={(e) => handleOnSubmit(e)} color="secondary" fullWidth size="medium" style={{justifyContaint:"center", marginTop:"15px"}}> Save Address </Button>
                         </form>
-                        {/* <Formik initialValues = {initialValues}
-                            onSubmit={(values, formikHelpers, {setSubmitting}) => {
-                                console.log("Formik Values - " , values);
-                                formikHelpers.resetForm();
-                                setTimeout(() => {
-                                    alert(JSON.stringify(values, null, 2));
-                                    setSubmitting(false);
-                                  }, 10000);
-                            }}
-                            validationSchema={object(Form_Validation)}>
-                            {({errors,dirty,touched,isValid,values, handleChange,isSubmitting}) => (
-                            <Form autoComplete="off" onSubmit={() => handleSubmit(values)}>
-                                <InputField
-                                    required 
-                                    fullWidth
-                                    type = "text"
-                                    label = "Name"
-                                    name = "name"
-                                    value = {values.name}
-                                    onChange = {handleChange}
-                                />
-                                <InputField
-                                    required 
-                                    fullWidth
-                                    type="number"
-                                    variant = "outlined"
-                                    label = "Mobile Number"
-                                    name = "mobile"
-                                    value = {values.mobile}
-                                    onChange = {handleChange}
-                                />
-                                <InputField
-                                    required 
-                                    fullWidth
-                                    type="number"
-                                    variant = "outlined"
-                                    label = "PinCode"
-                                    name = "pincode"
-                                    value = {values.pincode}
-                                    onChange = {handleChange}
-                                />
-                                <InputField
-                                    required 
-                                    fullWidth
-                                    type="text"
-                                    variant = "outlined"
-                                    label = "Address"
-                                    name = "address"
-                                    value = {values.address}
-                                    onChange = {handleChange}
-                                />
-                                <InputField
-                                    required
-                                    fullWidth 
-                                    type="text"
-                                    variant = "outlined"
-                                    label = "Town"
-                                    name = "town"
-                                    value = {values.town}
-                                    onChange = {handleChange}
-                                />
-                                <InputField
-                                    required 
-                                    fullWidth
-                                    type="text"
-                                    variant = "outlined"
-                                    label = "City"
-                                    name = "city"
-                                    value = {values.city}
-                                    onChange = {handleChange}
-                                />
-                                <InputField
-                                    required 
-                                    fullWidth
-                                    type="text"
-                                    variant = "outlined"
-                                    label = "State"
-                                    name = "state"
-                                    value = {formvalues.state}
-                                    onChange = {handleChange}
-                                />
-                                <Button variant="contained" type="submit" disabled={isSubmitting} color="secondary" fullWidth size="medium" style={{justifyContaint:"center", marginTop:"15px"}}> Save Address </Button>
-                            </Form> )} 
-                         </Formik> */}
                     </Box>
                 </Box>
             </Box>      
@@ -290,7 +206,7 @@ const Address = () => {
 
     const sideCartImages = () => {
         return(cartprods && cartprods.map((product,i) => {
-            return <AddressImages imag={product.image} alt={product.alt} product = {product}/>
+            return <AddressImages imag={product.image} alt={product.alt} product={product}/>
         }));
     }
 

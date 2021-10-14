@@ -1,4 +1,5 @@
 import {object, string,number} from "yup";
+import * as Yup from "yup";
 
 export const Form_Validation = {
     name: string().required("Please Enter Name").min(3, "Name To Short").max(25, "Name To Big"),
@@ -9,6 +10,13 @@ export const Form_Validation = {
     city: string().required("Please Enter City"),
     state: string().required("Please Enter State") 
 }
+
+export const SignupSchema = Yup.object().shape({
+    displayName: Yup.string().required("Please Enter Name").min(3, "Name To Short").max(25, "Name To Big"),
+    email: Yup.string().email('Invalid email').required('Email Is Required'),
+    password: Yup.string().required("Password is required").min(5, "Name To Short").max(25, "Name To Big"),
+    confirmpassword: Yup.string().required("Confirm Password is required").min(5, "Name To Short").max(25, "Name To Big"),
+  });
     // if(nameField === "name") {
     //     if(typeof(value) !== string){
     //         return "Please Enter Valid Name";

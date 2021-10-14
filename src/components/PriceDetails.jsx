@@ -23,6 +23,7 @@ import { withRouter } from "react-router";
 
 const PriceDetails = (props) => {
     const classes = useStyles();
+
     const getTotalAmount = () => {
         let newAmount = 0;
         props.products && props.products.map((prod) => {
@@ -47,10 +48,14 @@ const PriceDetails = (props) => {
     }
 
     const onClickHandler = () => {
-        if(props.buttonText !== "CONTINUE"){
-            props.history.push("/checkout/address");
+        if(props.unAuthenticatedUser){
+            props.history.push("/login");
         }else{
-            props.history.push("/checkout/payment");
+            if(props.buttonText !== "CONTINUE"){
+                props.history.push("/checkout/address");
+            }else{
+                props.history.push("/checkout/payment");
+            }
         }
     }
 

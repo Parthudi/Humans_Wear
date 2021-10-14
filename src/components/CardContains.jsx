@@ -32,7 +32,6 @@ const CardContaint = (props) => {
   const handleRemoveChange = () => {
     removeAddress(props.index);
   }
-
   
   const address = () => {
       return(
@@ -48,7 +47,7 @@ const CardContaint = (props) => {
                       {props.city}, {props.state} - {props.pincode}
                   </Typography>
               </Box>
-              <Box mt={1} mb={3}>
+              <Box mt={1} mb={1}>
                   <Typography variant="subtitle2">
                       Mobile :- <b> {props.mobile} </b>
                   </Typography>

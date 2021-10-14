@@ -6,7 +6,7 @@ import Layout from "./components/Layout";
 import './App.css'
 
 const HomePage = React.lazy(() => import("./pages/Homepage"))
-const SignInAndSignUp = React.lazy(() => import('./pages/signup-signin/signup-signin'))
+const SignInAndSignUp = React.lazy(() => import('./pages/Login'))
 const  ShopPage = React.lazy(() => import('./pages/Shop/shop'))
 const HatsPage = React.lazy(() => import("./pages/Hats"))
 const SneakersPage = React.lazy(() => import("./pages/Sneakers"))

@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react"
 import "./singleImage.css"
-// import StarRatings from 'react-star-ratings';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import LocalShippingOutlinedIcon from '@material-ui/icons/LocalShippingOutlined';
@@ -469,11 +468,6 @@ const ShowSingleImage = (props) => {
                     <Avatar style={{color: `${xl}`,backgroundColor:"white", border:`1px solid ${xl}`, fontWeight: "normal"}} onClick={() => changeColor("4")}> XL </Avatar>
                     <Avatar style={{color: `${xxl}`,backgroundColor:"white", border:`1px solid ${xxl}`, fontWeight: "normal"}} onClick={() => changeColor("5")}> XXL </Avatar>
                 </Stack>
-                    {/* <span className="size"  style={{color: `${s}`, border:`1px solid ${s}`}} onClick={() => changeColor("1")}> S </span>   */}
-                    {/* <span className="size"  style={{color: `${m}`, border:`1px solid ${m}`}} onClick={() => changeColor("2")} > M </span>  
-                    <span className="size"  style={{color: `${l}`, border:`1px solid ${l}`}} onClick={() => changeColor("3")} > L </span>  
-                    <span className="size"  style={{color: `${xl}`,border:`1px solid ${xl}`}} onClick={() => changeColor("4")} > XL </span>  
-                    <span className="size"  style={{color: `${xxl}`,border:`1px solid ${xxl}`}} onClick={() => changeColor("5")} > XXL </span>   */}
 
                 <button className="addToCart" onClick={() => addItemsToBag()}> <ShoppingBasketIcon style={{marginRight: "5px"}}/>  ADD TO BAG </button>
                 <button className="wishList" onClick={() => addItemsToWishList()}> <FavoriteBorderIcon style={{marginRight: "5px"}}/> WISHLIST </button>
@@ -495,13 +489,12 @@ const ShowSingleImage = (props) => {
                             <span className="tick"> <CheckCircleRoundedIcon style={{color:"mediumseagreen"}} /> </span>
                             <button style={{color: `${buttonColor}`}} onClick={() => showPincodeModel()}> <b> CHANGE </b> </button>   
                         </span>
-                        
-                        <div className="expectedDeliveryDay"> <LocalShippingOutlinedIcon style={{marginRight:"10px"}}/> Get it by {moment().format("ddd, MMM Do")} </div>
+                        <div className="expectedDeliveryDay"> <LocalShippingOutlinedIcon style={{marginRight:"10px"}}/> Get it by {moment().add(4, 'days').format("ddd, MMM Do")} </div>
                         <div className="expectedDeliveryDay"> 
-                            <MobileScreenShareOutlinedIcon style={{marginRight:"10px"}}/> Pay on delivery available {moment().format("ddd, MMM Do")} 
+                            <MobileScreenShareOutlinedIcon style={{marginRight:"10px"}}/> Pay on delivery available {moment().add(4, 'days').format("ddd, MMM Do")} 
                         </div>
                         <div className="expectedDeliveryDay"> 
-                            <SwapHorizIcon style={{marginRight:"10px"}}/> Easy 30 days return & exchange available {moment().format("ddd, MMM Do")} 
+                            <SwapHorizIcon style={{marginRight:"10px"}}/> Easy 30 days return & exchange available {moment().add(4, 'days').format("ddd, MMM Do")} 
                             <span className="moreInfoForExchange" onClick={() => setShowInfoForExchange(true)}> MORE INFO {`>`} </span>
                         </div>
                         {showExchangeModal()}
