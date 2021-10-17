@@ -52,11 +52,13 @@ const labels = {
 const ShowSingleImage = (props) => {
     const [showalertwishlist, setShowAlertWishList] = useState(false);
     const [showalertbag, setShowAlertBag] = useState(false);
-    const [s, sets] = useState("black");
-    const [m, setm] = useState("black");
-    const [l, setl] = useState("black");
-    const [xl, setxl] = useState("black");
-    const [xxl ,setxxl] = useState("black");
+    const [size, setSize] = useState({
+        s : "black",
+        m : "black",
+        l : "black",
+        xl : "black",
+        xxl : "black" 
+    });
     const [pincode, setPincode] = useState("");
     const [showincorrectpincode, setShowIncorrectPincode] = useState(false);
     const [buttonColor, setButtonColor] = useState("grey");
@@ -69,7 +71,6 @@ const ShowSingleImage = (props) => {
     const [value, setValue] = useState(4);
     const [hover, setHover] = useState(-1);
     const [selectsize, setSelectSize] = useState(false);
-
     const [bankcolor, setBankColor] = useState({
         HDFC: "grey",
         ICICI : "grey",
@@ -83,6 +84,7 @@ const ShowSingleImage = (props) => {
     });
 
     const {HDFC,ICICI, CITY, SBI, KOTAK, AMEX, HSBC, INDUSIND, RBL} = bankcolor;
+    const {s, m, l, xl, xxl} = size;
 
     useEffect(() => {
         const route = props.location;
@@ -99,27 +101,10 @@ const ShowSingleImage = (props) => {
         setProductDetails(fetchedProduct);
     }, []);
 
-    const changeColor = (index) => {
-        sets("black");
-        setm("black");
-        setl("black");
-        setxl("black");
-        setxxl("black");
-        if(index === "1"){
-            sets("rgb(230, 25, 110)");
-        }
-        if(index === "2"){
-            setm("rgb(230, 25, 110)")
-        }
-        if(index === "3"){
-            setl("rgb(230, 25, 110)");
-        }
-        if(index === "4"){
-            setxl("rgb(230, 25, 110)");
-        }
-        if(index === "5"){
-            setxxl("rgb(230, 25, 110)");
-        }
+    const changeColor = (name) => {
+        const keyValuePair = {};
+        keyValuePair[`${name.toLowerCase()}`] = "rgb(230, 25, 110)";
+        setSize({s: "black", m: "black",l: "black", xl: "black", xxl: "black", ...keyValuePair})
     }
 
     const createData = (Months, Intrest, MonthlyEMI , OverAllCoast) => {
@@ -135,10 +120,9 @@ const ShowSingleImage = (props) => {
       ];
 
     const changeBankColor = (name) => {
-        setBankColor({ICICI: "grey", CITY: "grey", SBI: "grey", KOTAK: "grey", AMEX: "grey", HSBC: "grey", INDUSIND: "grey", RBL: "grey", HDFC: "grey"});
         const colorName = {};
         colorName[`${name}`] = "black";
-        setBankColor(colorName);
+        setBankColor({ICICI: "grey", CITY: "grey", SBI: "grey", KOTAK: "grey", AMEX: "grey", HSBC: "grey", INDUSIND: "grey", RBL: "grey", HDFC: "grey", ...colorName});
     }
 
     const dataForModel = () => {
@@ -462,11 +446,11 @@ const ShowSingleImage = (props) => {
                 <span className="clothSizing"> Select Size </span> 
                 <span className="sizeChart"> Size Chart {'>'} </span>
                 <Stack direction="row" spacing={3} mt={3} mb={3}>
-                    <Avatar style={{color: `${s}`,backgroundColor:"white", border:`1px solid ${s}`, fontWeight: "normal"}} onClick={() => changeColor("1")}> S </Avatar>
-                    <Avatar style={{color: `${m}`,backgroundColor:"white", border:`1px solid ${m}`, fontWeight: "normal"}} onClick={() => changeColor("2")}> M </Avatar>
-                    <Avatar style={{color: `${l}`,backgroundColor:"white", border:`1px solid ${l}`, fontWeight: "normal"}} onClick={() => changeColor("3")}> L </Avatar>
-                    <Avatar style={{color: `${xl}`,backgroundColor:"white", border:`1px solid ${xl}`, fontWeight: "normal"}} onClick={() => changeColor("4")}> XL </Avatar>
-                    <Avatar style={{color: `${xxl}`,backgroundColor:"white", border:`1px solid ${xxl}`, fontWeight: "normal"}} onClick={() => changeColor("5")}> XXL </Avatar>
+                    <Avatar style={{color: `${s}`,backgroundColor:"white", border:`1px solid ${s}`, fontWeight: "normal"}} onClick={() => changeColor("s")}> S </Avatar>
+                    <Avatar style={{color: `${m}`,backgroundColor:"white", border:`1px solid ${m}`, fontWeight: "normal"}} onClick={() => changeColor("m")}> M </Avatar>
+                    <Avatar style={{color: `${l}`,backgroundColor:"white", border:`1px solid ${l}`, fontWeight: "normal"}} onClick={() => changeColor("l")}> L </Avatar>
+                    <Avatar style={{color: `${xl}`,backgroundColor:"white", border:`1px solid ${xl}`, fontWeight: "normal"}} onClick={() => changeColor("xl")}> XL </Avatar>
+                    <Avatar style={{color: `${xxl}`,backgroundColor:"white", border:`1px solid ${xxl}`, fontWeight: "normal"}} onClick={() => changeColor("xxl")}> XXL </Avatar>
                 </Stack>
 
                 <button className="addToCart" onClick={() => addItemsToBag()}> <ShoppingBasketIcon style={{marginRight: "5px"}}/>  ADD TO BAG </button>

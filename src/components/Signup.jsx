@@ -11,6 +11,8 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import AlertMessage from "./AlertMessage";
 import Stack from '@mui/material/Stack';
 import {RegisterUser} from "./ApiCalls";
+import {Form_Validation} from "./FormValidations";
+import _ from "lodash";
 
 const Signup = () =>  {
     const [showalert, setShowAlert] = useState(false);
@@ -26,12 +28,17 @@ const Signup = () =>  {
         showPassword: false,
         showConfirmPassword: false,
     });
+    const [error, setError] = useState("");
+    const [errors, setErrors] = useState("");
 
     const {username, email, password, confirmpassword} = values;
-    const userType = ["Admin", "user"];
+    const userType = ["admin", "user"];
 
     const handleOnSubmit = async(event) => {
         event.preventDefault();
+        if(!_.isEmpty(Form_Validation(values))){
+            return;
+        }
         try{
             if(password !== confirmpassword) {
                 setMessage("Password And ConfirmPassword Didnt Match");
@@ -73,10 +80,11 @@ const Signup = () =>  {
       };
 
     const handleOnChange = (event) => {
-        console.log(event.target.name);
-        setValues({...values, [event.target.name] : event.target.value })
+        setValues({...values, [event.target.name] : event.target.value});
+        setErrors(Form_Validation(values));
         }
     
+        console.log("message  :- ", errors);
     const showSignupForm = () => {
         return( 
             <form autoComplete="off">
@@ -87,7 +95,10 @@ const Signup = () =>  {
                         type="text"
                         fullWidth
                         value={values.username}
-                        onChange={(e) => handleOnChange(e)} />
+                        onChange={(e) => handleOnChange(e)} 
+                        error = {Boolean(errors.username)}
+                        helperText = {errors.username}
+                        />
 
                     <InputField
                         showPadding={false}
@@ -96,7 +107,10 @@ const Signup = () =>  {
                         type="text"
                         fullWidth
                         value={values.email}
-                        onChange={(e) => handleOnChange(e)}/>
+                        onChange={(e) => handleOnChange(e)}
+                        error = {Boolean(errors.email)}
+                        helperText = {errors.email}
+                        />
 
                     <FormControl variant="outlined" fullWidth>
                         <InputLabel htmlFor="outlined-adornment-password"> Password </InputLabel>
@@ -113,7 +127,9 @@ const Signup = () =>  {
                                         {values.showPassword ? <VisibilityOff /> : <Visibility />}
                                     </IconButton>
                                 </InputAdornment>
-                            } />
+                            } 
+                            error = {Boolean(errors.password)}
+                            helperText = {errors.password}/>
                     </FormControl>
 
                     <FormControl variant="outlined" fullWidth>
@@ -131,7 +147,9 @@ const Signup = () =>  {
                                         {values.showConfirmPassword ? <VisibilityOff /> : <Visibility />}
                                     </IconButton>
                                 </InputAdornment>
-                            } />
+                            } 
+                            error = {Boolean(errors.confirmpassword)}
+                            helperText = {errors.confirmpassword}/>
                     </FormControl>
 
                     <Box sx={{ minWidth: 120, marginTop: 15}}>
@@ -143,20 +161,21 @@ const Signup = () =>  {
                             </Select> 
                         </FormControl>
                     </Box>
-                    <Button type="submit" variant="contained" color="secondary" onClick={(e) => handleOnSubmit(e)} fullWidth> <b> Sign Up </b> </Button>
+                    <Button type="submit" variant="contained" color="secondary" disabled={email === "" || password === "" || username ==="" || confirmpassword === "" || !_.isEmpty(Form_Validation(values))} onClick={(e) => handleOnSubmit(e)} fullWidth> <b> Sign Up </b> </Button>
                 </Stack>
             </form>
         )}
 
     return(
-       <div className='sign-up'>
+       <Box>
+            {error !== "" && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={error} />}
             {showalert && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message={message} />}
             {showerroralert && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={message} />}
 
            <h1><b> I dont have an account </b></h1>
               <span> Sign up with your email & password </span>
                 {showSignupForm()}
-        </div>
+        </Box>
         )
 }
 

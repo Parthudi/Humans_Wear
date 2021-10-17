@@ -1994,6 +1994,11 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@hookform/resolvers@^2.8.2":
+  "integrity" "sha512-oDTGrm7yHxT4VIv4kJcfjvWvozCbdcL0/jrpbAkeo39FYn78XnKOrrGTNmrXdfu+EQVkNIdZ47IYRFManZ4jUA=="
+  "resolved" "https://registry.npmjs.org/@hookform/resolvers/-/resolvers-2.8.2.tgz"
+  "version" "2.8.2"
+
 "@humanwhocodes/config-array@^0.5.0":
   "integrity" "sha512-FagtKFz74XrTl7y6HCzQpwDfXP0yhxe9lHLD1UZxjvZIcbyRz8zTFF/yYNfSfzU414eDwZ1SrO0Qvtyf+wFMQg=="
   "resolved" "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.5.0.tgz"
@@ -10834,10 +10839,10 @@
     "prop-types" "^15.5.0"
     "react-async-script" "^1.1.1"
 
-"react-hook-form@^7.17.0":
-  "integrity" "sha512-hA6cbLxycyTRVL585jofNesc1sPtxn2GB1/KCV0P8lnmwzPmqhMxqbuX5TtTdTcBItf3grawfllkg1cv1iDMtQ=="
-  "resolved" "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.17.0.tgz"
-  "version" "7.17.0"
+"react-hook-form@^7.0.0", "react-hook-form@^7.17.4":
+  "integrity" "sha512-7XhbCr7d9fDC1TgcK/BUbt7D3q0VJMu7jPErfsa0JrxVjv/nni41xWdJcy0Zb7R+Np8OsCkQ2lMyloAtE3DLiQ=="
+  "resolved" "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.17.4.tgz"
+  "version" "7.17.4"
 
 "react-html-parser@^2.0.2":
   "integrity" "sha512-XeerLwCVjTs3njZcgCOeDUqLgNIt/t+6Jgi5/qPsO/krUWl76kWKXMeVs2LhY2gwM6X378DkhLjur0zUQdpz0g=="
