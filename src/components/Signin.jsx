@@ -104,7 +104,7 @@ const SignIn = (props) =>  {
                 </FormControl>
 
                     <Button variant="contained" disabled={email === "" || password === "" || !_.isEmpty(Form_Validation(values))} size="medium" color="primary" onClick={(e) => handleOnSubmit(e)}> SIGN IN </Button>
-                    <Button variant="contained" color="success" googlestyle='true' size="medium" onClick={signInWithGoogle}> Sign in with Google </Button>
+                    {/* <Button variant="contained" color="success" googlestyle='true' size="medium" onClick={signInWithGoogle}> Sign in with Google </Button> */}
                 </Stack>
             </form>
         </Box>

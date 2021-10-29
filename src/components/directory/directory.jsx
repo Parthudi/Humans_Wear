@@ -5,6 +5,7 @@ import Hat from '../../images/myfinalhat.jpg'
 import Sneaker from '../../images/myfinalsneaker.jpg'
 import Jacket from '../../images/jackets.png'
 import Women from '../../images/womens.png'
+import {Container} from "@material-ui/core";
 import './directory.css'
 
 class Directory extends Component {
@@ -56,8 +57,8 @@ class Directory extends Component {
              })
 
         return(
-            <div className='directory-menu'>
-                        {menuitem}
+            <div className='directory-menu' disableGutters={true}>
+                    {menuitem}
             </div>
         )
     }

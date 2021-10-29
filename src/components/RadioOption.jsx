@@ -5,6 +5,7 @@ import FormControl from '@mui/material/FormControl';
 import CardContaint from "./CardContains";
 import PaymentRadio from "./PaymentRadio";
 
+
 const RadioOption = (props) => {
     const [value, setValue] = useState(0);
   
@@ -15,7 +16,7 @@ const RadioOption = (props) => {
     return(
             <Container>
                 {props.options && props.options.length > 0 && props.options.map((option, i) => (
-                    <FormControl component="fieldset" key={i}>
+                    <FormControl component="fieldset" key={i} >
                         <RadioGroup
                             name={props.name}
                             value={value}

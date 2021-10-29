@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(3,0,3,0),
       padding: theme.spacing(2,1,1,1),
       width: "45vw",
+  },
+  adjustViewForSmall: {
+      display: "block"
   }
 }));
 
@@ -35,7 +38,7 @@ const CardContaint = (props) => {
   
   const address = () => {
       return(
-          <Box>
+          <Box className={classes.adjustViewForSmall}>
               <Typography variant="subtitle1">
               <Stack direction="row" spacing={1}> <b> {props.name} </b> <Chip label="HOME" color="success" size="small" variant="outlined" /> </Stack>
               </Typography>

@@ -10,6 +10,23 @@
     overflow: hidden;
   }
 
+  @media only screen and (max-width: 638px) {
+    body {
+      background-color: lightblue;
+    }
+    .menu-item {
+      min-width: 470px;
+      height: 240px;
+      align-items: center;
+      display: block;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid black;
+      margin: 0 7.5px 15px;
+      overflow: hidden;
+    }
+  }
+
   .menu-item:hover {
     cursor: pointer;
   }

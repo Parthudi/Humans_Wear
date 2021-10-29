@@ -1,14 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {Badge, Box, Grid, Typography, makeStyles,BottomNavigation, BottomNavigationAction,Menu,MenuItem,Divider, Avatar,Tooltip,IconButton } from "@material-ui/core";
+import {Badge, Box, Grid, Typography, makeStyles,BottomNavigation, BottomNavigationAction} from "@material-ui/core";
 import {NavLink, withRouter} from 'react-router-dom';
 import ReactLogo from '../assets/Crown.js';
 import {itemTotal} from "./LocalStorageItems/Cart";
 import {wishListItemTotal} from "./LocalStorageItems/Wishlist";
-import {AddShoppingCartOutlined, FavoriteBorderOutlined, StorefrontOutlined,InfoOutlined} from "@material-ui/icons";
-import ListItemIcon from '@mui/material/ListItemIcon';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
+import {AddShoppingCartOutlined, FavoriteBorderOutlined, StorefrontOutlined} from "@material-ui/icons";
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import {getUser,removeUser} from "./LocalStorageItems/User"; 
@@ -22,6 +18,7 @@ const useStyle = makeStyles((theme) => ({
         },
         title: {
             fontFamily: "Henny Penny , cursive",
+            fontSize: "33px"
         },
         headerText: {
             color: "black",
@@ -35,6 +32,19 @@ const useStyle = makeStyles((theme) => ({
             "&:hover": {
                 color: "green"
             }
+        },
+        adjustMargin: {
+            marginLeft: "20rem"
+        },
+        [theme.breakpoints.up("md")]: {
+            marginLeft: "5rem"
+        },
+        [theme.breakpoints.down("sm")]: {
+            title: {
+                fontSize: "21px",
+                marginLeft: "75px",
+                letterSpacing: "3px"
+            }
         }
     }));
 
@@ -44,8 +54,8 @@ const HeaderCompo = () => {
     const [cartitems, setCartItems] = useState("0");
     const [wishlistitems, setWishListItems] = useState("0"); 
     const [user, setUser] = useState({});
-    const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl);
+    // const [anchorEl, setAnchorEl] = useState(null);
+    // const open = Boolean(anchorEl);
 
     useEffect(() => {
         const user = getUser();
@@ -56,30 +66,30 @@ const HeaderCompo = () => {
         setWishListItems(itemssFromWishList);
     } , [cartitems,wishlistitems,user.is_authorized]);
 
-    const handleOnClick = (e) => {
-        setAnchorEl(e.currentTarget);
-    }
+    // const handleOnClick = (e) => {
+    //     setAnchorEl(e.currentTarget);
+    // }
 
-    const handleClose = () => {
-        setAnchorEl(null);
-      };
+    // const handleClose = () => {
+    //     setAnchorEl(null);
+    //   };
 
     return(
-        <Box mb={3} style={{zIndex:"-1"}} >
+        <Box className={classes.adjustSizing} mb={3} style={{zIndex:"-1"}} md={10} sm={6}>
             <Grid direction="row" container>
-                <Grid item xs={3} sm={4} md={5}>
+                <Grid item xs={2} sm={4} md={5}>
                     <NavLink className={classes.logoContainer} to="/">
                         <ReactLogo className='logo' />
                     </NavLink>
                 </Grid>
-                <Grid container item xs={9} sm={8} md={7}>
+                <Grid container item xs={10} sm={8} md={7}>
                     <Grid item xs={7} sm={6} md={5}>
-                        <Typography className={classes.title}  variant="h4" color="secondary">
-                            HUMANS WEAR
+                        <Typography className={classes.title} color="secondary">
+                             HUMANS WEAR
                         </Typography>
                     </Grid>
-                    <Grid item xs={2} sm={2} md={2}>
-                        <Box ml={30} sx={{width: 100}}>
+                    <Grid item xs={3} sm={2} md={2}>
+                        <Box className={classes.adjustMargin}>
                             <BottomNavigation showLabels>
                                 <BottomNavigationAction label="Bag" className={classes.headerText} icon={<Badge badgeContent={cartitems} color="error">
                                     <NavLink to="/checkout/cart" className={classes.headerIcons}>  <AddShoppingCartOutlined /> </NavLink>

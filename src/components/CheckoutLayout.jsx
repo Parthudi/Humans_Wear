@@ -1,11 +1,23 @@
 import React from "react";
-import {Container, Divider,Box,Grid} from "@material-ui/core";
+import {Container, Divider,Box,Grid, makeStyles} from "@material-ui/core";
 import CartHeader from "./CartHeader";
 
+const useStyles = makeStyles((theme) => ({
+    [theme.breakpoints.down("sm")]: {
+        adjustBag: {
+            width: "550px"
+        },
+    }
+}));
+
 const Checkout = (props) => {
+    const classes = useStyles();
+
     return(
-        <Container>
-            <CartHeader bag={props.showHighlight}/>
+        <Container className={classes.adjustBag}>
+            <Box>
+                <CartHeader bag={props.showHighlight}/>
+            </Box>
             <Divider />
 
             <Box mt={4}>

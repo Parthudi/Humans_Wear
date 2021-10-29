@@ -8,6 +8,13 @@
   border-radius: 50%;
 }
 
+@media only screen and (max-width: 638px) {
+  .adjustSizing {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 .fa:hover {
     opacity: 1.5;
     transform: rotateX(25deg);

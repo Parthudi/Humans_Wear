@@ -1,6 +1,7 @@
-import React,{useState} from "react"
+import React,{useState} from "react";
 import useSound from 'use-sound';
-import cartoon from './audio/cartoon.mp3'
+import cartoon from './audio/cartoon.mp3';
+import {Box, Typography} from "@material-ui/core";
 import './footer.css'
 
 const Boot = () => {
@@ -12,8 +13,19 @@ const Boot = () => {
       const [ , setIsHovering] = useState(false);
     
         return (
-            <div className= "text-center center-block" style={{marginTop: "10rem"}}>
-
+            <Box>
+                <Box style={{left: "10px"}} className="adjustSizingForName">
+                    <Typography variant="h6" style={{fontFamily: "Henny Penny , cursive"}}>
+                    <light> Creator </light> :  <strong> Parth Parmar </strong>
+                    </Typography>
+                    <Typography variant="h6" style={{fontFamily: "Henny Penny , cursive"}}>
+                    <light> Email </light> :  <strong> parmarparth597@gmail.com </strong>
+                    </Typography>
+                    <Typography variant="h6" style={{fontFamily: "Henny Penny , cursive"}}>
+                    <light> Mobile Number </light> :  <strong> 8320416824 </strong>
+                    </Typography>
+                </Box>
+            <div className= "text-center center-block adjustSizing" style={{marginTop: "3rem"}}>
                 <a onMouseEnter={() => {
                          setIsHovering(true);
                          play();
@@ -65,9 +77,10 @@ const Boot = () => {
                         setIsHovering(false);
                         stop();
                     }} href="https://secure.skype.com/portal/overview" className="fa fa-skype"> </a>
-                                
-            </div>
-            )
+                </div>
+             
+            </Box>
+        )
     }
 
   

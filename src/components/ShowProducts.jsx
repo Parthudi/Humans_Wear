@@ -63,6 +63,20 @@ const useStyles = makeStyles((theme) => ({
     setPerfectImage: {
         height: "224px",
         width: "250px"
+    },
+    [theme.breakpoints.down("sm")]: {
+        flexcard: {
+            padding: theme.spacing(1),
+            margin: theme.spacing(1,1),
+            display: "flex"
+        }
+    },
+    [theme.breakpoints.up("lg")]: {
+        flexCard: {
+            padding: theme.spacing(1),
+            margin: theme.spacing(2,2),
+            display: "block"
+        },
     }
 }))
 
@@ -128,7 +142,7 @@ const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...
     }
 
     return(
-        <Card className={classes.card} m={2} pt={3} onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+        <Card className={props.sizing === "flex" ? classes.flexCard : classes.card} m={2} pt={3} onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
             {showalertwishlist && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message="Product Added To WishList" />}
             {showalertbag && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message="Product Added To Bag" />}
             {showalertremove && <AlertMessage shouldDisplay={"dontShow"} severity="warning" pinCodeInvalid={false} message="Product Removed To Bag" />}

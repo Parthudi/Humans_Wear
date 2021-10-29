@@ -3,14 +3,14 @@ import Directory from '../components/directory/directory'
 import ShowCarousel from "../components/Carousel/Carousel";
 import {Box} from "@material-ui/core";
 
-const HomePage = (props) => {
+const HomePage = () => {
     
     return(
-        <div>
+        <Box mt={10}>
             <ShowCarousel />
-            <Box height={30}/> 
+            <Box height={40}/> 
             <Directory />
-        </div>
+        </Box>
     )
 }
 

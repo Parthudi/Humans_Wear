@@ -19,8 +19,23 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import {Container, Box, Grid, Button, Slide} from "@material-ui/core";
 import Skeleton from '@mui/material/Skeleton';
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+    [theme.breakpoints.down('md')]: {
+        containerSize: {
+            width: "50rem"
+        }
+    }, 
+    [theme.breakpoints.down('sm')]: {
+        containerSize: {
+            width: "30rem"
+        }
+    },
+}));
 
 const ShowCarousel = () => {
+    const classes = useStyles();
     // const [checked, setChecked] = useState(false);
     const imageUrls = [{name: "Brown Black Strip Hat",imageurl: hats1},{name:"Shaddy Green Hat", imageurl: hats2} ,{name: "Stylish Blues Hat" , imageurl: hats3},
             {name: "Awesome Jackets", imageurl: jackets1},{name: "Brown hams Jackets", imageurl: jackets2},{name: "Chexi Black Jackets", imageurl: jackets3},
@@ -40,9 +55,9 @@ const ShowCarousel = () => {
     // onMouseEnter={() => setChecked(true)} onMouseLeave={() => setChecked(false)} 
 
     return(
-        <Container>
+        <Container className={classes.containerSize}>
             <Box mt={4}>
-                <Grid container item xs={12} sm={8} md={12}>
+                <Grid container item xs={12} sm={12} md={12}>
                     {imageUrls.length == 15 ?
                         <AliceCarousel autoPlay playButtonEnabled={"keyup" ? true: false} fadeOutAnimation={true} infinite autoPlayInterval="6000">
                             {imageUrls && imageUrls.map((image,i) => (

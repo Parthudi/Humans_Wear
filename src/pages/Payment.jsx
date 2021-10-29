@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from "react";
-import {Card,Typography,makeStyles,Box,Button,Grid} from "@material-ui/core";
+import {Card,Typography,makeStyles,Box,Button,Grid, Container} from "@material-ui/core";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -45,6 +45,12 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(4,4),
         width: "25vw"
     },
+    [theme.breakpoints.down("sm")]: {
+        card: {
+            padding: theme.spacing(4,4),
+            width: "200vw"
+        }
+    }
 }));
 
 const Payment = () => {
@@ -87,8 +93,8 @@ const Payment = () => {
 
     return(
         <Checkout showHighlight="payment">
-            <Grid container  spacing={8}>
-                <Grid container item xs={12} sm={11} md={8}>
+            <Grid container spacing={8}>
+                <Grid container item xs={10} sm={11} md={8}>
                     <div>
                     <Card>
                         <Typography variant="subtitle2" display="block" noWrap>
