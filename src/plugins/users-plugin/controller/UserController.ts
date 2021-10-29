@@ -32,7 +32,7 @@ export default class InventoryController {
   
   static async LogoutUser(req: Request, res: Response) {
     try{
-      const data = req.params || {};
+    const data = req.params || {};
       await RequestValidator.LogoutUser(data);
       const result = await UserOperator.LogoutUser(data);
       return ResponseHandler.sendSuccess(res, result, 201);
