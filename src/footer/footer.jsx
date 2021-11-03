@@ -14,12 +14,12 @@ const Boot = () => {
     
         return (
             <Box>
-                <Box style={{left: "10px"}} className="adjustSizingForName">
+                <Box style={{left: "10px"}} className="multicolortext">
                     <Typography variant="h6" style={{fontFamily: "Henny Penny , cursive"}}>
-                    <light> Creator </light> :  <strong> Parth Parmar </strong>
+                    <light> Creator </light> : <strong> Parth Parmar </strong>
                     </Typography>
                     <Typography variant="h6" style={{fontFamily: "Henny Penny , cursive"}}>
-                    <light> Email </light> :  <strong> parmarparth597@gmail.com </strong>
+                    <light> Email </light> : <strong> parmarparth597@gmail.com </strong>
                     </Typography>
                     <Typography variant="h6" style={{fontFamily: "Henny Penny , cursive"}}>
                     <light> Mobile Number </light> :  <strong> 8320416824 </strong>

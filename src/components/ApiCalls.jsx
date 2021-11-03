@@ -1,6 +1,8 @@
+import {API} from "../config";
+
 export const RegisterUser = (data) => {
     try{
-        return fetch(`http://localhost:3001/v1/users/register`, {
+        return fetch(`${API}/register`, {
             method: "POST",
             headers: {
                     "Content-Type": "application/json",
@@ -15,7 +17,7 @@ export const RegisterUser = (data) => {
 
 export const LoginUser = (data) => {
     try{
-        return fetch(`http://localhost:3001/v1/users/login`, {
+        return fetch(`${API}/login`, {
             method: "POST",
             headers: {
                     "Content-Type": "application/json",

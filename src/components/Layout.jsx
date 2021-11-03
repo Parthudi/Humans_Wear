@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "../footer/footer";
-import {Divider,Box, makeStyles} from "@material-ui/core"; 
+import {Divider,Box,makeStyles} from "@material-ui/core"; 
 
 const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {

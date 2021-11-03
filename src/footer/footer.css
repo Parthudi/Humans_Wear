@@ -68,3 +68,11 @@
   color: white;
   margin: 0px 10px;
 }
+
+.multicolortext strong {
+  background-image: linear-gradient(to left, rgb(255, 13, 255), indigo, green, blue, rgb(126, 126, 2), rgb(202, 131, 0), red);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
