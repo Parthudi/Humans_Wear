@@ -62,7 +62,7 @@ const Boot = () => {
                     }} onMouseLeave={() => {
                         setIsHovering(false);
                         stop();
-                    }} href="https://www.instagram.com/parth___thehuman"  className="fa fa-instagram"> </a>
+                    }} href="https://www.instagram.com/parth__thehuman"  className="fa fa-instagram"> </a>
                                 <a  onMouseEnter={() => {
                                         setIsHovering(true);
                                         play();

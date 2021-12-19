@@ -36,7 +36,7 @@ const CashOnDelivery = () => {
             setTimeout(() => {
                 setSuccess(null);
             }, 3000);
-            setSuccess(" Woahooo Captcha Matchd — You Can Proceed! ");
+            setSuccess(" Woahooo Captcha Matched — You Can Proceed! ");
 
         }else {
             setTimeout(() => {
