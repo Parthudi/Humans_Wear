@@ -1,19 +1,20 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, forwardRef} from "react";
 import {makeStyles,Typography,Container,Divider,Button,Grid,Card,Box,TextField,FormControl,InputLabel,Modal} from "@material-ui/core";
-import CartHeader from "../components/CartHeader";
 import ModalCompo from "../components/Modal";
 import {CloseOutlined} from "@material-ui/icons";
-import {useFormik, Form, Formik, Field } from "formik";
-import {object, string, number} from "yup";
 import InputField from "../components/InputFields";
-import {Form_Validation} from "../components/FormValidations";
 import {addAddress, getAddress} from "../components/LocalStorageItems/Address";
-import {useForm, Controller} from "react-hook-form";
 import RadioOption from "../components/RadioOption";
 import AddressImages from "../components/AddressImages";
-import {getCart,itemTotal} from "../components/LocalStorageItems/Cart";
+import {getCart} from "../components/LocalStorageItems/Cart";
 import ProductDetails from "../components/PriceDetails";
 import Checkout from "../components/CheckoutLayout";
+import MuiAlert from '@mui/material/Alert';
+
+
+const Alert = forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
 
 const useStyle = makeStyles((theme) => ({
     header: {
@@ -90,24 +91,6 @@ const Address = () => {
         }
     }
 
-    // const initialValues = {
-    //     name: "",
-    //     mobile: "",
-    //     pincode: "",
-    //     address: "",
-    //     town: "",
-    //     city: "",
-    //     state: "" 
-    // }
-
-        // const formik = useFormik({
-        //     initialValues,
-        //     validationSchema: Form_Validation,
-        //     onSubmit: (values) => {
-        //         console.log("alll formik values : " , values);
-        //         alert(JSON.stringify(values, null, 2));
-        //     },
-        // });
     const addAddressForm = () => {
         return(
             <Box m={5} align="center" className={classes.modeling}>
@@ -217,8 +200,9 @@ const Address = () => {
             </ModalCompo>)
     }
 
-    return(
-        <Checkout showHighlight="address">
+    const checkOutPage = () => {
+        return(
+            <Checkout showHighlight="address">
             <Grid container item xs={12} sm={11} md={8}>
                 <Grid container direction="row" alignItems="center">
                     <Grid item xs={6} sm={8} md={9}>
@@ -257,6 +241,16 @@ const Address = () => {
                 </Card>
             </Grid>
         </Checkout>
+        )
+    }
+
+    return(
+        <div>
+            {cartprods.length > 0 ? 
+                checkOutPage()
+                :
+            <Alert severity="warning">Cart Is Empty!</Alert>}
+        </div>
     );
 }
 

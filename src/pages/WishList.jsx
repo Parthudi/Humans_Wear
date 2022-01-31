@@ -1,8 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, forwardRef} from "react";
 import {withRouter} from "react-router-dom";
 import ShowProduct from "../components/ShowProducts";
 import {Typography,Grid,makeStyles,Box} from '@material-ui/core';
 import {wishListGetItems} from "../components/LocalStorageItems/Wishlist";
+
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -35,17 +41,24 @@ const WishList = () => {
     }, [product.length]);
 
     return(
-        <Box className = {classes.AdjustSizing} mt={4}>
-            <Typography variant="h4" align="left" className={classes.textHeading} gutterBottom>
-                <b> My WishList </b>
-            </Typography>
-            <Grid container item xs={12} sm={8} md={12}>
-                {product && product.map((picture,i) => {
-                    return (
-                        <ShowProduct imag={picture.image} sizing="flex" alt="product not available" key={i} products={picture} showBag={true} showCard={true}/>
-                )})} 
-            </Grid>
-        </Box>
+        <div>
+            {product.length > 0 ?
+                (<Box className = {classes.AdjustSizing} mt={4}>
+                    <Typography variant="h4" align="left" className={classes.textHeading} gutterBottom>
+                        <b> My WishList </b>
+                    </Typography>
+                    <Grid container item xs={12} sm={8} md={12}>
+                        {product && product.map((picture,i) => {
+                            return (
+                                <ShowProduct imag={picture.image} sizing="flex" alt="product not available" key={i} products={picture} showBag={true} showCard={true}/>
+                        )})} 
+                    </Grid>
+                </Box>)
+                :
+            <Alert severity="warning">Cart Is Empty!</Alert>
+        }
+
+        </div>
     )
 }
 

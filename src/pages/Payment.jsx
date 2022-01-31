@@ -1,5 +1,5 @@
-import React, {useState,useEffect} from "react";
-import {Card,Typography,makeStyles,Box,Button,Grid, Container} from "@material-ui/core";
+import React, {useState,useEffect, forwardRef} from "react";
+import {Card,Typography,makeStyles,Box,Button,Grid} from "@material-ui/core";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -39,6 +39,13 @@ import mobiKwik from "../assets/MobiKwik.png"
 import airtelMoney from "../assets/airtelMoney.png"
 import freeCharge from "../assets/freecharge.png"
 import olaMoney from "../assets/olaMoney.png"
+
+import MuiAlert from '@mui/material/Alert';
+
+
+const Alert = forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -91,8 +98,9 @@ const Payment = () => {
         )
     }
 
-    return(
-        <Checkout showHighlight="payment">
+    const checkOutPage = () => {
+        return(
+            <Checkout showHighlight="payment">
             <Grid container spacing={8}>
                 <Grid container item xs={10} sm={11} md={8}>
                     <div>
@@ -173,15 +181,9 @@ const Payment = () => {
                                 {selectedIndex == 0 && <CashOnDelivery />}
                                 {selectedIndex == 1 && <CardPayment />}
                                 {selectedIndex == 2 && <RadioPayments options={upiRadio} paymentMethodName="PAY USING UPI" name="Upi" radioFor="Payment" />}
-                                {/* {selectedIndex == 2 && <UPI />} */}
                                 {selectedIndex == 3 && <RadioPayments options={walletRadio} paymentMethodName="Select Wallet To Pay" name="Wallet" radioFor="Payment" />}
-                                {/* {selectedIndex == 3 && <Wallet />} */}
-
                                 {selectedIndex == 4 && <RadioPayments options={netBankingRadio} paymentMethodName="Net Banking" name="net banking" radioFor="Payment" />}
-                                {/* {selectedIndex == 4 && <NetBanking />} */}
-                                
                                 {selectedIndex == 5 && <RadioPayments options={emiRadio} paymentMethodName="Select Emi Option" name="Emi" radioFor="Payment" />}
-                                {/* {selectedIndex == 5 && <Emi />} */}
 
                             </Grid>
                         </Grid>
@@ -195,6 +197,15 @@ const Payment = () => {
                 </Grid>
             </Grid>
         </Checkout>
+        )
+    }
+    return(
+        <div>
+            {product.length > 0 ? 
+                checkOutPage()
+                :
+            <Alert severity="warning">Cart Is Empty!</Alert>}
+        </div>
     )
 }
 
