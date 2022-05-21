@@ -65,15 +65,15 @@
       margin: 11px 0px;
       padding: 0 25px;
       align-items: center;
-      opacity: 0.7;
+      opacity: 0.75;
       display: block;
       flex-direction: column;
       justify-content: center;
       border:0px solid white;
       background: linear-gradient(
           to right,
-          rgb(104, 103, 103) 0%,
-          rgb(255, 255, 255) 100%
+          rgb(239, 223, 241) 100%,
+          rgb(236, 222, 240) 0%
           
       )
   }

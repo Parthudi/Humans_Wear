@@ -1,7 +1,6 @@
  body {
     padding: 20px 60px;
-    background-image: url("./assets/humansWear.jpg");
-    background-size: cover
+    background-image: linear-gradient(#efecf9,  #fbdddc);
 };
 
 a {

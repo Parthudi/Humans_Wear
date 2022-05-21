@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
-import {Box, makeStyles} from '@material-ui/core'; 
+import {Box} from '@material-ui/core'; 
 import './menuItems.css'
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -12,7 +12,6 @@ const MenuItems = (props) => {
       }, []);
 
   return(
-    <div data-aos="zoom-in-up">
         <Box className={props.siz +` menu-item `} onClick={() => props.history.push(`${props.match.url}${props.linku}`)}>
             <div className="background-image"  style={{backgroundImage : `url(${props.image})`}} >
                 <div className="content">
@@ -21,7 +20,6 @@ const MenuItems = (props) => {
                 </div>
             </div>
         </Box>
-    </div>
         )
     }
 

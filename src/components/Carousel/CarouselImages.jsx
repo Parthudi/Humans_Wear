@@ -1,20 +1,11 @@
-import React, {useState} from "react";
-import {makeStyles, Card, Button} from '@material-ui/core'
-import "react-alice-carousel/lib/alice-carousel.css";
+import React from "react";
+import {Card} from '@material-ui/core'
 
-const useStyles = makeStyles(() => ({
-    // sliderimg: {
-    //     width: "100rem",
-    //     height: "40rem",
-    //     objectFit: "cover"
-    //   }
-}));
 
 const ShowItemsCarousol = (props) => {
-    const classes = useStyles();
     return(
         <Card key={props.identifier}>
-            <img src={props.imag} alt={props.alt} key={props.identifier} className={classes.sliderimg} width="923" height="690"/> 
+            <img src={props.imag} alt={props.alt} key={props.identifier} width="913" height="690"/> 
         </Card>
     )
 }
