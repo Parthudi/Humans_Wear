@@ -10,7 +10,7 @@ const CollectionPreview = (props) => {
                 
                 <div className='preview'>
                     {props.items.slice(0,4).map((item) => {
-                        return <CollectionItem key={item.id} namee={item.name} pricee={item.price} imag={item.imageUrl} />
+                        return <CollectionItem key={item.id} namee={item.name} pricee={item.price} imag={item.imageUrl} onClick={item.id} />
                     })}
 
                 </div>

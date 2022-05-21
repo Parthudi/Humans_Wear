@@ -53,12 +53,13 @@ const ShopPage = (props) =>  {
         }
     }
 
+
     const shopItem = () => {
         return(collections.map((collection, i) => {
             return(
                 <div key={collection.id}>
                     <button className={classes.butt} onClick={() => clickHandler(i)}> Load More </button> 
-                    <CollectionPreview key={i}  title={collection.title} items={collection.items} clicked={() => this.props.history.push("/shop/product")}/>             
+                    <CollectionPreview key={i}  title={collection.title} items={collection.items} clicked={() => props.history.push("/shop/product")}/>             
                 </div>
             )
         }))

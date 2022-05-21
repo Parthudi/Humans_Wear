@@ -16,7 +16,7 @@ const Boot = () => {
             <Box>
                 <Box style={{left: "10px"}} className="multicolortext">
                     <Typography variant="h6" style={{fontFamily: "Henny Penny , cursive"}}>
-                    <light> Creator </light> : <strong> Parth Parmar </strong>
+                        <light> Creator </light> : <strong> Parth Parmar </strong>
                     </Typography>
                     <Typography variant="h6" style={{fontFamily: "Henny Penny , cursive"}}>
                     <light> Email </light> : <strong> parmarparth597@gmail.com </strong>
