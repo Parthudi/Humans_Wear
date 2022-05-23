@@ -23,7 +23,7 @@ const Videos = () => {
                    <p> Watch Style In Motion </p>
                 </div>
 
-                <video width="950" height="550" controls>
+                <video width="75%" height="40%" controls>
                     <source src="/Videos/clothes.mp4" type="video/mp4"/>
                 </video>
             </center>

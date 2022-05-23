@@ -405,7 +405,7 @@ const ShowSingleImage = (props) => {
             </div>    
 
             <div className="collection-item2">
-                <div className="name1"> HRX by Parth The Human </div>
+                <div className="name1"> {productdetails[0]["name"].split(" ").slice(-1)} by Parth The Human </div>
                 <span className="productName"> {productdetails[0].name} &nbsp; <strong></strong> </span> 
                 <div className="rating">
                 <Box
@@ -430,13 +430,6 @@ const ShowSingleImage = (props) => {
                             <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
                         )}
                     </Box>
-                    {/* <StarRatings
-                        rating={rating}
-                        starRatedColor="lightyellow"
-                        changeRating={changeRating}
-                        numberOfStars={5}
-                        name="rating"
-                        /> */}
                 </div>
                 <hr/>
                 <span> $ {productdetails[0].price} </span>  

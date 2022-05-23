@@ -58,11 +58,11 @@ const ShowCarousel = () => {
         Aos.init({duration: 1000});
       }, [showMenu]);
 
-    const imageUrls = [{name: "Brown Black Strip Hat",imageurl: hats1},{name:"Shaddy Green Hat", imageurl: hats2} ,{name: "Stylish Blues Hat" , imageurl: hats3},
-            {name: "Awesome Jackets", imageurl: jackets1},{name: "Brown hams Jackets", imageurl: jackets2},{name: "Chexi Black Jackets", imageurl: jackets3},
-            {name: "Casual Tees", imageurl: mens1}, {name: "Full Sleeves Pink Tees", imageurl: mens2},{name: "Rowing Browni Coat", imageurl: mens3},
-            {name: "Brown Cherry Shoes", imageurl: sneakers1},{name: "Colorous Sneakers", imageurl: sneakers2},{name: "Casual Loafers", imageurl: sneakers3},
-            {name: "All Time Wears", imageurl: womens1},{name: "Casual Wedding Skirt", imageurl: womens2},{name: "Stripper Blowsom Pants", imageurl: womens3}];
+    const imageUrls = [{name: "Tomato Shady Tee",imageurl: hats1},{name:"Shaddy Hats", imageurl: hats2} ,{name: "Stylish Blues Hat" , imageurl: hats3},
+            {name: "Awesome Jackets", imageurl: jackets1},{name: "Brown Hams Jackets", imageurl: jackets2},{name: "Chexi Black Jackets", imageurl: jackets3},
+            {name: "Casual Tees", imageurl: mens1}, {name: "Stylish Cool Tees", imageurl: mens2},{name: "Romanio Round Neck Tee", imageurl: mens3},
+            {name: "Blue Cherry Shoes", imageurl: sneakers1},{name: "Colorous Sneakers", imageurl: sneakers2},{name: "Casual Loafers", imageurl: sneakers3},
+            {name: "All Time Wears", imageurl: womens1},{name: "Casual Wedding Skirt", imageurl: womens2},{name: "Brown Stripper Coated Jackets", imageurl: womens3}];
 
     const showModal = (name) => {
          return(
@@ -71,9 +71,7 @@ const ShowCarousel = () => {
                     <h6> {name} </h6> 
                 </Box>
              </div>
-           
-         )
-    }
+         )}
 
     return(
         <div data-aos="flip-down">

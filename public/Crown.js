@@ -6,8 +6,8 @@ class ReactLogo extends React.Component {
            
 <svg width="50px" height="39px" viewBox="0 0 50 39" version="1.1" xmlns="http://www.w3.org/2000/svg" >
  
-    <title>Group</title>
-    <desc>Created with Sketch.</desc>
+    <title>Home</title>
+    <desc>Created By Parth.</desc>
     <g id="WiP" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="Artboard" transform="translate(-90.000000, -38.000000)">
             <g id="Group" transform="translate(90.000000, 38.000000)">

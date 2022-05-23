@@ -3,6 +3,7 @@ import Directory from '../components/directory/directory'
 import ShowCarousel from "../components/Carousel/Carousel";
 import {Box} from "@material-ui/core";
 import Videos from "../components/Videos/Videos";
+import footware from "../assets/footware.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -23,6 +24,8 @@ const HomePage = () => {
             <div>
                 <Videos />
             </div>
+            <Box mt={10}/>
+          <img src={footware} alt="Footware" width="100%" />
         </Box>
     )
 }

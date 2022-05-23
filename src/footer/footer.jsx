@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import useSound from 'use-sound';
 import cartoon from './audio/cartoon.mp3';
 import {Box, Typography} from "@material-ui/core";
+import Marquee from "react-fast-marquee";
 import './footer.css'
 
 const Boot = () => {
@@ -79,6 +80,11 @@ const Boot = () => {
                     }} href="https://secure.skype.com/portal/overview" className="fa fa-skype"> </a>
                 </div>
              
+            <Box mt={3}/>
+                <Marquee>
+                   <p> Download the <b> Humans Wear App </b> and get extra ₹300 off. Use code: HWAPP300 </p>
+                </Marquee>
+               
             </Box>
         )
     }

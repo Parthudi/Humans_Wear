@@ -11,6 +11,9 @@ import {getUser,removeUser} from "./LocalStorageItems/User";
 import _ from "lodash";
 
 const useStyle = makeStyles((theme) => ({
+        // adjustSizing: {
+        //     position: "fixed"
+        // },
         logoContainer: {
             "&:hover": {
                 transform: "scale(1.1)",
@@ -18,7 +21,7 @@ const useStyle = makeStyles((theme) => ({
         },
         title: {
             fontFamily: "Henny Penny , cursive",
-            fontSize: "33px"
+            fontSize: "40px"
         },
         headerText: {
             color: "black",
@@ -54,8 +57,6 @@ const HeaderCompo = () => {
     const [cartitems, setCartItems] = useState("0");
     const [wishlistitems, setWishListItems] = useState("0"); 
     const [user, setUser] = useState({});
-    // const [anchorEl, setAnchorEl] = useState(null);
-    // const open = Boolean(anchorEl);
 
     useEffect(() => {
         const user = getUser();
@@ -65,14 +66,6 @@ const HeaderCompo = () => {
         setCartItems(itemsFromCart);
         setWishListItems(itemssFromWishList);
     } , [cartitems,wishlistitems,user.is_authorized]);
-
-    // const handleOnClick = (e) => {
-    //     setAnchorEl(e.currentTarget);
-    // }
-
-    // const handleClose = () => {
-    //     setAnchorEl(null);
-    //   };
 
     return(
         <Box className={classes.adjustSizing} mb={3} style={{zIndex:"-1"}} md={10} sm={6}>
