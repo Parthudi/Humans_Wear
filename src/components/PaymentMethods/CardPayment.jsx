@@ -5,6 +5,10 @@ import PaymentTwoToneIcon from '@mui/icons-material/PaymentTwoTone';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import StripeCheckout from "react-stripe-checkout";
+import {getUser} from "../LocalStorageItems/User";
+// import { loadStripe } from "@stripe/stripe-js";
+// import { Elements } from "@stripe/react-stripe-js";
 
 const useStyles = makeStyles((theme) => ({
     box: {
@@ -18,7 +22,10 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const CardPayment = () => {
+// const stripePayment = loadStripe("pk_test_51L2zH9SISLQJLz2v3zlp5fvErjhUMM40Tqclnob0j2e3EDcOalGoDxk8DV1QjtIVeG5MqpmvsaGVDNjLXbHN4Nwa00Z9Lm5N2d");
+
+const CardPayment = (props) => {
+    // console.log(stripePayment);
     const [values, setValues] = useState({
         card: "",
         userName: "",
@@ -26,14 +33,59 @@ const CardPayment = () => {
         cvv: "",
     })
     const [check, setCheck] = useState(false);
+    const [user, setUser] = useState({});
+    const [amount, setAmount] = useState(0);
     const classes = useStyles();
+
+
+    useEffect(() => {
+        const user = getUser();
+        getTotalAmount();
+        setUser(user);
+    }, []);
+
 
     const handleOnChange = (e) => {
         // setCaptcha(e.target.value);
     }
     
     const handleOnSubmit = (e) => {
-       
+    }
+
+    const getTotalAmount = () => {
+        let newAmount = 0;
+        props.products && props.products.map((prod) => {
+            let currentProduct = 0;
+            currentProduct += prod.price;  
+            currentProduct *= prod.count;
+            newAmount += currentProduct;
+        });
+        setAmount(newAmount);
+        return newAmount;
+    }
+
+    const makePayment = token => {
+        let products = {};
+        products["amount"] = amount;
+        
+        const body = {
+            token,
+            products,
+            user
+        }
+        const headers = {
+            "Content-Type": "application/json"
+        }
+
+        return fetch(`http://localhost:3001/v1/payment` , {
+            method: "POST",
+            headers,
+            body: JSON.stringify(body)
+        }).then(response => {
+            console.log(`RESPONSE :- ${JSON.stringify(response)}`);
+        }).catch(err => {
+            console.log(`ERROR :- ${err}`);
+        })
     }
 
     return(
@@ -104,9 +156,13 @@ const CardPayment = () => {
                     <Typography variant="caption" display="block" gutterBottom>
                         <FormControlLabel control={<Switch check />} label="save this card for faster payments " /> <InfoOutlinedIcon style={{fontSize:"20px"}} />
                     </Typography>
-                    <Button variant="contained" color="secondary" fullWidth size="large"  onClick={() => handleOnSubmit()}>
-                        PLACE ORDER
-                    </Button>
+
+                    <StripeCheckout stripeKey={process.env.REACT_APP_KEY} token={makePayment} amount={() => getTotalAmount() * 100} name="Place Order"> 
+                        <Button variant="contained" color="secondary" fullWidth size="large"  onClick={() => handleOnSubmit()}>
+                            PLACE ORDER ${amount}
+                        </Button>
+                    </StripeCheckout>
+                    
                 </form>
             
         </Box>

@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         margin: "auto",
         border: "3px 2px solid grey",
         opacity: "0.7",
-        padding: "10px",
+        padding: "15px",
         width: "15rem",
         position: "fixed",
         top: "20%",
@@ -63,38 +63,37 @@ const ShowCarousel = () => {
             {name: "Casual Tees", imageurl: mens1}, {name: "Stylish Cool Tees", imageurl: mens2},{name: "Romanio Round Neck Tee", imageurl: mens3},
             {name: "Blue Cherry Shoes", imageurl: sneakers1},{name: "Colorous Sneakers", imageurl: sneakers2},{name: "Casual Loafers", imageurl: sneakers3},
             {name: "All Time Wears", imageurl: womens1},{name: "Casual Wedding Skirt", imageurl: womens2},{name: "Brown Stripper Coated Jackets", imageurl: womens3}];
-
+      
     const showModal = (name) => {
          return(
              <div data-aos="flip-right">
-                <Box m={2} className={classes.boxSize} style={{ background: "linear-gradient(#ee9ca7, #ffdde1)" }}>
+                <Box className={classes.boxSize} style={{ background: "linear-gradient(#ee9ca7, #ffdde1)" }}>
                     <h6> {name} </h6> 
                 </Box>
              </div>
          )}
 
     return(
-        <div data-aos="flip-down">
             <Container className={classes.containerSize} onMouseEnter={() => setShowMenu(true)}  onMouseLeave={() => setShowMenu(false)}>
-                <Box mt={4}>
-                    <Grid container item xs={12} sm={12} md={12}>
-                        {imageUrls.length == 15 ?
-                            <AliceCarousel autoPlay playButtonEnabled={"keyup" ? true: false} fadeOutAnimation={true} infinite autoPlayInterval="5000">
+                {imageUrls.length == 15 ?
+                    <Box mt={4}>
+                        <Grid container item xs={12} sm={12} md={12}>
+                            <AliceCarousel autoPlay playButtonEnabled={"keyup" ? true: false} fadeOutAnimation={true} infinite autoPlayInterval="4000">
                                 {imageUrls && imageUrls.map((image,i) => (
                                     showMenu == true ?
-                                    <>
+                                    <div>
                                         {showModal(image.name)}
                                         <ShowItemsCarousol imag={image.imageurl} name={image.name} identifier={i} key={i} alt="Procuct Not Available"/>
-                                    </>
+                                    </div>
                                       :
                                     <ShowItemsCarousol imag={image.imageurl} name={image.name} identifier={i} key={i} alt="Procuct Not Available"/>
                                 ))}
-                            </AliceCarousel> : 
-                        <Skeleton variant="rectangular" width={1310} height={428} style={{marginBottom: "50px"}} /> }
-                    </Grid>
-                </Box>
+                            </AliceCarousel> 
+                        </Grid>
+                    </Box>
+                : 
+                <Skeleton variant="rect" width={1310} height={428} style={{marginBottom: "50px"}} /> }
             </Container>
-        </div>
     )
 }
 

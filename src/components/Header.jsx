@@ -11,9 +11,6 @@ import {getUser,removeUser} from "./LocalStorageItems/User";
 import _ from "lodash";
 
 const useStyle = makeStyles((theme) => ({
-        // adjustSizing: {
-        //     position: "fixed"
-        // },
         logoContainer: {
             "&:hover": {
                 transform: "scale(1.1)",

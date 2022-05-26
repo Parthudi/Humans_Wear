@@ -1,7 +1,6 @@
 import React from "react";
 import {Card} from '@material-ui/core'
 
-
 const ShowItemsCarousol = (props) => {
     return(
         <Card key={props.identifier}>

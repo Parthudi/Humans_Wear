@@ -229,7 +229,7 @@ const SHOP_DATA = [
         id: 26,
         name: 'Blue Tanktop',
         imageUrl: wom1,
-        price: 25
+        price: 1
       },
       {
         id: 27,

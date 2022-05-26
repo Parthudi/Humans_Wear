@@ -11,6 +11,8 @@
     "@material-ui/icons": "^4.11.2",
     "@mui/icons-material": "^5.0.1",
     "@mui/material": "^5.0.2",
+    "@stripe/react-stripe-js": "^1.8.1",
+    "@stripe/stripe-js": "^1.29.0",
     "aos": "^2.3.4",
     "cra-template": "1.1.2",
     "firebase": "^8.9.1",
@@ -30,6 +32,7 @@
     "react-scripts": "4.0.3",
     "react-simple-captcha": "^8.2.0",
     "react-star-ratings": "^2.3.0",
+    "react-stripe-checkout": "^2.6.3",
     "use-sound": "^4.0.1",
     "yup": "^0.32.9"
   },

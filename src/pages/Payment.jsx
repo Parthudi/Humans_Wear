@@ -179,7 +179,7 @@ const Payment = () => {
 
                             <Grid item xs={8} sm={8} md={8}>
                                 {selectedIndex == 0 && <CashOnDelivery />}
-                                {selectedIndex == 1 && <CardPayment />}
+                                {selectedIndex == 1 && <CardPayment products={product} />}
                                 {selectedIndex == 2 && <RadioPayments options={upiRadio} paymentMethodName="PAY USING UPI" name="Upi" radioFor="Payment" />}
                                 {selectedIndex == 3 && <RadioPayments options={walletRadio} paymentMethodName="Select Wallet To Pay" name="Wallet" radioFor="Payment" />}
                                 {selectedIndex == 4 && <RadioPayments options={netBankingRadio} paymentMethodName="Net Banking" name="net banking" radioFor="Payment" />}
