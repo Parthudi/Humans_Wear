@@ -4,7 +4,7 @@ import RequestValidator from "../lib/RequestValidator";
 import ResponseHandler from "../lib/ResponseHandler";
 import config from "../config/index";
 
-export default class InventoryController {
+export default class UserController {
 
   static async RegisterUser(req: Request, res: Response) {
     try{

@@ -8,10 +8,9 @@ import bodyParser from "body-parser";
 import DBConnection from "../database/DBConnection";
 import appConfig from "../config/appConfig";
 import MAPPInit from "./MAPPInit";
-// import CacheHelper from "../lib/CacheHelper";
 
-import { MAPP as UserRoutes } from "../plugins/users-plugin/index";
-
+import {MAPP as UserRoutes } from "../plugins/users-plugin/index";
+import {MAPP as ProductRoutes} from "../plugins/payment-plugin/index";
 
 DBConnection.connect(appConfig.get("database:mongodb:db"))
   .then(async (result) => {
@@ -30,6 +29,7 @@ DBConnection.connect(appConfig.get("database:mongodb:db"))
     app.use(bodyParser.json({limit: "50mb"}));
 
     app.use("/v1/users", UserRoutes);
+    app.use("/v1/payment", ProductRoutes);
 
     app.get("/", (req, res) => {
       res.status(200).send("<H1>Welcome to Humans Wear Server By Parth Parmar</H1>");
