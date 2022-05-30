@@ -18,10 +18,6 @@ const useStyles = makeStyles((theme) => ({
 const PaymentRadio = (props) => {
   const classes = useStyles();
 
-//   const handleRemoveChange = () => {
-//     removeAddress(props.index);
-//   }
-//   <img src={props.icon} className={classes.icons} alt="payment method not available" height="30px"/> 
   const payment = () => {
       return(
           <Box>

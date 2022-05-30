@@ -184,7 +184,6 @@ const Payment = () => {
                                 {selectedIndex == 3 && <RadioPayments options={walletRadio} paymentMethodName="Select Wallet To Pay" name="Wallet" radioFor="Payment" />}
                                 {selectedIndex == 4 && <RadioPayments options={netBankingRadio} paymentMethodName="Net Banking" name="net banking" radioFor="Payment" />}
                                 {selectedIndex == 5 && <RadioPayments options={emiRadio} paymentMethodName="Select Emi Option" name="Emi" radioFor="Payment" />}
-
                             </Grid>
                         </Grid>
                     </Card>

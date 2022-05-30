@@ -2,6 +2,7 @@ import React, {useEffect,useState} from "react";
 import { Typography,Box,makeStyles,Paper,Tooltip,Button} from "@material-ui/core";
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import InputField from "../InputFields";
+import {useSelector} from "react-redux";
 import Alert from '@mui/material/Alert';
 
 const useStyles = makeStyles((theme) => ({
@@ -21,6 +22,7 @@ const CashOnDelivery = () => {
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
     const classes = useStyles();
+    const totalPrice = useSelector(state => state.totalAmount);
 
     useEffect(() => {
         loadCaptchaEnginge(6);
@@ -73,7 +75,7 @@ const CashOnDelivery = () => {
                         You can pay via Cash/Card or UPI enabled at the time of delivery. Ask your delivery executive for this options
                     </Typography>
                     <Button variant="contained" color="secondary" fullWidth size="large" mt={2} onClick={() => handleOnSubmit()}>
-                        PLACE ORDER
+                        PLACE ORDER ${totalPrice}
                     </Button>
                 </form>
             </Box>

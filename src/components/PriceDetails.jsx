@@ -3,6 +3,7 @@ import {makeStyles,Card,Typography,Divider,Box,Button} from  "@material-ui/core"
 import {itemTotal} from "./LocalStorageItems/Cart";
 import {LocalShippingOutlined} from "@material-ui/icons";
 import { withRouter } from "react-router";
+import {useSelector, useDispatch } from "react-redux";
 
     const useStyles = makeStyles((theme) => ({
         textHeading: {
@@ -23,6 +24,7 @@ import { withRouter } from "react-router";
 
 const PriceDetails = (props) => {
     const classes = useStyles();
+    const dispatch = useDispatch();
 
     const getTotalAmount = () => {
         let newAmount = 0;
@@ -32,6 +34,7 @@ const PriceDetails = (props) => {
             currentProduct *= prod.count;
             newAmount += currentProduct;
         });
+        dispatch({ type: "totalAmount" , payload: {price: newAmount}});
         return newAmount;
     }
 
@@ -75,7 +78,7 @@ const PriceDetails = (props) => {
                 </Typography><br/><br/>
                 <Divider />
                 <Typography  variant="subtitle1" className={classes.textContaint}>
-                    <span  style={{float: "left"}}> <b>Total Amount</b> </span> <span style={{float: "right"}}> <b> ${(getTotalAmount())} </b> </span>
+                    <span  style={{float: "left"}}> <b>Total Amount</b> </span> <span style={{float: "right"}}> <b> ${getTotalAmount()} </b> </span>
                 </Typography><br/><br/>
                 {props.buttonText === "PLACE ORDER" && 
                 <Box mb={2} className={classes.convinenceFee}>

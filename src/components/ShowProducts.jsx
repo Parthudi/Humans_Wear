@@ -7,6 +7,7 @@ import {addItem} from "./LocalStorageItems/Cart";
 import {Link} from "react-router-dom";
 import {FavoriteBorderOutlined, CancelOutlined} from "@material-ui/icons";
 import AlertMessage from './AlertMessage'; 
+// import {useDispatch, useSelector} from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -85,9 +86,9 @@ const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...
     const [showalertwishlist, setShowAlertWishList] = useState(false);
     const [showalertbag, setShowAlertBag] = useState(false);
     const [showalertremove, setShowAlertRemove] = useState(false);
-
     const [show, setShow] = useState();
 
+    // const dispatch = useDispatch();
     const classes = useStyles();
 
     const handleOnChange = (e) => {
@@ -103,7 +104,7 @@ const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...
     const addToWishList = () => {
         return(
             wishListAddItems({id: props.products.id, image: props.imag, name: props.products.name, price: props.products.price} , () => {
-                console.log("Item Pushed To WishList");
+                // dispatch({ type: "addWhishlist" , payload: {whishList: {id: props.products.id, image: props.imag, name: props.products.name, price: props.products.price}}});
                 setTimeout(() => {
                     setShowAlertWishList(false);
                     window.location.reload();
@@ -115,6 +116,7 @@ const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...
 
     const removeItemFromBag = async() => {
         const remove = await removeItemCart(props.products.id);
+        // dispatch({ type: "addWhishlist" , payload: {whishList: {id: props.products.id, image: props.imag, name: props.products.name, price: props.products.price}}});
             setTimeout(() => {
                 setShowAlertRemove(false);
                 window.location.reload();
@@ -124,7 +126,7 @@ const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...
 
     const addItemsFromWhishListToBag = () => {
         return(
-            addItem({id: props.products.id, image: props.imag, name: props.products.name, price: props.products.price} , () => {
+            addItem({id: props.products.id, image: props.imag, name: props.products.name, price: props.products.price}, () => {
                 wishListRemoveItem(props.products.id);
                 setTimeout(() => {
                     setShowAlertBag(false);

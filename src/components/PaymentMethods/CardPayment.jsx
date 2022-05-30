@@ -7,8 +7,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import StripeCheckout from "react-stripe-checkout";
 import {getUser} from "../LocalStorageItems/User";
-// import { loadStripe } from "@stripe/stripe-js";
-// import { Elements } from "@stripe/react-stripe-js";
+import {useSelector} from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
     box: {
@@ -22,17 +21,15 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-// const stripePayment = loadStripe("pk_test_51L2zH9SISLQJLz2v3zlp5fvErjhUMM40Tqclnob0j2e3EDcOalGoDxk8DV1QjtIVeG5MqpmvsaGVDNjLXbHN4Nwa00Z9Lm5N2d");
-
 const CardPayment = (props) => {
-    // console.log(stripePayment);
+    const totalPrice = useSelector((state) => state.totalAmount);
+
     const [values, setValues] = useState({
         card: "",
         userName: "",
         validTill: "",
         cvv: "",
     })
-    const [check, setCheck] = useState(false);
     const [user, setUser] = useState({});
     const [amount, setAmount] = useState(0);
     const classes = useStyles();
@@ -40,7 +37,6 @@ const CardPayment = (props) => {
 
     useEffect(() => {
         const user = getUser();
-        getTotalAmount();
         setUser(user);
     }, []);
 
@@ -50,18 +46,6 @@ const CardPayment = (props) => {
     }
     
     const handleOnSubmit = (e) => {
-    }
-
-    const getTotalAmount = () => {
-        let newAmount = 0;
-        props.products && props.products.map((prod) => {
-            let currentProduct = 0;
-            currentProduct += prod.price;  
-            currentProduct *= prod.count;
-            newAmount += currentProduct;
-        });
-        setAmount(newAmount);
-        return newAmount;
     }
 
     const makePayment = token => {
@@ -157,9 +141,9 @@ const CardPayment = (props) => {
                         <FormControlLabel control={<Switch check />} label="save this card for faster payments " /> <InfoOutlinedIcon style={{fontSize:"20px"}} />
                     </Typography>
 
-                    <StripeCheckout stripeKey={process.env.REACT_APP_KEY} token={makePayment} amount={() => getTotalAmount() * 100} name="Place Order"> 
+                    <StripeCheckout stripeKey={process.env.REACT_APP_KEY} token={makePayment} amount={() => totalPrice * 100} name="Place Order"> 
                         <Button variant="contained" color="secondary" fullWidth size="large"  onClick={() => handleOnSubmit()}>
-                            PLACE ORDER ${amount}
+                            PLACE ORDER ${totalPrice}
                         </Button>
                     </StripeCheckout>
                     
