@@ -14,7 +14,7 @@ const Boot = () => {
       const [ , setIsHovering] = useState(false);
     
         return (
-            <Box>
+            <Box className="backgroundColor">
                 <Box style={{left: "10px"}} className="multicolortext">
                     <Typography variant="h6" style={{fontFamily: "Henny Penny , cursive"}}>
                         <light> Creator </light> : <strong> Parth Parmar </strong>
@@ -80,7 +80,7 @@ const Boot = () => {
                     }} href="https://secure.skype.com/portal/overview" className="fa fa-skype"> </a>
                 </div>
              
-            <Box mt={3}/>
+                <Box mt={3}/>
                 <Marquee>
                    <p> Download the <b> Humans Wear App </b> and get extra ₹300 off. Use code: HWAPP300 </p>
                 </Marquee>

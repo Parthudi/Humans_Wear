@@ -25,7 +25,7 @@ import "aos/dist/aos.css";
 
 const useStyles = makeStyles((theme) => ({
     containerSize: {
-        width: "59rem"
+        width: "70%"
     },
     boxSize: {
         margin: "auto",
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     }, 
     [theme.breakpoints.down('sm')]: {
         containerSize: {
-            width: "60rem"
+            width: "40rem"
         }
     },
 }));

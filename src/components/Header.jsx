@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Badge, Box, Grid, Typography, makeStyles,BottomNavigation, BottomNavigationAction} from "@material-ui/core";
+import {Badge, Box, Grid, Typography, makeStyles,BottomNavigation, BottomNavigationAction,Tooltip,Avatar} from "@material-ui/core";
 import {NavLink, withRouter} from 'react-router-dom';
 import ReactLogo from '../assets/Crown.js';
 import {itemTotal} from "./LocalStorageItems/Cart";
@@ -9,8 +9,13 @@ import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import {getUser,removeUser} from "./LocalStorageItems/User"; 
 import _ from "lodash";
+import FaceIcon from '@mui/icons-material/Face';
+import IconButton from '@mui/material/IconButton';
 
 const useStyle = makeStyles((theme) => ({
+        adjustSizing: {
+            padding: "30px 40px",
+        },
         logoContainer: {
             "&:hover": {
                 transform: "scale(1.1)",
@@ -18,7 +23,8 @@ const useStyle = makeStyles((theme) => ({
         },
         title: {
             fontFamily: "Henny Penny , cursive",
-            fontSize: "40px"
+            fontSize: "3rem",
+            marginLeft: "5rem"
         },
         headerText: {
             color: "black",
@@ -64,21 +70,24 @@ const HeaderCompo = () => {
         setWishListItems(itemssFromWishList);
     } , [cartitems,wishlistitems,user.is_authorized]);
 
+    const handleOnClick = () => {
+        return ;
+    }
     return(
         <Box className={classes.adjustSizing} mb={3} style={{zIndex:"-1"}} md={10} sm={6}>
             <Grid direction="row" container>
-                <Grid item xs={2} sm={4} md={5}>
+                <Grid item xs={2} sm={3} md={4}>
                     <NavLink className={classes.logoContainer} to="/">
                         <ReactLogo className='logo' />
                     </NavLink>
                 </Grid>
-                <Grid container item xs={10} sm={8} md={7}>
-                    <Grid item xs={7} sm={6} md={5}>
+                <Grid container item xs={10} sm={9} md={8}>
+                    <Grid item xs={7} sm={6} md={6}>
                         <Typography className={classes.title} color="secondary">
                              HUMANS WEAR
                         </Typography>
                     </Grid>
-                    <Grid item xs={3} sm={2} md={2}>
+                    <Grid item xs={3} sm={3} md={2}>
                         <Box className={classes.adjustMargin}>
                             <BottomNavigation showLabels>
                                 <BottomNavigationAction label="Bag" className={classes.headerText} icon={<Badge badgeContent={cartitems} color="error">
@@ -92,11 +101,12 @@ const HeaderCompo = () => {
                                     <BottomNavigationAction label="Logout" className={classes.headerText} icon={<LogoutOutlinedIcon onClick={() => removeUser()} />} /> 
                                     :
                                 <BottomNavigationAction label="Login" className={classes.headerText} icon={ <NavLink to="/login" className={classes.headerIcons}> <LoginOutlinedIcon /> </NavLink>} /> }
-                                {/* <Tooltip title="Account settings">
-                                <IconButton onClick={(e) => handleOnClick(e)} size="small" sx={{ ml: 2 }}>
+                                
+                                <Tooltip title="Profile">
+                                <IconButton onClick={(e) => handleOnClick(e)} size="medium">
                                     <Avatar sx={{ width: 32, height: 32 }}>P</Avatar>
                                 </IconButton>
-                                </Tooltip> */}
+                                </Tooltip>
                             </BottomNavigation>
                         </Box> 
                     </Grid>

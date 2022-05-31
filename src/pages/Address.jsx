@@ -1,4 +1,4 @@
-import React, {useState, useEffect, forwardRef} from "react";
+import React, {useState, useEffect, forwardRef, useMemo} from "react";
 import {makeStyles,Typography,Container,Divider,Button,Grid,Card,Box,TextField,FormControl,InputLabel,Modal} from "@material-ui/core";
 import ModalCompo from "../components/Modal";
 import {CloseOutlined} from "@material-ui/icons";
@@ -10,6 +10,9 @@ import {getCart} from "../components/LocalStorageItems/Cart";
 import ProductDetails from "../components/PriceDetails";
 import Checkout from "../components/CheckoutLayout";
 import MuiAlert from '@mui/material/Alert';
+import MenuItem from '@mui/material/MenuItem';
+import Select from 'react-select'
+import countryList from 'react-select-country-list'
 
 
 const Alert = forwardRef(function Alert(props, ref) {
@@ -51,6 +54,8 @@ const useStyle = makeStyles((theme) => ({
     },
 }));
 
+const placeType = ["Home", "Office", "Other"];
+
 const Address = () => {
     const classes = useStyle();
     const [open, setOpen] = useState(false);
@@ -58,6 +63,8 @@ const Address = () => {
     const [cartprods, setCartProds] = useState([])
     const [formvalues, setFormValues] = useState({
         name: "",
+        placeType: "",
+        countryCode: "",
         mobile: "",
         pincode: "",
         address: "",
@@ -68,6 +75,8 @@ const Address = () => {
     // const {register, handleSubmit, errors, control} = useForm();
     // const onSubmit = (data) => console.log("data Came : " , data);
 
+    const options = useMemo(() => countryList().getData(), [])
+
     useEffect(() => {
         const fetchedAddress = getAddress();
         const cartProducts =  getCart();
@@ -76,6 +85,7 @@ const Address = () => {
     }, [address.length, cartprods.length]);
  
     const handleOnChange = (e) => {
+        console.log("onChange");
         setFormValues({...formvalues, [e.target.name] : e.target.value});
     }
 
@@ -90,6 +100,10 @@ const Address = () => {
             console.log("error : " , error);
         }
     }
+
+    const changeHandler = value => {
+        setFormValues({countryCode: value});
+      }
 
     const addAddressForm = () => {
         return(
@@ -109,77 +123,97 @@ const Address = () => {
                     </Typography>
                     <Box className={classes.showScroll}>
                         <form autoComplete="off">
-                             <InputField
-                                    required 
-                                    fullWidth
-                                    variant = "outlined"
-                                    type = "text"
-                                    label = "Name"
-                                    name = "name"
-                                    value = {formvalues.name}
-                                    onChange = {(e) => handleOnChange(e)}
-                                />
-                                <InputField
-                                    required 
-                                    fullWidth
-                                    type="number"
-                                    variant = "outlined"
-                                    label = "Mobile Number"
-                                    name = "mobile"
-                                    value = {formvalues.mobile}
-                                    onChange = {(e) => handleOnChange(e)}
-                                />
-                                <InputField
-                                    required 
-                                    fullWidth
-                                    type="number"
-                                    variant = "outlined"
-                                    label = "PinCode"
-                                    name = "pincode"
-                                    value = {formvalues.pincode}
-                                    onChange = {(e) => handleOnChange(e)}
-                                />
-                                <InputField
-                                    required 
-                                    fullWidth
-                                    type="text"
-                                    variant = "outlined"
-                                    label = "Address"
-                                    name = "address"
-                                    value = {formvalues.address}
-                                    onChange = {(e) => handleOnChange(e)}
-                                />
-                                <InputField
-                                    required
-                                    fullWidth 
-                                    type="text"
-                                    variant = "outlined"
-                                    label = "Town"
-                                    name = "town"
-                                    value = {formvalues.town}
-                                    onChange = {(e) => handleOnChange(e)}
-                                />
-                                <InputField
-                                    required 
-                                    fullWidth
-                                    type="text"
-                                    variant = "outlined"
-                                    label = "City"
-                                    name = "city"
-                                    value = {formvalues.city}
-                                    onChange = {(e) => handleOnChange(e)}
-                                />
-                                <InputField
-                                    required 
-                                    fullWidth
-                                    type="text"
-                                    variant = "outlined"
-                                    label = "State"
-                                    name = "state"
-                                    value = {formvalues.state}
-                                    onChange = {(e) => handleOnChange(e)}
-                                />
-                                <Button variant="contained" type="submit" onClick={(e) => handleOnSubmit(e)} color="secondary" fullWidth size="medium" style={{justifyContaint:"center", marginTop:"15px"}}> Save Address </Button>
+                            <TextField
+                                id="filled-select-currency"
+                                select
+                                label="Place Type"
+                                fullWidth
+                                value={formvalues.placeType}
+                                name="placeType"
+                                onChange= {(e) => handleOnChange(e)}
+                                helperText="Please select your Place Type"
+                                variant="standard">
+                                {placeType.map((place) => (
+                                    <MenuItem  key={place} value={place}>
+                                        {place}
+                                    </MenuItem >
+                                ))}
+                            </TextField>
+                            <InputField
+                                required 
+                                fullWidth
+                                variant = "outlined"
+                                type = "text"
+                                label = "Name"
+                                name = "name"
+                                value = {formvalues.name}
+                                onChange = {(e) => handleOnChange(e)}
+                            />
+                            <Box mt={2}>
+                            <Select options={options} value={formvalues.countryCode} onChange={changeHandler} />
+                            </Box>
+                            <InputField
+                                required 
+                                fullWidth
+                                type="number"
+                                variant = "outlined"
+                                label = "Mobile Number"
+                                name = "mobile"
+                                value = {formvalues.mobile}
+                                onChange = {(e) => handleOnChange(e)}
+                            />
+                            <InputField
+                                required 
+                                fullWidth
+                                type="number"
+                                variant = "outlined"
+                                label = "PinCode"
+                                name = "pincode"
+                                value = {formvalues.pincode}
+                                onChange = {(e) => handleOnChange(e)}
+                            />
+                            <InputField
+                                required 
+                                fullWidth
+                                type="text"
+                                variant = "outlined"
+                                label = "Address"
+                                name = "address"
+                                value = {formvalues.address}
+                                onChange = {(e) => handleOnChange(e)}
+                            />
+                            <InputField
+                                required
+                                fullWidth 
+                                type="text"
+                                variant = "outlined"
+                                label = "Town"
+                                name = "town"
+                                value = {formvalues.town}
+                                onChange = {(e) => handleOnChange(e)}
+                            />
+                            <InputField
+                                required 
+                                fullWidth
+                                type="text"
+                                variant = "outlined"
+                                label = "City"
+                                name = "city"
+                                value = {formvalues.city}
+                                onChange = {(e) => handleOnChange(e)}
+                            />
+                            <InputField
+                                required 
+                                fullWidth
+                                type="text"
+                                variant = "outlined"
+                                label = "State"
+                                name = "state"
+                                value = {formvalues.state}
+                                onChange = {(e) => handleOnChange(e)}
+                            />
+                            <Box mt={2} mb={2}/>
+                            <Button variant="contained" type="submit" onClick={(e) => handleOnSubmit(e)} color="secondary" fullWidth size="medium" style={{justifyContaint:"center", marginTop:"15px"}}> Save Address </Button>
                         </form>
                     </Box>
                 </Box>

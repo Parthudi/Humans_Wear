@@ -11,6 +11,9 @@ const Alert = forwardRef(function Alert(props, ref) {
   });
 
 const useStyles = makeStyles((theme) => ({
+    AdjustSizing: {
+        padding: "30px 40px"
+    },
     card: {
         width: 400,
         padding: theme.spacing(2,2)
