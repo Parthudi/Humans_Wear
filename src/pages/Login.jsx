@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const SignInAndSignUp = () => {
+const SignInAndSignUp = React.memo(() => {
     const classes = useStyles();
 
     useEffect(() => {
@@ -42,6 +42,6 @@ const SignInAndSignUp = () => {
                 </div>
             </Container>
     )
-}
+});
 
 export default SignInAndSignUp

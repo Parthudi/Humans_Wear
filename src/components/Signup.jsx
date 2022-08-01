@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme =>({
     }
 }));
 
-const Signup = () =>  {
+const Signup = React.memo(() =>  {
     const classes = useStyles();
     const [showsuccessalert, setShowSuccessAlert] = useState(false);
     const [showerroralert, setShowErrorAlert] = useState(false);
@@ -38,7 +38,7 @@ const Signup = () =>  {
         showPassword: false,
         showConfirmPassword: false,
     });
-    const [error, setError] = useState("");
+    const [error] = useState("");
     const [errors, setErrors] = useState("");
 
     const {username, email, password, confirmpassword} = values;
@@ -182,6 +182,6 @@ const Signup = () =>  {
                 {showSignupForm()}
         </Card>
         )
-}
+});
 
 export default Signup

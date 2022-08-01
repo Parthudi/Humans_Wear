@@ -5,7 +5,7 @@ export const userRegistration = (data) => {
         const user = localStorage.setItem('user', JSON.stringify(data));
         return user;
     }
-}
+};
 
 export const getUser = () => {
     if(typeof window !== "undefined"){
@@ -15,8 +15,7 @@ export const getUser = () => {
         }
     }
     return {};
-}
-
+};
 
 export const removeUser = () => {
     if(typeof window !== 'undefined') {
@@ -24,4 +23,4 @@ export const removeUser = () => {
         window.location.reload();
         return user;
     }
-}
+};

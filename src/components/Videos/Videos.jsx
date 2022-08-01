@@ -1,16 +1,13 @@
-import React from "react";
+import React, {memo} from "react";
 import {makeStyles} from '@material-ui/core'
 
 const useStyles = makeStyles(() => ({
     video: {
         fontFamily: 'Macondo, cursive'
       }
-
-      
 }));
 
-
-const Videos = () => {
+const Videos = memo(() => {
     const classes = useStyles();
     return(
         <div className={classes.video}>
@@ -29,6 +26,6 @@ const Videos = () => {
             </center>
        </div>
     )
-}
+});
 
 export default Videos;

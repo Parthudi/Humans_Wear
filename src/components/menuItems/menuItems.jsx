@@ -1,12 +1,11 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, memo} from 'react'
 import {withRouter} from 'react-router-dom'
 import {Box} from '@material-ui/core'; 
 import './menuItems.css'
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const MenuItems = (props) => {
-
+const MenuItems = memo((props) => {
     useEffect(() => {
         Aos.init({duration: 3000});
       }, []);
@@ -21,6 +20,6 @@ const MenuItems = (props) => {
             </div>
         </Box>
         )
-    }
+    });
 
 export default withRouter(MenuItems)

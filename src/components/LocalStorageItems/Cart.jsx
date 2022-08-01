@@ -1,4 +1,4 @@
-export const addItem = ( item , next ) => {
+export const addItem = (item , next) => {
     let bag = [];
     if(typeof window !== "undefined"){
         if(localStorage.getItem("bag")) {
@@ -6,7 +6,6 @@ export const addItem = ( item , next ) => {
         }
     }
     bag.push({ ...item, count : 0})
-    console.log("bag" , bag);
     bag && bag.map(p => p.id == item.id ? p.count++ : p);
 
     // REMOVES DUPLICATES FROM ARRAY !!
@@ -20,7 +19,7 @@ export const addItem = ( item , next ) => {
 
     localStorage.setItem("bag", JSON.stringify(bag));
     next();
-}
+};
 
 export const itemTotal = () => {
     if(typeof window !== "undefined"){
@@ -29,7 +28,7 @@ export const itemTotal = () => {
         }
     }
     return 0;
-}
+};
 
 export const getCart = () => {
     if(typeof window !== "undefined"){
@@ -43,7 +42,7 @@ export const getCart = () => {
         }
     }
     return [];
-}
+};
 
 export const updateCart = (id, count) => {
     let bag = [];
@@ -59,7 +58,7 @@ export const updateCart = (id, count) => {
     })
     localStorage.setItem("bag" , JSON.stringify(bag));
     window.location.reload();
-}
+};
 
 export const removeItemCart = (id) => {
     let bag = [];
@@ -76,5 +75,5 @@ export const removeItemCart = (id) => {
     localStorage.setItem("bag" , JSON.stringify(bag));
     // window.location.reload();
     return bag; 
-}
+};
 

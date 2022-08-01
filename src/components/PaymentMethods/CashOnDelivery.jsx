@@ -1,11 +1,11 @@
-import React, {useEffect,useState} from "react";
-import { Typography,Box,makeStyles,Paper,Tooltip,Button} from "@material-ui/core";
-import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import React, {useEffect,useState, memo} from "react";
+import { Typography,Box,makeStyles,Tooltip,Button} from "@material-ui/core";
+import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import InputField from "../InputFields";
 import {useSelector} from "react-redux";
 import Alert from '@mui/material/Alert';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     box: {
         margin: "1vw 2vw 1vw 2vw"
     },
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const CashOnDelivery = () => {
+const CashOnDelivery = memo(() => {
     const [captcha, setCaptcha] = useState("");
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
@@ -45,12 +45,11 @@ const CashOnDelivery = () => {
                 setError(null);
             }, 3000);
             setError("Oops Captcha Invalid - You Cant Proceed Further !");
-            
         }
     }
 
     return(
-        <Box  className={classes.box} >
+        <Box className={classes.box} >
               <Tooltip title="COD" placement="right-start">
                 <b> Pay On Delivery (Cash/Card/UPI) </b>
               </Tooltip>
@@ -81,6 +80,6 @@ const CashOnDelivery = () => {
             </Box>
         </Box>
     )
-}
+})
 
 export default CashOnDelivery;

@@ -1,7 +1,7 @@
 import React from "react";
 import {Modal} from "@material-ui/core";
 
-const ModalCompo = (props) => {
+const ModalCompo = React.memo((props) => {
     return(
         <Modal
             open={props.showModal}
@@ -11,6 +11,6 @@ const ModalCompo = (props) => {
                {props.children}
         </Modal>
     )
-}
+});
 
 export default ModalCompo;

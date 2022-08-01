@@ -5,7 +5,7 @@ import {Typography,Grid,Box} from '@material-ui/core';
 import {withRouter} from 'react-router-dom'
 import {useStyles} from "../components/styles";
 
-const Mens = () => {
+const Mens = React.memo(() => {
     const classes = useStyles();
 
     return(
@@ -20,6 +20,6 @@ const Mens = () => {
             </Grid>
         </Box>
     )
-}
+});
 
 export default withRouter(Mens)

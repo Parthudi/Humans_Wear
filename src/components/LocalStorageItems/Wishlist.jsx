@@ -1,4 +1,6 @@
-export const wishListAddItems = ( item , next ) => {
+import React from "react";
+
+export const wishListAddItems = (item , next ) => {
     let wishlist = [];
     if(typeof window !== "undefined"){
         if(localStorage.getItem("wishlist")) {
@@ -19,7 +21,7 @@ export const wishListAddItems = ( item , next ) => {
 
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
     next();
-}
+};
 
 export const wishListItemTotal = () => {
     if(typeof window !== "undefined"){
@@ -28,7 +30,7 @@ export const wishListItemTotal = () => {
         }
     }
     return 0;
-}
+};
 
 export const wishListGetItems = () => {
     if(typeof window !== "undefined"){
@@ -42,7 +44,7 @@ export const wishListGetItems = () => {
         }
     }
     return [];
-}
+};
 
 export const wishListUpdateItem = (id, count) => {
     let wishlist = [];
@@ -58,7 +60,7 @@ export const wishListUpdateItem = (id, count) => {
     })
     localStorage.setItem("wishlist" , JSON.stringify(wishlist));
     window.location.reload();
-}
+};
 
 export const wishListRemoveItem = (id) => {
     console.log("id : ", id);
@@ -74,7 +76,7 @@ export const wishListRemoveItem = (id) => {
         }
     })
     localStorage.setItem("wishlist" , JSON.stringify(wishlist));
-    // window.location.reload();
     return wishlist; 
-}
+};
+
 

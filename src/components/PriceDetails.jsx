@@ -1,9 +1,9 @@
 import React, {Fragment} from "react";
-import {makeStyles,Card,Typography,Divider,Box,Button} from  "@material-ui/core";
+import {makeStyles,Typography,Divider,Box,Button} from  "@material-ui/core";
 import {itemTotal} from "./LocalStorageItems/Cart";
 import {LocalShippingOutlined} from "@material-ui/icons";
 import { withRouter } from "react-router";
-import {useSelector, useDispatch } from "react-redux";
+import {useDispatch } from "react-redux";
 
     const useStyles = makeStyles((theme) => ({
         textHeading: {
@@ -22,7 +22,7 @@ import {useSelector, useDispatch } from "react-redux";
         }
     }));
 
-const PriceDetails = (props) => {
+const PriceDetails = React.memo((props) => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
@@ -91,6 +91,6 @@ const PriceDetails = (props) => {
                 </Button>}
         </Fragment>
     )
-}
+});
 
 export default withRouter(PriceDetails);

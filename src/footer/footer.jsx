@@ -5,7 +5,7 @@ import {Box, Typography} from "@material-ui/core";
 import Marquee from "react-fast-marquee";
 import './footer.css'
 
-const Boot = () => {
+const Boot = React.memo(() => {
     const [play, { stop }] = useSound(
         cartoon,
         { volume: 0.5 }
@@ -80,14 +80,14 @@ const Boot = () => {
                     }} href="https://secure.skype.com/portal/overview" className="fa fa-skype"> </a>
                 </div>
              
-                <Box mt={3}/>
+                <Box mt={5}/>
                 <Marquee>
                    <p> Download the <b> Humans Wear App </b> and get extra ₹300 off. Use code: HWAPP300 </p>
                 </Marquee>
                
             </Box>
         )
-    }
+    });
 
   
 export default Boot

@@ -5,7 +5,7 @@ import {Typography, Grid, Box} from '@material-ui/core';
 import {withRouter } from 'react-router-dom'
 import {useStyles} from "../components/styles";
 
-const Hats = () => {
+const Hats = React.memo(() => {
     const classes = useStyles();
     return(
         <Box className={classes.AdjustSizing} mt={4}>
@@ -19,6 +19,6 @@ const Hats = () => {
             </Grid>
         </Box>
     )
-}
+});
 
 export default withRouter(Hats)

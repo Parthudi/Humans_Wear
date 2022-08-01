@@ -1,14 +1,6 @@
-import React, {useState} from "react";
+import React, {memo} from "react";
 import {Box,makeStyles,Tooltip} from "@material-ui/core";
-import phonepay from "../../assets/phonepay.png";
-import gpay from "../../assets/gpay.png";
-import upi from "../../assets/upi.png";
 import RadioOption from "../RadioOption";
-import axis from "../../assets/axis.png"
-import hdfc from "../../assets/hdfc.png"
-import icici from "../../assets/icici.png"
-import kotak from "../../assets/kotak.png"
-import sbi from "../../assets/sbi.png"
 
 const useStyles = makeStyles((theme) => ({
     box: {
@@ -22,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const RadioPayments = (props) => {
+const RadioPayments = memo((props) => {
     const classes = useStyles();
 
     return(
@@ -33,6 +25,6 @@ const RadioPayments = (props) => {
             <RadioOption options={props.options} name={props.name} radioFor={props.radioFor} />
         </Box>
     )
-}
+});
 
 export default RadioPayments;

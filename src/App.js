@@ -1,6 +1,5 @@
 import React, { Component, Suspense } from 'react';
 import {Route,Switch} from 'react-router-dom'
-import {auth,CreateUserProfileDocument } from './firebase.utility/firebase.utility'
 import {CircularProgress,Backdrop } from '@material-ui/core';
 import Layout from "./components/Layout";
 import './App.css'
@@ -18,6 +17,7 @@ const Bag = React.lazy(() => import("./pages/Bag"))
 const Address = React.lazy(() => import("./pages/Address"))
 const WishList = React.lazy(() => import("./pages/WishList"))
 const Payment = React.lazy(() => import("./pages/Payment"))
+const Profile = React.lazy(() => import("./pages/Profile"))
 
 class App extends Component {
 
@@ -26,31 +26,6 @@ class App extends Component {
     }
 
     unSubscribeFromAuth = null
-
-    componentDidMount() {
-      this.unSubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-        if(userAuth) {
-          const userRef = await CreateUserProfileDocument(userAuth)
-
-          userRef.onSnapshot(snapShot => {
-            this.setState({
-
-              CurrentUser: {
-                id: snapShot.id,
-                ...snapShot.data()
-              }
-            })
-            console.log(this.state)
-         })
-         
-      }
-    else {
-      this.setState({ CurrentUser: userAuth })
-    }  
-     
-      })
-    }
-
     componentWillUnmount() {
       this.unSubscribeFromAuth()
     }
@@ -125,27 +100,33 @@ class App extends Component {
                 )}/>
                 
                 <Route path='/checkout/cart' exact render={() => (
-                <Suspense fallback= {loader()}>
-                  <Bag /> 
-                </Suspense>
+                  <Suspense fallback= {loader()}>
+                    <Bag /> 
+                  </Suspense>
                 )}/>
 
                 <Route path='/checkout/address' exact render={() => (
-                <Suspense fallback= {loader()}>
-                  <Address /> 
-                </Suspense>
+                  <Suspense fallback= {loader()}>
+                    <Address /> 
+                  </Suspense>
                 )}/>
 
                 <Route path='/whistlist' exact render={() => (
-                <Suspense fallback= {loader()}>
-                  <WishList /> 
-                </Suspense>
+                  <Suspense fallback= {loader()}>
+                    <WishList /> 
+                  </Suspense>
                 )}/>
 
                 <Route path='/checkout/payment' exact render={() => (
-                <Suspense fallback= {loader()}>
-                  <Payment /> 
-                </Suspense>
+                  <Suspense fallback= {loader()}>
+                    <Payment /> 
+                  </Suspense>
+                )}/>
+
+                <Route path='/profile' exact render={() => (
+                  <Suspense fallback= {loader()}>
+                    <Profile /> 
+                  </Suspense>
                 )}/>
 
               <Route path='*'  render={() => {

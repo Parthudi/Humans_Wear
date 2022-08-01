@@ -1,7 +1,7 @@
 import React from "react";
 import {Box, FormControl, InputLabel, OutlinedInput} from "@material-ui/core";
 
-const FormControlComponent = (props) => {
+const FormControlComponent = React.memo((props) => {
     return(
         <div>
             <Box height={20} />
@@ -18,6 +18,6 @@ const FormControlComponent = (props) => {
             </FormControl>
         </div>
         )
-    }
+    });
 
 export default FormControlComponent;

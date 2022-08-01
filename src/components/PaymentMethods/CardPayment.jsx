@@ -1,4 +1,4 @@
-import React, {useEffect,useState} from "react";
+import React, {useEffect,useState, memo} from "react";
 import { Typography,Box,makeStyles,Paper,Tooltip,Button,InputAdornment,FormControl,InputLabel,OutlinedInput,Grid} from "@material-ui/core";
 import InputField from "../InputFields";
 import PaymentTwoToneIcon from '@mui/icons-material/PaymentTwoTone';
@@ -21,17 +21,17 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const CardPayment = (props) => {
+const CardPayment = memo((props) => {
     const totalPrice = useSelector((state) => state.totalAmount);
 
-    const [values, setValues] = useState({
+    const [values] = useState({
         card: "",
         userName: "",
         validTill: "",
         cvv: "",
     })
     const [user, setUser] = useState({});
-    const [amount, setAmount] = useState(0);
+    const [amount] = useState(0);
     const classes = useStyles();
 
 
@@ -151,6 +151,6 @@ const CardPayment = (props) => {
             
         </Box>
     )
-}
+});
 
 export default CardPayment;

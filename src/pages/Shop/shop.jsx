@@ -31,7 +31,7 @@ const useStyle = makeStyles((theme) => ({
     }
 }));
 
-const ShopPage = (props) =>  {
+const ShopPage = React.memo((props) =>  {
     const collections = SHOP_DATA;
     const classes = useStyle();
 
@@ -70,6 +70,6 @@ const ShopPage = (props) =>  {
             {shopItem()};
         </Container>
     )
-}
+});
 
 export default withRouter(ShopPage)

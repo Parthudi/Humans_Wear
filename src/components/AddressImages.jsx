@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import moment from "moment";
 import {NavLink, withRouter} from "react-router-dom";
 
-const AddressImages = (props) => {
+const AddressImages = memo((props) => {
 
     const getRandomNumbers = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1) + min)
@@ -37,6 +37,6 @@ const AddressImages = (props) => {
                 </Box>
         </Card>
     )
-}
+});
 
 export default withRouter(AddressImages);

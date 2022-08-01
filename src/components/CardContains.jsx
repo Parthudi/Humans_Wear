@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import ListItemText from '@mui/material/ListItemText';
 import StarIcon from '@mui/icons-material/Star';
@@ -6,7 +6,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemButton from '@mui/material/ListItemButton';
 import {Card,Typography,makeStyles,Button,Box} from "@material-ui/core";
 import Radio from '@mui/material/Radio';
-import {removeAddress} from "./LocalStorageItems/Address";
+import {deleteAddress} from "./ApiCalls";
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
@@ -25,24 +25,37 @@ const useStyles = makeStyles((theme) => ({
       width: "45vw",
   },
   adjustViewForSmall: {
-      display: "block"
-  }
+      display: "block",
+      padding: "2px 20px"
+  },
+  [theme.breakpoints.down("md")]: {
+    card: {
+        width: "35rem",
+    }
+    },
+    [theme.breakpoints.down("sm")]: {
+        card: {
+            width: "25rem",
+        }
+    }
 }));
 
-const CardContaint = (props) => {
+const CardContaint = React.memo((props) => {
   const classes = useStyles();
 
-  const handleRemoveChange = () => {
-    removeAddress(props.index);
+  const handleRemoveChange = async(id) => {
+    await deleteAddress(id);
+    window.location.reload();
   }
   
   const address = () => {
       return(
           <Box className={classes.adjustViewForSmall}>
               <Typography variant="subtitle1">
-              <Stack direction="row" spacing={1}> <b> {props.name} </b> <Chip label="HOME" color="success" size="small" variant="outlined" /> </Stack>
+                <Stack direction="row" spacing={1}> <Chip label={props.placeType} color="success" size="small" variant="outlined" /> </Stack>
               </Typography>
               <Box mt={2}>
+                  <h6> ADDRESS </h6>
                   <Typography variant="subtitle2">
                       {props.address}, {props.town}, {props.city}, {props.state}
                   </Typography>
@@ -59,11 +72,11 @@ const CardContaint = (props) => {
                           <ListItemIcon>
                               <StarIcon />
                           </ListItemIcon>
-                          <ListItemText primary="Cash On Delivery Available" />
+                          <ListItemText primary={props.modeOfpayment} />
                       </ListItemButton>
                   </Typography>
               </Box>
-              <Button variant="outlined" fullWidth color="secondary" onClick={() => handleRemoveChange()}> Remove </Button>
+              <Button variant="outlined" fullWidth color="secondary" onClick={() => handleRemoveChange(props.id)}> Remove </Button>
           </Box>
           )
       }
@@ -73,6 +86,6 @@ const CardContaint = (props) => {
         <FormControlLabel value={props.index} control={<Radio />} label={address()} />
       </Card>
     )
-}
+});
 
 export default CardContaint;

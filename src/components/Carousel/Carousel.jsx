@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect,memo} from "react";
 import hats1 from "../../assets/hats1.jpg";
 import hats2 from "../../assets/hats2.jpg"
 import hats3 from "../../assets/hats3.jpg"
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const ShowCarousel = () => {
+const ShowCarousel = memo(() => {
     const classes = useStyles();
     const [showMenu, setShowMenu] = useState(false);
 
@@ -95,6 +95,6 @@ const ShowCarousel = () => {
                 <Skeleton variant="rect" width={1310} height={428} style={{marginBottom: "50px"}} /> }
             </Container>
     )
-}
+});
 
 export default ShowCarousel;

@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const CartHeader = (props) => {
+const CartHeader = React.memo((props) => {
     const classes = useStyles();
     
     return(
@@ -44,6 +44,6 @@ const CartHeader = (props) => {
         </Box>
         
     )
-}
+});
 
 export default CartHeader;

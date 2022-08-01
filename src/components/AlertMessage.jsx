@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {memo} from "react";
 import {makeStyles} from "@material-ui/core";
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const AlertMessage = (props) => {
+const AlertMessage = memo((props) => {
     const classes = useStyles();
 
     const AlertMessage = () => {
@@ -61,6 +61,6 @@ const AlertMessage = (props) => {
     }
 
     return( AlertMessage() )
-}
+});
 
 export default AlertMessage;

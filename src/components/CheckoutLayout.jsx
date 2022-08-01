@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Checkout = (props) => {
+const Checkout = React.memo((props) => {
     const classes = useStyles();
 
     return(
@@ -27,6 +27,6 @@ const Checkout = (props) => {
             </Box>    
         </Container>
     )
-}
+});
 
 export default Checkout;

@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
-import {TextField, makeStyles, Box} from "@material-ui/core";
+import {TextField, Box} from "@material-ui/core";
 
-const InputFieldAndValidations = ({showPadding = true, ...props}) => {
+const InputFieldAndValidations = React.memo(({showPadding = true, ...props}) => {
     return(
         <Fragment>
                     {showPadding && <Box height={15}/>}
@@ -20,6 +20,6 @@ const InputFieldAndValidations = ({showPadding = true, ...props}) => {
                     />
         </Fragment>
     )
-}
+});
 
 export default InputFieldAndValidations;

@@ -3,7 +3,8 @@ import {makeStyles,Typography,Container,Divider,Button,Grid,Card,Box,TextField,F
 import ModalCompo from "../components/Modal";
 import {CloseOutlined} from "@material-ui/icons";
 import InputField from "../components/InputFields";
-import {addAddress, getAddress} from "../components/LocalStorageItems/Address";
+// import {addAddress, getAddress} from "../components/LocalStorageItems/Address";
+import {getUser} from "../components/LocalStorageItems/User";
 import RadioOption from "../components/RadioOption";
 import AddressImages from "../components/AddressImages";
 import {getCart} from "../components/LocalStorageItems/Cart";
@@ -11,9 +12,8 @@ import ProductDetails from "../components/PriceDetails";
 import Checkout from "../components/CheckoutLayout";
 import MuiAlert from '@mui/material/Alert';
 import MenuItem from '@mui/material/MenuItem';
-import Select from 'react-select'
-import countryList from 'react-select-country-list'
-
+import {CreateAddress, getAddress} from "../components/ApiCalls";
+import AlertMessage from '../components/AlertMessage';
 
 const Alert = forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -55,55 +55,79 @@ const useStyle = makeStyles((theme) => ({
 }));
 
 const placeType = ["Home", "Office", "Other"];
+const paymentMethod = ["Cash On Delivery", "Card Payment", "UPI Payment"];
 
-const Address = () => {
+const Address = React.memo(() => {
     const classes = useStyle();
     const [open, setOpen] = useState(false);
-    const [address, setAddress] = useState([])
-    const [cartprods, setCartProds] = useState([])
+    const [address, setAddress] = useState([]);
+    const [user, setUser] = useState({});
+    const [cartprods, setCartProds] = useState([]);
     const [formvalues, setFormValues] = useState({
-        name: "",
         placeType: "",
-        countryCode: "",
         mobile: "",
         pincode: "",
         address: "",
         town: "",
         city: "",
-        state: ""
+        state: "",
+        modeOfpayment: "",
     });
-    // const {register, handleSubmit, errors, control} = useForm();
-    // const onSubmit = (data) => console.log("data Came : " , data);
 
-    const options = useMemo(() => countryList().getData(), [])
+    const [showsuccessalert, setShowSuccessAlert] = useState(false);
+    const [showerroralert, setShowErrorAlert] = useState(false);
+    const [message, setMessage] = useState("");
+    const [error, setError] = useState("");
+
+    const getUserAddress = (async (id, token) => {
+        const address = await getAddress(id, token);
+        if(address.success == true){
+            setAddress(address.data);
+        }else{
+            setAddress([]);
+        }
+    });
 
     useEffect(() => {
-        const fetchedAddress = getAddress();
+        // const fetchedAddress = getAddress();
         const cartProducts =  getCart();
-        setCartProds(cartProducts)
-        setAddress(fetchedAddress);
+        const user = getUser();
+        const address = getUserAddress(user._id, user.token);
+        setUser(user);
+        setCartProds(cartProducts);
     }, [address.length, cartprods.length]);
- 
     const handleOnChange = (e) => {
-        console.log("onChange");
         setFormValues({...formvalues, [e.target.name] : e.target.value});
     }
 
-    console.log("address : ", address);
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        try{
-            addAddress({name:formvalues.name, mobile: formvalues.mobile, pincode: formvalues.pincode, address: formvalues.address, town: formvalues.town, city: formvalues.city, state: formvalues.state}, () => {
-                console.log("userAdded");
-            });
-        }catch(error) {
-            console.log("error : " , error);
-        }
+            try{
+                CreateAddress({user: user._id, name:formvalues.name, mobile: formvalues.mobile, pincode: formvalues.pincode, address: formvalues.address, town: formvalues.town, city: formvalues.city, state: formvalues.state, placetype: formvalues.placeType, modeofpayment: formvalues.modeOfpayment}).then(async data => {  
+                    if(data.message) {
+                        setTimeout(() => {
+                            setShowErrorAlert(false);
+                          }, 4000);
+                        setShowErrorAlert(true);
+                        setMessage(`Address Failed  ${data.message}`);
+                        return;
+                    }else{
+                        setOpen(false)  
+                        setMessage(`Address Created Successful`);
+                        window.location.reload();
+                    }
+                });
+            }catch(error) {
+                console.log(error.message);
+                setTimeout(() => {
+                    setShowErrorAlert(false);
+                  }, 5000);
+                setShowErrorAlert(true);
+                setMessage(`Address Failed  ${error.message}`);
+            }
+            // addAddress({name:formvalues.name, mobile: formvalues.mobile, pincode: formvalues.pincode, address: formvalues.address, town: formvalues.town, city: formvalues.city, state: formvalues.state, placeType: formvalues.placeType, modeOfpayment: formvalues.modeOfpayment}, () => {
+            // });
     }
-
-    const changeHandler = value => {
-        setFormValues({countryCode: value});
-      }
 
     const addAddressForm = () => {
         return(
@@ -139,19 +163,7 @@ const Address = () => {
                                     </MenuItem >
                                 ))}
                             </TextField>
-                            <InputField
-                                required 
-                                fullWidth
-                                variant = "outlined"
-                                type = "text"
-                                label = "Name"
-                                name = "name"
-                                value = {formvalues.name}
-                                onChange = {(e) => handleOnChange(e)}
-                            />
-                            <Box mt={2}>
-                            <Select options={options} value={formvalues.countryCode} onChange={changeHandler} />
-                            </Box>
+                            
                             <InputField
                                 required 
                                 fullWidth
@@ -212,6 +224,22 @@ const Address = () => {
                                 value = {formvalues.state}
                                 onChange = {(e) => handleOnChange(e)}
                             />
+                            <TextField
+                                id="filled-select-currency"
+                                select
+                                label="Mode of Payment"
+                                fullWidth
+                                value={formvalues.modeOfpayment}
+                                name="modeOfpayment"
+                                onChange= {(e) => handleOnChange(e)}
+                                helperText="Please select your mode of payment"
+                                variant="standard">
+                                {paymentMethod.map((payment) => (
+                                    <MenuItem  key={payment} value={payment}>
+                                        {payment}
+                                    </MenuItem >
+                                ))}
+                            </TextField>
                             <Box mt={2} mb={2}/>
                             <Button variant="contained" type="submit" onClick={(e) => handleOnSubmit(e)} color="secondary" fullWidth size="medium" style={{justifyContaint:"center", marginTop:"15px"}}> Save Address </Button>
                         </form>
@@ -254,7 +282,7 @@ const Address = () => {
                     </Typography>
 
                     <RadioOption options={address} name="Address" radioFor="Address" />
-                        
+        
                     <Card style={{cursor: "pointer"}} onClick={() => setOpen(true)}>
                         <Typography className={classes.cardLeft} variant="subtitle1" color="secondary">
                             <b> + Add New Address </b> 
@@ -280,12 +308,15 @@ const Address = () => {
 
     return(
         <div>
+              {error !== "" && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={error} />}
+            {showsuccessalert && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message={message} />}
+            {showerroralert && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={message} />}
             {cartprods.length > 0 ? 
                 checkOutPage()
                 :
             <Alert severity="warning">Cart Is Empty!</Alert>}
         </div>
     );
-}
+});
 
 export default Address;

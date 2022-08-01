@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Layout = (props) => {
+const Layout = React.memo((props) => {
     const classes = useStyles();
 
     useEffect(() => {
@@ -34,6 +34,6 @@ const Layout = (props) => {
 
         </React.Fragment>
     )
-}
+});
 
 export default Layout;

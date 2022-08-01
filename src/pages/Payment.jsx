@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Payment = () => {
+const Payment = React.memo(() => {
     const [showbankoffers, setShowBankOffers] = useState(false);
     const [product, setProduct] = useState([]);
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -206,6 +206,6 @@ const Payment = () => {
             <Alert severity="warning">Cart Is Empty!</Alert>}
         </div>
     )
-}
+});
 
 export default Payment;

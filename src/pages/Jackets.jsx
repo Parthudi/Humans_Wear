@@ -5,7 +5,7 @@ import ShowProduct from "../components/ShowProducts";
 import {withRouter } from 'react-router-dom'
 import {useStyles} from "../components/styles";
 
-const Jackets = () => {
+const Jackets = React.memo(() => {
     const classes = useStyles();
 
     return(
@@ -20,6 +20,6 @@ const Jackets = () => {
             </Grid>
         </Box>
     )
-}
+});
 
 export default withRouter(Jackets)

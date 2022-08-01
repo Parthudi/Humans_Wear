@@ -5,9 +5,7 @@ export const addAddress = ( item , next ) => {
             address = JSON.parse(localStorage.getItem('address'));
         }
     }
-    console.log(item);
     address.push({ ...item})
-    console.log("address" , address);
     // address && address.map(p => p.id == item.id ? p.count++ : p);
 
     // REMOVES DUPLICATES FROM ARRAY !!
@@ -23,7 +21,7 @@ export const addAddress = ( item , next ) => {
     localStorage.setItem("address", JSON.stringify(address));
     window.location.reload();
     next();
-}
+};
 
 export const itemTotal = () => {
     if(typeof window !== "undefined"){
@@ -46,7 +44,7 @@ export const getAddress = () => {
         }
     }
     return [];
-}
+};
 
 export const updateAddress = (id, count) => {
     let address = [];
@@ -62,7 +60,7 @@ export const updateAddress = (id, count) => {
     })
     localStorage.setItem("address" , JSON.stringify(address));
     window.location.reload();
-}
+};
 
 export const removeAddress = (id) => {
     let address = [];
@@ -71,14 +69,12 @@ export const removeAddress = (id) => {
             address = JSON.parse(localStorage.getItem('address'));
         }
     }
-
     address.map((product, i) => {
         if(i == id) {
             address.splice(i, 1);
         }
     })
     localStorage.setItem("address" , JSON.stringify(address));
-    // window.location.reload();
     return address; 
-}
+};
 

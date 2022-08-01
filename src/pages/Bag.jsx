@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Bag = () => {
+const Bag = React.memo(() => {
     const [product, setProduct] = useState([]);
     const [user, setUser] = useState({});
     const classes = useStyles();
@@ -70,6 +70,6 @@ const Bag = () => {
             <Alert severity="warning">Cart Is Empty!</Alert>}
         </div>
     )
-}
+});
 
 export default withRouter(Bag);

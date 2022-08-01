@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {memo} from 'react';
 import './CollectionItem.css';
 import { useHistory } from "react-router";
 import {Link} from "react-router-dom";
 
-const CollectionItem = (props) => {
+const CollectionItem = memo((props) => {
     const history = useHistory();
     const showFullProuct = (id) => {
         return history.push({pathname:  `/shop/product/${props.namee}/${id}`});
@@ -22,7 +22,7 @@ const CollectionItem = (props) => {
         </div> 
 
     )
-}
+});
 
 export default CollectionItem
 

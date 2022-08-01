@@ -7,7 +7,6 @@ import {addItem} from "./LocalStorageItems/Cart";
 import {Link} from "react-router-dom";
 import {FavoriteBorderOutlined, CancelOutlined} from "@material-ui/icons";
 import AlertMessage from './AlertMessage'; 
-// import {useDispatch, useSelector} from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -81,14 +80,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...props}) => {
+const CartItem = React.memo(({showQuantity = false, showBag = false, whishlist = false, ...props}) => {
     const [quantity, setQuantity] = useState(props.products.count);
     const [showalertwishlist, setShowAlertWishList] = useState(false);
     const [showalertbag, setShowAlertBag] = useState(false);
     const [showalertremove, setShowAlertRemove] = useState(false);
     const [show, setShow] = useState();
 
-    // const dispatch = useDispatch();
     const classes = useStyles();
 
     const handleOnChange = (e) => {
@@ -104,7 +102,6 @@ const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...
     const addToWishList = () => {
         return(
             wishListAddItems({id: props.products.id, image: props.imag, name: props.products.name, price: props.products.price} , () => {
-                // dispatch({ type: "addWhishlist" , payload: {whishList: {id: props.products.id, image: props.imag, name: props.products.name, price: props.products.price}}});
                 setTimeout(() => {
                     setShowAlertWishList(false);
                     window.location.reload();
@@ -116,7 +113,6 @@ const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...
 
     const removeItemFromBag = async() => {
         const remove = await removeItemCart(props.products.id);
-        // dispatch({ type: "addWhishlist" , payload: {whishList: {id: props.products.id, image: props.imag, name: props.products.name, price: props.products.price}}});
             setTimeout(() => {
                 setShowAlertRemove(false);
                 window.location.reload();
@@ -133,11 +129,9 @@ const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...
                     window.location.reload();
                   }, 2000);
                   setShowAlertBag(true);
-                
             })
         )
     }
-
 
     const showFullProuct = () => {
         return `/shop/product/${props.products.name}/${props.products.id}`;
@@ -175,7 +169,7 @@ const CartItem = ({showQuantity = false, showBag = false, whishlist = false, ...
                    {showQuantity && <Button size="medium" style={{display: showQuantity ? "inherit" : "none"}} className={classes.fail} fullWidth={true} onClick={() => removeItemFromBag()}> Remove From Bag </Button>}
                 </CardActions>
         </Card> 
-    )}
+    )});
 
 export default CartItem
 

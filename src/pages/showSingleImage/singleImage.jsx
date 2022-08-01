@@ -49,7 +49,7 @@ const labels = {
   5: 'Excellent+',
 };
 
-const ShowSingleImage = (props) => {
+const ShowSingleImage = React.memo((props) => {
     const [showalertwishlist, setShowAlertWishList] = useState(false);
     const [showalertbag, setShowAlertBag] = useState(false);
     const [size, setSize] = useState({
@@ -643,6 +643,6 @@ const ShowSingleImage = (props) => {
         </div>) : null}
         </div>
     )
-}
+});
 
 export default withRouter(ShowSingleImage);

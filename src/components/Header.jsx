@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Badge, Box, Grid, Typography, makeStyles,BottomNavigation, BottomNavigationAction,Tooltip,Avatar} from "@material-ui/core";
 import {NavLink, withRouter} from 'react-router-dom';
-import ReactLogo from '../assets/Crown.js';
+import ReactLogo from '../assets/humansWear.png';
 import {itemTotal} from "./LocalStorageItems/Cart";
 import {wishListItemTotal} from "./LocalStorageItems/Wishlist";
 import {AddShoppingCartOutlined, FavoriteBorderOutlined, StorefrontOutlined} from "@material-ui/icons";
@@ -9,7 +9,6 @@ import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import {getUser,removeUser} from "./LocalStorageItems/User"; 
 import _ from "lodash";
-import FaceIcon from '@mui/icons-material/Face';
 import IconButton from '@mui/material/IconButton';
 
 const useStyle = makeStyles((theme) => ({
@@ -54,8 +53,7 @@ const useStyle = makeStyles((theme) => ({
         }
     }));
 
-
-const HeaderCompo = () => {
+const HeaderCompo = React.memo(() => {
     const classes = useStyle();
     const [cartitems, setCartItems] = useState("0");
     const [wishlistitems, setWishListItems] = useState("0"); 
@@ -78,7 +76,7 @@ const HeaderCompo = () => {
             <Grid direction="row" container>
                 <Grid item xs={2} sm={3} md={4}>
                     <NavLink className={classes.logoContainer} to="/">
-                        <ReactLogo className='logo' />
+                        <img src={ReactLogo}  alt="MyBurger" height="60px"/>
                     </NavLink>
                 </Grid>
                 <Grid container item xs={10} sm={9} md={8}>
@@ -102,11 +100,16 @@ const HeaderCompo = () => {
                                     :
                                 <BottomNavigationAction label="Login" className={classes.headerText} icon={ <NavLink to="/login" className={classes.headerIcons}> <LoginOutlinedIcon /> </NavLink>} /> }
                                 
-                                <Tooltip title="Profile">
-                                <IconButton onClick={(e) => handleOnClick(e)} size="medium">
-                                    <Avatar sx={{ width: 32, height: 32 }}>P</Avatar>
-                                </IconButton>
-                                </Tooltip>
+                                {/* <BottomNavigationAction label="Profile" className={classes.headerText} icon={<Badge badgeContent={wishlistitems} color="error">
+                                    <NavLink to="/whistlist" className={classes.headerIcons}> <FavoriteBorderOutlined /> </NavLink>
+                                </Badge>} /> */}
+                                 <NavLink to="/profile" className={classes.headerIcons}> 
+                                    <Tooltip title="Profile">
+                                        <IconButton onClick={(e) => handleOnClick(e)} size="medium">
+                                            <Avatar sx={{ width: 32, height: 32 }}>P</Avatar>
+                                        </IconButton>
+                                    </Tooltip>
+                                </NavLink>
                             </BottomNavigation>
                         </Box> 
                     </Grid>
@@ -114,6 +117,6 @@ const HeaderCompo = () => {
             </Grid>
         </Box> 
     )
-}    
+});    
 
 export default withRouter(HeaderCompo);

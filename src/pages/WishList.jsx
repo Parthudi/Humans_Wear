@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const WishList = () => {
+const WishList = React.memo(() => {
     const classes = useStyles();
     const [product, setProduct] = useState([]);
 
@@ -63,6 +63,6 @@ const WishList = () => {
 
         </div>
     )
-}
+});
 
 export default withRouter(WishList);

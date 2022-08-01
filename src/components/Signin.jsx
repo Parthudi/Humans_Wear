@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {signInWithGoogle} from '../firebase.utility/firebase.utility.js'
 import {Button} from "@material-ui/core";
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
@@ -27,17 +26,17 @@ const useStyles = makeStyles(theme =>({
     }
 }));
 
-const SignIn = (props) =>  {
+const SignIn = React.memo((props) =>  {
     const classes = useStyles();
     const [values, setValues] = useState({
         email: "",
         password: "",
         showPassword: false,
     });
-    const [showsuccessalert, setShowSuccessAlert] = useState(false);
+    const [showsuccessalert] = useState(false);
     const [showerroralert, setShowErrorAlert] = useState(false);
     const [message, setMessage] = useState("");
-    const [error, setError] = useState("");
+    const [error] = useState("");
     const [errors, setErrors] = useState("");
 
     const {email, password} = values;
@@ -84,7 +83,7 @@ const SignIn = (props) =>  {
 
     const formData = () => {
         return(
-<form autoComplete="off">
+            <form autoComplete="off">
                 <Stack mt={5} spacing={3}>
                     <InputFields 
                         showPadding={false}
@@ -118,7 +117,6 @@ const SignIn = (props) =>  {
                     </FormControl>
 
                     <Button variant="contained" disabled={email === "" || password === "" || !_.isEmpty(SigninSchema(values))} size="medium" color="primary" onClick={(e) => handleOnSubmit(e)}> SIGN IN </Button>
-                    {/* <Button variant="contained" color="success" googlestyle='true' size="medium" onClick={signInWithGoogle}> Sign in with Google </Button> */}
                 </Stack>
             </form>
         )
@@ -126,8 +124,6 @@ const SignIn = (props) =>  {
 
     return (
         <Card className={classes.fillBackground}>
-        {/* {error !== "" && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={error} />} */}
-           
             {error !== "" && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={error} />}
             {showsuccessalert && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message={message} />}
             {showerroralert && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={message} />}
@@ -137,6 +133,6 @@ const SignIn = (props) =>  {
             {formData()}
         </Card>
         )       
-  }
+  });
 
 export default withRouter(SignIn);
