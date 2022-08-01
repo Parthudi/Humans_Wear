@@ -7,6 +7,9 @@
       "db": "HumansWear"
     }
   },
+  "auth": {
+    "private_key": "parth_the_humans_wear"
+  },
   "Publish_key": "pk_test_51L2zH9SISLQJLz2v3zlp5fvErjhUMM40Tqclnob0j2e3EDcOalGoDxk8DV1QjtIVeG5MqpmvsaGVDNjLXbHN4Nwa00Z9Lm5N2d",
   "Secret_key":"sk_test_51L2zH9SISLQJLz2vevqDZF2MK1oDu8CUFGa5TsRDFxAGgFuh1YTEtODj38wK0iPdgOcnZnkPqi8qNVN1m6kYDbCf00QLzVxCbz"
 }

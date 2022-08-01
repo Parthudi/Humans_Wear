@@ -7,6 +7,7 @@ interface IUser {
   confirmpassword: string;
   type: "admin" | "user";
   is_authorized: boolean;
+  token: string;
   created_at: Date;
   modified_at: Date;
 }
@@ -30,6 +31,7 @@ const userSchema = new Schema({
     default: "user"
   },
   is_authorized: { type: Boolean, default: false },
+  token: {type: String},
   created_at: { type: Date, default: Date() },
   modified_at: { type: Date, default: Date() },
 });

@@ -1,7 +1,7 @@
 import _ from "lodash";
-import User from "../schema/PaymentSchema";
+import User from "../schema/UserSchema";
 
-export default class PaymentDataObject {
+export default class UserDataObject {
     
     static CheckForUniqueEmail(emailCheck: any): Promise<any> {
         return new Promise(async(resolve,reject) => {
@@ -35,6 +35,17 @@ export default class PaymentDataObject {
                console.log(keyValuePair);
                const user = User.findOne(keyValuePair);
                !user ? reject({}) : resolve(user);
+            }catch(error) {
+               reject(error);
+            }
+        });
+    }
+
+    static FindOneAndUpdate(id: string, token: string): Promise<any> {
+        return new Promise(async(resolve,reject) => {
+           try {
+            const user = await User.findOneAndUpdate({"_id": id },{$set:{"is_authorized": true, "token": token}});
+            !user ? reject({}) : resolve(user);
             }catch(error) {
                reject(error);
             }
