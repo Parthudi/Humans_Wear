@@ -103,13 +103,13 @@ const HeaderCompo = React.memo(() => {
                                 {/* <BottomNavigationAction label="Profile" className={classes.headerText} icon={<Badge badgeContent={wishlistitems} color="error">
                                     <NavLink to="/whistlist" className={classes.headerIcons}> <FavoriteBorderOutlined /> </NavLink>
                                 </Badge>} /> */}
-                                 <NavLink to="/profile" className={classes.headerIcons}> 
+                                 {/* <NavLink to="/profile" className={classes.headerIcons}> 
                                     <Tooltip title="Profile">
                                         <IconButton onClick={(e) => handleOnClick(e)} size="medium">
                                             <Avatar sx={{ width: 32, height: 32 }}>P</Avatar>
                                         </IconButton>
                                     </Tooltip>
-                                </NavLink>
+                                </NavLink> */}
                             </BottomNavigation>
                         </Box> 
                     </Grid>

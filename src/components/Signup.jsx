@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {Fragment, useState} from 'react'
 import InputField from "./InputFields";
 import {Button,Box,MenuItem,Select,Card,makeStyles} from "@material-ui/core";
 import IconButton from '@mui/material/IconButton';
@@ -12,6 +12,7 @@ import AlertMessage from "./AlertMessage";
 import Stack from '@mui/material/Stack';
 import {RegisterUser} from "./ApiCalls";
 import {Form_Validation} from "./FormValidations";
+import footware from "../assets/footware.png";
 import _ from "lodash";
 
 const useStyles = makeStyles(theme =>({
@@ -28,6 +29,8 @@ const Signup = React.memo(() =>  {
     const [showsuccessalert, setShowSuccessAlert] = useState(false);
     const [showerroralert, setShowErrorAlert] = useState(false);
     const [message, setMessage] = useState("");
+    const [fileresource, setFileResource] = useState("");
+    const [file, setFile] = useState("");
     const [values, setValues] = useState({
         username: '',
         email: '',
@@ -88,11 +91,28 @@ const Signup = React.memo(() =>  {
     const handleOnChange = (event) => {
         setValues({...values, [event.target.name] : event.target.value});
         setErrors(Form_Validation(values));
-        }
+    }
     
+    const handleOnFileChange = (e) => {
+        setFile(e.target.files[0]);
+        const fileData = e.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(fileData);
+        reader.onload = (e) => {
+            setFileResource(reader.result);
+            console.log(reader.result);
+        }
+    }
+
     const showSignupForm = () => {
         return( 
-            <form autoComplete="off">
+            // <div>
+            //     { fileresource && fileresource.length > 0 && (
+            //         <span>
+            //             <img className="imag" src={fileresource} alt="file damaged" style={{height:"60px", width:"70px", borderRadius: "50%"}} />
+            //         </span>
+            //     )}
+            <form autoComplete="off" >
                 <Stack spacing={3}>
                     <InputField
                         label="Name"
@@ -166,22 +186,33 @@ const Signup = React.memo(() =>  {
                             </Select> 
                         </FormControl>
                     </Box>
+                    {/* <input type='file' name='file' onChange={(e) => handleOnFileChange(e)} /> */}
                     <Button type="submit" variant="contained" color="secondary" disabled={email === "" || password === "" || username ==="" || confirmpassword === "" || !_.isEmpty(Form_Validation(values))} onClick={(e) => handleOnSubmit(e)} fullWidth> <b> Sign Up </b> </Button>
                 </Stack>
             </form>
-        )}
+    )}
+
+          // style={{backgroundImage: 'transparent url('+fileresource+')', backgroundSize: "cover"}}
+        /* style={{backgroundImage: 'transparent url('+footware+')', backgroundSize: "cover", opacity: "0.6"}} */
 
     return(
-       <Card className={classes.fillBackground}>
-            {error !== "" && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={error} />}
-            {showsuccessalert && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message={message} />}
-            {showerroralert && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={message} />}
+        <Fragment>
+            <Card className={classes.fillBackground}>
+                {error !== "" && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={error} />}
+                {showsuccessalert && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message={message} />}
+                {showerroralert && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={message} />}
 
-           <h1><b> I dont have an account </b></h1>
-              <span> Sign up with your email & password </span>
+                <h1><b> I dont have an account </b></h1>
+                <span> Sign up with your email & password </span>
+                {/* {fileresource && fileresource.length > 0 && (
+                    <center>
+                        <img className="imag" src={fileresource} alt="file damaged" style={{height:"15rem", width:"70%", justifyContent:"center" ,backgroundImage: 'transparent url('+footware+')', backgroundSize: "cover", borderRadius:"50%"}} />
+                    </center>
+                )} */}
                 {showSignupForm()}
-        </Card>
+            </Card>
+        </Fragment>
         )
-});
+    });
 
 export default Signup
