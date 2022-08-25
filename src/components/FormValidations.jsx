@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Form_Validation = React.memo((values) => {
+export const Form_Validation = (values) => {
     let error = {};
 
     if(values.username) {
@@ -41,9 +41,9 @@ export const Form_Validation = React.memo((values) => {
     }
 
     return error;
-});
+};
 
-export const SigninSchema = React.memo((values) => {
+export const SigninSchema = (values) => {
   let error = {};
 
   if(values.email) {
@@ -63,4 +63,4 @@ export const SigninSchema = React.memo((values) => {
   }
 
   return error;
-});
+};

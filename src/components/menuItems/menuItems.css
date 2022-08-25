@@ -1,70 +1,51 @@
-.menu-item {
-    min-width: 30%;
+ .menu-item1 {
     height: 240px;
-    flex: 1 1 auto;
+    border: 0.5px solid rgb(229, 199, 199);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
-    margin: 0 7.5px 15px;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
     overflow: hidden;
   }
 
-  @media only screen and (max-width: 638px) {
-    body {
-      background-color: lightblue;
-    }
-    .menu-item {
-      min-width: 470px;
-      height: 240px;
-      align-items: center;
-      display: block;
-      flex-direction: column;
-      justify-content: center;
-      border: 1px solid black;
-      margin: 0 7.5px 15px;
-      overflow: hidden;
-    }
-  }
-
-  .menu-item:hover {
+  .menu-item1:hover {
     cursor: pointer;
   }
 
-  .menu-item:hover .background-image {
+  .menu-item1:hover .background-image1 {
     background-size: cover;
     transform: scale(1.1);
     transition: transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .menu-item:hover .content{
+  .menu-item1:hover .content1{
     margin-top: 150px ;
     opacity: 0.7;
     text-align: center;
   }
 
-  .menu-item.large:hover .content{
+  .menu-item1.large1:hover .content1{
     margin-top: 285px ;
     opacity: 0.7;
   }
 
-  .menu-item.large {
+  .menu-item1.large1 {
     height: 380px;
   }
   
-  .menu-item:first-child {
+  .menu-item1:first-child {
     margin-right: 7.5px;
   }
   
-  .menu-item:last-child {
+  .menu-item1:last-child {
     margin-left: 7.5px;
   }
   
-    .content {
+    .content1 {
       display: inline-flex;
       margin: 11px 0px;
       padding: 0 25px;
       align-items: center;
+      text-align: center;
       opacity: 0.75;
       display: block;
       flex-direction: column;
@@ -73,25 +54,30 @@
       background: linear-gradient(
           to right,
           rgb(205, 202, 202) 100%,
-          rgb(236, 222, 240) 0%
+          rgb(241, 250, 249) 0%
           
       )
   }
-      .title {
+      .title1 {
         font-weight: bolder;
         margin-top: 20px;
         font-size: 22px;
         color: #201818;
       }
   
-     .subtitle {
+     .subtitle1 {
         font-weight: lighter;
         font-size: 17px;
       }
     
-  .background-image {
+  .background-image1 {
       height: 100%;
       width: 100%;
       background-position: center;
       background-size: cover;
+  } 
+
+  .title2{
+    font-family: "Henny Penny, cursive";
+    font-size: large;
   }

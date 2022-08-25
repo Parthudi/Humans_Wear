@@ -2,7 +2,7 @@ import React, {memo} from 'react'
 import CollectionItem from '../CollectionItem/CollectionItem'
 import './collectionpreview.css'
 
-const CollectionPreview = memo((props) => {
+const CollectionPreview = (props) => {
         return(
             <div className='collection-preview'>
                 <h1 className='title'> {props.title.toUpperCase()} </h1>
@@ -13,6 +13,6 @@ const CollectionPreview = memo((props) => {
                 </div>
             </div>
         )
-});
+}
 
 export default CollectionPreview

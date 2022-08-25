@@ -24,29 +24,16 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 const useStyles = makeStyles((theme) => ({
-    containerSize: {
-        width: "70%"
-    },
     boxSize: {
         margin: "auto",
         border: "3px 2px solid grey",
         opacity: "0.7",
-        padding: "15px",
-        width: "15rem",
+        padding: "12px",
+        width: "13rem",
         position: "fixed",
         top: "20%",
         color: "black"
-    },
-    [theme.breakpoints.down('md')]: {
-        containerSize: {
-            width: "50rem"
-        }
-    }, 
-    [theme.breakpoints.down('sm')]: {
-        containerSize: {
-            width: "40rem"
-        }
-    },
+    }
 }));
 
 
@@ -74,7 +61,7 @@ const ShowCarousel = memo(() => {
          )}
 
     return(
-            <Container className={classes.containerSize} onMouseEnter={() => setShowMenu(true)}  onMouseLeave={() => setShowMenu(false)}>
+            <Container maxWidth="md" onMouseEnter={() => setShowMenu(true)}  onMouseLeave={() => setShowMenu(false)}>
                 {imageUrls.length == 15 ?
                     <Box mt={4}>
                         <Grid container item xs={12} sm={12} md={12}>

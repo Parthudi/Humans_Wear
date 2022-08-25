@@ -1,7 +1,7 @@
-import React, {useEffect} from "react";
+import React, {useEffect, memo} from "react";
 import Header from "./Header";
-import Footer from "../footer/footer";
-import {Divider,Box,makeStyles} from "@material-ui/core"; 
+import Footer from "../components/footer";
+import {Divider,Box,makeStyles, Container} from "@material-ui/core"; 
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -10,10 +10,10 @@ const useStyles = makeStyles((theme) => ({
         adjustSizing: {
             width: "520px"
           }
-    }
-}));
+        }
+    }));
 
-const Layout = React.memo((props) => {
+const Layout = memo((props) => {
     const classes = useStyles();
 
     useEffect(() => {
@@ -23,15 +23,16 @@ const Layout = React.memo((props) => {
     return(
         <React.Fragment>
             <Header />
-                    <Box mt={5} mb={20} >
-                        {props.children}
-                    </Box>
-                
-                <Box className={classes.adjustSizing}>
-                    <Divider />
-                    <Footer />
+            <Box mb={15}/>
+            {/* <Container maxWidth="xl"> */}
+                <Box mt={5} mb={20}>
+                    {props.children}
                 </Box>
-
+            {/* </Container> */}
+            <Box className={classes.adjustSizing}>
+                <Divider />
+                <Footer />
+            </Box>
         </React.Fragment>
     )
 });

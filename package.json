@@ -36,6 +36,7 @@
     "react-star-ratings": "^2.3.0",
     "react-stripe-checkout": "^2.6.3",
     "redux": "^4.2.0",
+    "swiper": "^8.3.2",
     "use-sound": "^4.0.1",
     "yup": "^0.32.9"
   },

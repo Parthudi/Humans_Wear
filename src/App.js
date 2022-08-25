@@ -1,4 +1,4 @@
-import React, { Component, Suspense } from 'react';
+import React, {Suspense } from 'react';
 import {Route,Switch} from 'react-router-dom'
 import {CircularProgress,Backdrop } from '@material-ui/core';
 import Layout from "./components/Layout";
