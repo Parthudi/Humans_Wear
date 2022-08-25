@@ -112,4 +112,14 @@ export default class UsersOperator {
     });
   }
 
+  static async multipleDBCalls(data: any) {
+      try{
+        const address = AddressDataObject.FindAll(data.id);
+        const updatedUser = UserDataObject.FindUserByIdAndUpdate(data.id, "is_authorized", false);
+        // const allRequests = await Promise.all([AddressDataObject.FindAll(data.id), UserDataObject.FindUserByIdAndUpdate(data.id, "is_authorized", false)]);
+        (address);
+      }catch(error){
+        console.log("error : --- ", error);
+      }
+  }
 }
