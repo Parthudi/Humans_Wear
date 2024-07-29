@@ -101,7 +101,6 @@
   color: rgb(230, 25, 110);
 }
 
-
 .sizingArea{
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -454,3 +453,4 @@
       transform : translateX(-78px) ;
   }
 }
+

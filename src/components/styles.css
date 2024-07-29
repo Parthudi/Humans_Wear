@@ -102,20 +102,17 @@
         margin: 0px 10px;
       }
 
-  /* .directory-menu {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
+      .directory1-menu {
+        width: 100%;
+        justify-content: space-between;
+      }
+      
   .menu-item1 {
-    min-width: 30%;
     height: 240px;
     border: 0.5px solid rgb(229, 199, 199);
     display: flex;
     flex: 1 1 auto;
-
+    flex-wrap: wrap;
     overflow: hidden;
   }
 
@@ -187,4 +184,9 @@
       width: 100%;
       background-position: center;
       background-size: cover;
-  } */
+  } 
+
+  .title2{
+    font-family: "Henny Penny, cursive";
+    font-size: large;
+  } 

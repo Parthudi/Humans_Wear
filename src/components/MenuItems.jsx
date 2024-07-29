@@ -1,7 +1,7 @@
 import React, {memo} from 'react'
 import {withRouter} from 'react-router-dom'
-import {Box,Grid, Typography} from '@material-ui/core'; 
-import './menuItems.css'
+import {Grid, Typography} from '@material-ui/core'; 
+import './styles.css';
 
 const MenuItems = memo((props) => {
 

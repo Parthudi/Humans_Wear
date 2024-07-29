@@ -23,6 +23,68 @@ import { makeStyles } from "@material-ui/core";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
+
+// const ShowCarousel = memo(() => {
+    // const classes = useStyles();
+    // const [showMenu, setShowMenu] = useState(false);
+
+//     useEffect(() => {
+//         Aos.init({duration: 1000});
+//       }, [showMenu]);
+
+//     const imageUrls = [{name: "Tomato Shady Tee",imageurl: hats1},{name:"Shaddy Hats", imageurl: hats2} ,{name: "Stylish Blues Hat" , imageurl: hats3},
+//             {name: "Awesome Jackets", imageurl: jackets1},{name: "Brown Hams Jackets", imageurl: jackets2},{name: "Chexi Black Jackets", imageurl: jackets3},
+//             {name: "Casual Tees", imageurl: mens1}, {name: "Stylish Cool Tees", imageurl: mens2},{name: "Romanio Round Neck Tee", imageurl: mens3},
+//             {name: "Blue Cherry Shoes", imageurl: sneakers1},{name: "Colorous Sneakers", imageurl: sneakers2},{name: "Casual Loafers", imageurl: sneakers3},
+//             {name: "All Time Wears", imageurl: womens1},{name: "Casual Wedding Skirt", imageurl: womens2},{name: "Brown Stripper Coated Jackets", imageurl: womens3}];
+      
+    // const showModal = (name) => {
+    //      return(
+    //          <div data-aos="flip-right">
+    //             <Box className={classes.boxSize} style={{ background: "linear-gradient(#ee9ca7, #ffdde1)" }}>
+    //                 <h6> {name} </h6> 
+    //             </Box>
+    //          </div>
+    //      )}
+
+//     return(
+            // <Container maxWidth="md" onMouseEnter={() => setShowMenu(true)}  onMouseLeave={() => setShowMenu(false)}>
+//                 {imageUrls.length == 15 ?
+//                     <Box mt={4}>
+//                         <Grid container item xs={12} sm={12} md={12}>
+//                             <AliceCarousel autoPlay playButtonEnabled={"keyup" ? true: false} fadeOutAnimation={true} infinite autoPlayInterval="4000">
+//                                 {imageUrls && imageUrls.map((image,i) => (
+//                                     showMenu == true ?
+//                                     <div>
+//                                         {showModal(image.name)}
+//                                         <ShowItemsCarousol imag={image.imageurl} name={image.name} identifier={i} key={i} alt="Procuct Not Available"/>
+//                                     </div>
+//                                       :
+//                                     <ShowItemsCarousol imag={image.imageurl} name={image.name} identifier={i} key={i} alt="Procuct Not Available"/>
+//                                 ))}
+//                             </AliceCarousel> 
+//                         </Grid>
+//                     </Box>
+//                 : 
+//                 <Skeleton variant="rect" width={1310} height={428} style={{marginBottom: "50px"}} /> }
+//             </Container>
+//     )
+// });
+
+// export default ShowCarousel;
+
+
+import { useTheme } from '@mui/material/styles';
+import MobileStepper from '@mui/material/MobileStepper';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import SwipeableViews from 'react-swipeable-views';
+import { autoPlay } from 'react-swipeable-views-utils';
+
+
 const useStyles = makeStyles((theme) => ({
     boxSize: {
         margin: "auto",
@@ -36,52 +98,108 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
-const ShowCarousel = memo(() => {
-    const classes = useStyles();
-    const [showMenu, setShowMenu] = useState(false);
 
-    useEffect(() => {
-        Aos.init({duration: 1000});
-      }, [showMenu]);
+const images = [{label: "Tomato Shady Tee",imgPath: hats1},{label:"Shaddy Hats", imgPath: hats2} ,{label: "Stylish Blues Hat" , imgPath: hats3},
+{label: "Awesome Jackets", imgPath: jackets1},{label: "Brown Hams Jackets", imgPath: jackets2},{label: "Chexi Black Jackets", imgPath: jackets3},
+{label: "Casual Tees", imgPath: mens1}, {label: "Stylish Cool Tees", imgPath: mens2},{label: "Romanio Round Neck Tee", imgPath: mens3},
+{label: "Blue Cherry Shoes", imgPath: sneakers1},{label: "Colorous Sneakers", imgPath: sneakers2},{label: "Casual Loafers", imgPath: sneakers3},
+{label: "All Time Wears", imgPath: womens1},{label: "Casual Wedding Skirt", imgPath: womens2},{label: "Brown Stripper Coated Jackets", imgPath: womens3}];
 
-    const imageUrls = [{name: "Tomato Shady Tee",imageurl: hats1},{name:"Shaddy Hats", imageurl: hats2} ,{name: "Stylish Blues Hat" , imageurl: hats3},
-            {name: "Awesome Jackets", imageurl: jackets1},{name: "Brown Hams Jackets", imageurl: jackets2},{name: "Chexi Black Jackets", imageurl: jackets3},
-            {name: "Casual Tees", imageurl: mens1}, {name: "Stylish Cool Tees", imageurl: mens2},{name: "Romanio Round Neck Tee", imageurl: mens3},
-            {name: "Blue Cherry Shoes", imageurl: sneakers1},{name: "Colorous Sneakers", imageurl: sneakers2},{name: "Casual Loafers", imageurl: sneakers3},
-            {name: "All Time Wears", imageurl: womens1},{name: "Casual Wedding Skirt", imageurl: womens2},{name: "Brown Stripper Coated Jackets", imageurl: womens3}];
-      
-    const showModal = (name) => {
-         return(
-             <div data-aos="flip-right">
-                <Box className={classes.boxSize} style={{ background: "linear-gradient(#ee9ca7, #ffdde1)" }}>
-                    <h6> {name} </h6> 
-                </Box>
-             </div>
-         )}
+const ShowCarousel = () => {
+  const theme = useTheme();
+  const classes = useStyles();
+  const [activeStep, setActiveStep] = React.useState(0);
+  const maxSteps = images.length;
+  const [showMenu, setShowMenu] = useState(false);
 
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleStepChange = (step: number) => {
+    setActiveStep(step);
+  };
+
+  const showModal = (name) => {
     return(
-            <Container maxWidth="md" onMouseEnter={() => setShowMenu(true)}  onMouseLeave={() => setShowMenu(false)}>
-                {imageUrls.length == 15 ?
-                    <Box mt={4}>
-                        <Grid container item xs={12} sm={12} md={12}>
-                            <AliceCarousel autoPlay playButtonEnabled={"keyup" ? true: false} fadeOutAnimation={true} infinite autoPlayInterval="4000">
-                                {imageUrls && imageUrls.map((image,i) => (
-                                    showMenu == true ?
-                                    <div>
-                                        {showModal(image.name)}
-                                        <ShowItemsCarousol imag={image.imageurl} name={image.name} identifier={i} key={i} alt="Procuct Not Available"/>
-                                    </div>
-                                      :
-                                    <ShowItemsCarousol imag={image.imageurl} name={image.name} identifier={i} key={i} alt="Procuct Not Available"/>
-                                ))}
-                            </AliceCarousel> 
-                        </Grid>
-                    </Box>
-                : 
-                <Skeleton variant="rect" width={1310} height={428} style={{marginBottom: "50px"}} /> }
-            </Container>
-    )
-});
+        <div data-aos="flip-right">
+           <Box className={classes.boxSize} style={{ background: "linear-gradient(#ee9ca7, #ffdde1)" }}>
+               <h6> {name} </h6> 
+           </Box>
+        </div>
+    )}
+
+  return (
+    <Container maxWidth="md" md={{margin: 'auto',
+    display: 'flex', 
+    alignItems: 'center',
+    justifyContent: 'center'}} onMouseEnter={() => setShowMenu(true)}  onMouseLeave={() => setShowMenu(false)}>
+
+    <Box sx={{ maxWidth: 1000, flexGrow: 1}}>
+      <AutoPlaySwipeableViews
+        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        index={activeStep}
+        onChangeIndex={handleStepChange}
+        enableMouseEvents
+      >
+        {images.map((step, index) => (
+          <div key={step.label}>
+            {showMenu && showModal(step.label)}
+            {Math.abs(activeStep - index) <= 10 ? (
+              <Box
+                component="img"
+                sx={{
+                  height: 550,
+                  display: 'block',
+                  maxWidth: 6000,
+                  objectFit: 'cover',
+                  width: '100%',
+                }}
+                src={step.imgPath}
+                alt={step.label}
+              />
+            ) : ''}
+          </div>
+        ))}
+      </AutoPlaySwipeableViews>
+      <MobileStepper
+        steps={maxSteps}
+        position="static"
+        activeStep={activeStep}
+        nextButton={
+          <Button
+            size="small"
+            onClick={handleNext}
+            disabled={activeStep === maxSteps - 1}
+          >
+            Next
+            {theme.direction === 'rtl' ? (
+              <KeyboardArrowLeft />
+            ) : (
+              <KeyboardArrowRight />
+            )}
+          </Button>
+        }
+        backButton={
+          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+            {theme.direction === 'rtl' ? (
+              <KeyboardArrowRight />
+            ) : (
+              <KeyboardArrowLeft />
+            )}
+            Back
+          </Button>
+        }
+      />
+    </Box>
+    </Container>
+  );
+}
 
 export default ShowCarousel;

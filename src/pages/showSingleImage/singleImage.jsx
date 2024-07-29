@@ -33,8 +33,9 @@ import AlertMessage from "../../components/AlertMessage";
 import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
-import {Avatar} from "@material-ui/core";
+import {Avatar,Container} from "@material-ui/core";
 import Stack from '@mui/material/Stack';
+import ImageMagnify from "../../components/ImageMagnify";
 
 const labels = {
   0.5: 'Useless',
@@ -392,7 +393,7 @@ const ShowSingleImage = React.memo((props) => {
     }
 
     return(
-        <div>
+        <Container>
         {productdetails && productdetails.length > 0 ? (
         <div className="row" style={{justifyContent:"space-between"}}>
             {showincorrectpincode && pinCodeCheck()}
@@ -401,7 +402,7 @@ const ShowSingleImage = React.memo((props) => {
             {showalertbag && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message="Product Added To Bag" />}
             
             <div className="collection-item1">
-                <div className="background-image" style={{backgroundImage : `url(${productdetails[0].imageUrl})` }} /> 
+                <ImageMagnify src={productdetails[0].imageUrl} alt="Example Image" />
             </div>    
 
             <div className="collection-item2">
@@ -641,7 +642,7 @@ const ShowSingleImage = React.memo((props) => {
                 {detailmodel()}
             </div>
         </div>) : null}
-        </div>
+        </Container>
     )
 });
 

@@ -1,12 +1,12 @@
 import React, {memo} from 'react'
-import MenuItems from '../menuItems/menuItems'
-import Men from '../../images/parthudi.jpg'
-import Hat from '../../images/myfinalhat.jpg'
-import Sneaker from '../../images/myfinalsneaker.jpg'
-import Jacket from '../../images/jackets.png'
-import Women from '../../images/womens.png'
+import MenuItems from './MenuItems'
+import Men from '../images/parthudi.jpg'
+import Hat from '../images/myfinalhat.jpg'
+import Sneaker from '../images/myfinalsneaker.jpg'
+import Jacket from '../images/jackets.png'
+import Women from '../images/womens.png'
 import {Container} from "@material-ui/core"
-import './directory.css';
+import './styles.css';
 
 const sections = [{
       title: 'hats',

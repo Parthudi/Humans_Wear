@@ -1,27 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import {Badge, Box, Grid, Typography, makeStyles,BottomNavigation, BottomNavigationAction,Tooltip,Paper} from "@material-ui/core";
+import {Badge, Box, Typography, makeStyles,BottomNavigation, BottomNavigationAction,Paper} from "@material-ui/core";
 import {NavLink, withRouter} from 'react-router-dom';
-// import ReactLogo from '../assets/humansWear.png';
 import {itemTotal} from "./LocalStorageItems/Cart";
 import {wishListItemTotal} from "./LocalStorageItems/Wishlist";
 import {AddShoppingCartOutlined, FavoriteBorderOutlined, StorefrontOutlined} from "@material-ui/icons";
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import {getUser,removeUser} from "./LocalStorageItems/User"; 
-// import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-// import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-// import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-// import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-// import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import _ from "lodash";
 import HumansWear from "../assets/HumansWear.png"
 import NavigationLink from "./NavLink";
@@ -38,7 +28,6 @@ const useStyle = makeStyles((theme) => ({
         title: {
             fontFamily: "Henny Penny , cursive",
             fontSize: "3rem",
-            marginLeft: "5rem"
         },
         headerText: {
             color: "black",
@@ -72,7 +61,6 @@ const pages = [{name: 'Mens', to:"/shop/mens"},{name:'Womens', to:"/shop/womens"
 const HeaderCompo = () => {
     const classes = useStyle();
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [setAnchorElUser] = React.useState(null);
     const [cartitems, setCartItems] = useState("0");
     const [wishlistitems, setWishListItems] = useState("0"); 
     const [user, setUser] = useState({});
@@ -93,12 +81,7 @@ const HeaderCompo = () => {
       setAnchorElNav(null);
     };
 
-    const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
-    };
-
     return (
-        console.log(window.scrollY),
         <Paper elevation={0} style={{position:"fixed", top:"0px", width:"100%", zIndex:"1"}}>
             <Toolbar disableGutters>
                 <Box sx={{display: { xs: 'flex', md: 'none' } }}>
@@ -155,13 +138,13 @@ const HeaderCompo = () => {
                 </Box>
 
                 <center>
-                    <Box sx={{flexGrow: {xs: '1', md:'0.8'} , display: { xs: 'flex'} }}>
+                    <Box sx={{flexGrow: {xs: '1', md:'1.0'} , display: { xs: 'flex'} }}>
                         <Typography
-                            variant="h3"
+                            variant="h4"
                             color= "secondary"
                             noWrap
                             style={{fontFamily: "Henny Penny , cursive"}} >
-                            Humans Wear
+                            The Humans Wear
                         </Typography>
                     </Box> 
                 </center>

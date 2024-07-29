@@ -1,8 +1,9 @@
 import React, {Suspense } from 'react';
 import {Route,Switch} from 'react-router-dom'
-import {CircularProgress,Backdrop } from '@material-ui/core';
+import {CircularProgress,Backdrop,Box} from '@material-ui/core';
 import Layout from "./components/Layout";
 import './App.css'
+import {useDispatch} from "react-redux";
 
 // Lazy loading loads the components only when required
 const HomePage = React.lazy(() => import("./pages/Homepage"))
@@ -21,22 +22,34 @@ const Payment = React.lazy(() => import("./pages/Payment"))
 const Profile = React.lazy(() => import("./pages/Profile"))
 
 const App = () => {
-  const loader =  () => {
+  const dispatch = useDispatch();
+  const loader = (props) => {
+    // props.onLoad ? onLoad() : onComplete();
     return(
       <Backdrop
         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 100000000 }}
         open={true}
         style={{zIndex:"1"}}>
-          <CircularProgress  color="secondary" />
+          <Box pt={10} pb={20}>
+             <CircularProgress color="secondary" /> 
+          </Box>
      </Backdrop>
     )
   };
 
+  // const onLoad = () => {
+  //   dispatch({ type: "loading" , payload: {loading: true}}); 
+  // }
+
+  // const onComplete = () => {
+  //   dispatch({ type: "loading" , payload: {loading: false}});
+  // }
+
   const routes = () => {
     return(
       <Switch>
-          <Route path='/' exact render={() => (
-            <Suspense fallback= {loader()}>
+          <Route path='/' exact render={(props) => (
+            <Suspense fallback= {loader()} >
               <HomePage />
             </Suspense>
           )} /> 

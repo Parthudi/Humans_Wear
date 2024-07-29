@@ -4,6 +4,7 @@ const defaultState = {
     totalAmount: 0, 
     products: [],
     whishList: [],
+    loading: false
 } 
 
 const reducerFunc = (state = {...defaultState}, action) => {
@@ -18,8 +19,10 @@ const reducerFunc = (state = {...defaultState}, action) => {
     if(action.type === "addWhishlist"){
         const products = [...state.whishList];
         products.push(action.payload.whishList);
-        console.log(`PARTH WHISHLIST PROD :- ${products}`);
         return {whishList: products}
+    }
+    if(action.type === "loading"){
+        return {loading: action.payload.loading}
     }
 }
 
