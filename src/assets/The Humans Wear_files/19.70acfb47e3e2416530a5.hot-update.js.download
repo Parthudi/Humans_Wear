@@ -1,0 +1,363 @@
+webpackHotUpdate(19,{
+
+/***/ "./src/components/Signin.jsx":
+/*!***********************************!*\
+  !*** ./src/components/Signin.jsx ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(__react_refresh_utils__, __react_refresh_error_overlay__) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var _mui_icons_material_Visibility__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/icons-material/Visibility */ "./node_modules/@mui/icons-material/Visibility.js");
+/* harmony import */ var _mui_icons_material_Visibility__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_mui_icons_material_Visibility__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _mui_icons_material_VisibilityOff__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/icons-material/VisibilityOff */ "./node_modules/@mui/icons-material/VisibilityOff.js");
+/* harmony import */ var _mui_icons_material_VisibilityOff__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_mui_icons_material_VisibilityOff__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _mui_material_IconButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/IconButton */ "./node_modules/@mui/material/IconButton/index.js");
+/* harmony import */ var _mui_material_InputAdornment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/InputAdornment */ "./node_modules/@mui/material/InputAdornment/index.js");
+/* harmony import */ var _mui_material_Stack__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Stack */ "./node_modules/@mui/material/Stack/index.js");
+/* harmony import */ var _mui_material_OutlinedInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/OutlinedInput */ "./node_modules/@mui/material/OutlinedInput/index.js");
+/* harmony import */ var _mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material/InputLabel */ "./node_modules/@mui/material/InputLabel/index.js");
+/* harmony import */ var _mui_material_FormControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material/FormControl */ "./node_modules/@mui/material/FormControl/index.js");
+/* harmony import */ var _InputFields__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./InputFields */ "./src/components/InputFields.jsx");
+/* harmony import */ var _ApiCalls__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ApiCalls */ "./src/components/ApiCalls.jsx");
+/* harmony import */ var _LocalStorageItems_User__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./LocalStorageItems/User */ "./src/components/LocalStorageItems/User.jsx");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _AlertMessage_jsx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./AlertMessage.jsx */ "./src/components/AlertMessage.jsx");
+/* harmony import */ var _FormValidations__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./FormValidations */ "./src/components/FormValidations.jsx");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__);
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+__webpack_require__.$Refresh$.setup(module.i);
+
+var _jsxFileName = "C:\\Users\\User1\\Desktop\\MERN STACK\\MERN\\HumansWear\\Humans Wear Frontend\\src\\components\\Signin.jsx",
+  _s = __webpack_require__.$Refresh$.signature();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
+  fillBackground: {
+    backgroundColor: "white",
+    boxShadow: "10px 5px 10px grey",
+    borderRadius: "10px",
+    padding: "20px"
+  }
+}));
+const SignIn = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.memo(_c = _s(props => {
+  _s();
+  const classes = useStyles();
+  const [values, setValues] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    email: "",
+    password: "",
+    showPassword: false
+  });
+  const [showsuccessalert] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const [showerroralert, setShowErrorAlert] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const [message, setMessage] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+  const [error] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+  const [errors, setErrors] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+  const {
+    email,
+    password
+  } = values;
+  const handleOnSubmit = async event => {
+    event.preventDefault();
+    if (!lodash__WEBPACK_IMPORTED_MODULE_16___default.a.isEmpty(Object(_FormValidations__WEBPACK_IMPORTED_MODULE_15__["SigninSchema"])(values))) {
+      return;
+    }
+    try {
+      Object(_ApiCalls__WEBPACK_IMPORTED_MODULE_11__["LoginUser"])(values).then(async data => {
+        if (data.message) {
+          setTimeout(() => {
+            setShowErrorAlert(false);
+          }, 4000);
+          setShowErrorAlert(true);
+          setMessage(`Login Failed  ${data.message}`);
+          return;
+        } else {
+          console.log(data.data.user);
+          await Object(_LocalStorageItems_User__WEBPACK_IMPORTED_MODULE_12__["userRegistration"])(data.data.user);
+          props.history.push("/");
+          window.location.reload();
+        }
+      });
+    } catch (error) {
+      console.log(error.message);
+      setTimeout(() => {
+        setShowErrorAlert(false);
+      }, 5000);
+      setShowErrorAlert(true);
+      setMessage(`Login Failed  ${error.message}`);
+    }
+  };
+  const handleOnChange = event => {
+    setValues({
+      ...values,
+      [event.target.name]: event.target.value
+    });
+    setErrors(Object(_FormValidations__WEBPACK_IMPORTED_MODULE_15__["SigninSchema"])(values));
+  };
+  const handleClickShowPassword = name => {
+    name === "password" ? setValues({
+      ...values,
+      showPassword: !values.showPassword
+    }) : setValues({
+      ...values,
+      showConfirmPassword: !values.showConfirmPassword
+    });
+  };
+  const formData = () => {
+    return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])("form", {
+      autoComplete: "off",
+      children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_material_Stack__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        mt: 5,
+        spacing: 3,
+        children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_InputFields__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          showPadding: false,
+          label: "E-mail",
+          type: "text",
+          name: "email",
+          value: values.email,
+          onChange: e => handleOnChange(e),
+          error: Boolean(errors.email),
+          helperText: errors.email
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 88,
+          columnNumber: 21
+        }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          variant: "outlined",
+          fullWidth: true,
+          children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            htmlFor: "outlined-adornment-password",
+            children: " Password "
+          }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 100,
+            columnNumber: 25
+          }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_material_OutlinedInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+            id: "outlined-adornment-password",
+            type: values.showPassword ? "text" : "password",
+            name: "password",
+            value: values.password,
+            onChange: e => handleOnChange(e),
+            endAdornment: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_material_InputAdornment__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              position: "end",
+              children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_material_IconButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                onClick: () => handleClickShowPassword("password"),
+                children: values.showPassword ? /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_icons_material_VisibilityOff__WEBPACK_IMPORTED_MODULE_3___default.a, {}, void 0, false, {
+                  fileName: _jsxFileName,
+                  lineNumber: 111,
+                  columnNumber: 64
+                }, undefined) : /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_icons_material_Visibility__WEBPACK_IMPORTED_MODULE_2___default.a, {}, void 0, false, {
+                  fileName: _jsxFileName,
+                  lineNumber: 111,
+                  columnNumber: 84
+                }, undefined)
+              }, void 0, false, {
+                fileName: _jsxFileName,
+                lineNumber: 109,
+                columnNumber: 37
+              }, undefined)
+            }, void 0, false, {
+              fileName: _jsxFileName,
+              lineNumber: 108,
+              columnNumber: 33
+            }, undefined),
+            error: Boolean(errors.password),
+            helperText: errors.password
+          }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 101,
+            columnNumber: 25
+          }, undefined)]
+        }, void 0, true, {
+          fileName: _jsxFileName,
+          lineNumber: 99,
+          columnNumber: 21
+        }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+          variant: "contained",
+          disabled: email === "" || password === "" || !lodash__WEBPACK_IMPORTED_MODULE_16___default.a.isEmpty(Object(_FormValidations__WEBPACK_IMPORTED_MODULE_15__["SigninSchema"])(values)),
+          size: "medium",
+          color: "primary",
+          onClick: e => handleOnSubmit(e),
+          children: " SIGN IN "
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 119,
+          columnNumber: 21
+        }, undefined)]
+      }, void 0, true, {
+        fileName: _jsxFileName,
+        lineNumber: 87,
+        columnNumber: 17
+      }, undefined)
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 86,
+      columnNumber: 13
+    }, undefined);
+  };
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Paper"], {
+    className: classes.fillBackground,
+    children: [error !== "" && /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_AlertMessage_jsx__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      shouldDisplay: "dontShow",
+      severity: "error",
+      pinCodeInvalid: true,
+      message: error
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 127,
+      columnNumber: 30
+    }, undefined), showsuccessalert && /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_AlertMessage_jsx__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      shouldDisplay: "dontShow",
+      severity: "success",
+      pinCodeInvalid: false,
+      message: message
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 128,
+      columnNumber: 34
+    }, undefined), showerroralert && /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_AlertMessage_jsx__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      shouldDisplay: "dontShow",
+      severity: "error",
+      pinCodeInvalid: true,
+      message: message
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 129,
+      columnNumber: 32
+    }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])("h1", {
+      children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])("b", {
+        children: " I already have an account "
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 131,
+        columnNumber: 17
+      }, undefined)
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 131,
+      columnNumber: 13
+    }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])("span", {
+      children: " Signin with your email & password "
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 132,
+      columnNumber: 13
+    }, undefined), formData()]
+  }, void 0, true, {
+    fileName: _jsxFileName,
+    lineNumber: 126,
+    columnNumber: 9
+  }, undefined);
+}, "T25sdtQqgfgOzX6iVxqPMdHNMhw=", false, function () {
+  return [useStyles];
+}));
+_c2 = SignIn;
+/* harmony default export */ __webpack_exports__["default"] = (_c3 = Object(react_router__WEBPACK_IMPORTED_MODULE_13__["withRouter"])(SignIn));
+var _c, _c2, _c3;
+__webpack_require__.$Refresh$.register(_c, "SignIn$React.memo");
+__webpack_require__.$Refresh$.register(_c2, "SignIn");
+__webpack_require__.$Refresh$.register(_c3, "%default%");
+
+const currentExports = __react_refresh_utils__.getModuleExports(module.i);
+__react_refresh_utils__.registerExportsForReactRefresh(currentExports, module.i);
+
+if (true) {
+  const isHotUpdate = !!module.hot.data;
+  const prevExports = isHotUpdate ? module.hot.data.prevExports : null;
+
+  if (__react_refresh_utils__.isReactRefreshBoundary(currentExports)) {
+    module.hot.dispose(
+      /**
+       * A callback to performs a full refresh if React has unrecoverable errors,
+       * and also caches the to-be-disposed module.
+       * @param {*} data A hot module data object from Webpack HMR.
+       * @returns {void}
+       */
+      function hotDisposeCallback(data) {
+        // We have to mutate the data object to get data registered and cached
+        data.prevExports = currentExports;
+      }
+    );
+    module.hot.accept(
+      /**
+       * An error handler to allow self-recovering behaviours.
+       * @param {Error} error An error occurred during evaluation of a module.
+       * @returns {void}
+       */
+      function hotErrorHandler(error) {
+        if (
+          typeof __react_refresh_error_overlay__ !== 'undefined' &&
+          __react_refresh_error_overlay__
+        ) {
+          __react_refresh_error_overlay__.handleRuntimeError(error);
+        }
+
+        if (typeof __react_refresh_test__ !== 'undefined' && __react_refresh_test__) {
+          if (window.onHotAcceptError) {
+            window.onHotAcceptError(error.message);
+          }
+        }
+
+        __webpack_require__.c[module.i].hot.accept(hotErrorHandler);
+      }
+    );
+
+    if (isHotUpdate) {
+      if (
+        __react_refresh_utils__.isReactRefreshBoundary(prevExports) &&
+        __react_refresh_utils__.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)
+      ) {
+        module.hot.invalidate();
+      } else {
+        __react_refresh_utils__.enqueueUpdate(
+          /**
+           * A function to dismiss the error overlay after performing React refresh.
+           * @returns {void}
+           */
+          function updateCallback() {
+            if (
+              typeof __react_refresh_error_overlay__ !== 'undefined' &&
+              __react_refresh_error_overlay__
+            ) {
+              __react_refresh_error_overlay__.clearRuntimeErrors();
+            }
+          }
+        );
+      }
+    }
+  } else {
+    if (isHotUpdate && __react_refresh_utils__.isReactRefreshBoundary(prevExports)) {
+      module.hot.invalidate();
+    }
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js"), __webpack_require__(/*! ./node_modules/react-dev-utils/refreshOverlayInterop.js */ "./node_modules/react-dev-utils/refreshOverlayInterop.js")))
+
+/***/ })
+
+})
+//# sourceMappingURL=19.70acfb47e3e2416530a5.hot-update.js.map

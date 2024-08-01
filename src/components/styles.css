@@ -126,14 +126,20 @@
     transition: transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .menu-item1:hover .content1{
+  .menu-item1 .content1 {
     margin-top: 150px ;
+  }
+
+  .menu-item1.large1 .content1 {
+    margin-top: 285px ;
+  }
+
+  .menu-item1:hover .content1{
     opacity: 0.7;
     text-align: center;
   }
 
   .menu-item1.large1:hover .content1{
-    margin-top: 285px ;
     opacity: 0.7;
   }
 
@@ -151,8 +157,6 @@
   
     .content1 {
       display: inline-flex;
-      margin: 11px 0px;
-      padding: 0 25px;
       align-items: center;
       text-align: center;
       opacity: 0.75;

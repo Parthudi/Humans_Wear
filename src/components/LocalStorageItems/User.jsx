@@ -20,7 +20,7 @@ export const getUser = () => {
 export const removeUser = () => {
     if(typeof window !== 'undefined') {
         const user = localStorage.removeItem('user');
-        window.location.reload();
+        // window.location.reload();
         return user;
     }
 };

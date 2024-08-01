@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
         adjustSizing: {
-            width: "520px"
+            width: "10rem"
           }
         }
     }));
@@ -24,16 +24,16 @@ const Layout = memo((props) => {
         <React.Fragment>
             <Header />
             <Box mb={15}/>
-            {/* <Container maxWidth="xl"> */}
+            <Container sx={{ minHeight: '80vh' }}>
                 <Box mt={5} mb={20}>
                     {props.children}
                 </Box>
-            {/* </Container> */}
+            </Container>
             <Box className={classes.adjustSizing}>
                 <Divider />
                 <Footer />
-            </Box>
-        </React.Fragment>
+                </Box>
+            </React.Fragment>
     )
 });
 

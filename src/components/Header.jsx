@@ -159,7 +159,7 @@ const HeaderCompo = () => {
                             </Badge>} />
                             <BottomNavigationAction label="Shop" className={classes.headerText} icon={ <NavLink to="/shop" className={classes.headerIcons}> <StorefrontOutlined /> </NavLink>} />
                             {!_.isEmpty(user) && user.is_authorized ? 
-                                <BottomNavigationAction label="Logout" className={classes.headerText} icon={<LogoutOutlinedIcon onClick={() => removeUser()} />} /> 
+                                <BottomNavigationAction label="Logout" className={classes.headerText} icon={<NavLink to="/login" className={classes.headerIcons}> <LogoutOutlinedIcon onClick={() => removeUser()} /> </NavLink>} /> 
                                 :
                             <BottomNavigationAction label="Login" className={classes.headerText} icon={ <NavLink to="/login" className={classes.headerIcons}> <LoginOutlinedIcon /> </NavLink>} /> }
                         </BottomNavigation>

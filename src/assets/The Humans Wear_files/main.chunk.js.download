@@ -1,0 +1,2794 @@
+(this["webpackJsonphumans_wear"] = this["webpackJsonphumans_wear"] || []).push([["main"],{
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css":
+/*!************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!./node_modules/postcss-loader/src??postcss!./src/App.css ***!
+  \************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, " body {\r\n    background-image: linear-gradient(#efecf9,  #fbdddc);\r\n};\r\n\r\na {\r\n    text-decoration: none;\r\n    color: black;\r\n} ", "",{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"CAAC;IACG,oDAAoD;AACxD,CAAA;;AAEA;IACI,qBAAqB;IACrB,YAAY;AAChB","sourcesContent":[" body {\r\n    background-image: linear-gradient(#efecf9,  #fbdddc);\r\n};\r\n\r\na {\r\n    text-decoration: none;\r\n    color: black;\r\n} "],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/styles.css":
+/*!**************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!./node_modules/postcss-loader/src??postcss!./src/components/styles.css ***!
+  \**************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".collection-preview {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin-bottom: 30px;\r\n    }\r\n  \r\n  .title {\r\n      font-size: 28px;\r\n      margin-bottom: 25px;\r\n      background-color: rgb(238, 199, 222)\r\n    }\r\n  \r\n    .preview1 {\r\n        display: flex;\r\n        margin-bottom: 100px;\r\n        justify-content: space-between;\r\n      }\r\n  \r\n      .onHovering{\r\n        visibility: hidden;\r\n    }\r\n    \r\n    .select:hover .onHovering{\r\n        visibility: visible;\r\n        width: 150px;\r\n        background-color: hotpink;\r\n        margin-left: 5px;\r\n        animation:  parthudi 0.2s ;\r\n        background-color: rgb(225, 243, 225);\r\n    }\r\n    \r\n    @keyframes parthudi {\r\n        0% {\r\n            width: 0px;        \r\n        }\r\n        100% {\r\n            width: 150px;\r\n        }\r\n      } \r\n  \r\n      .fa {\r\n        padding: 20px;\r\n        font-size: 30px;\r\n        width: 30px;\r\n        text-align: center;\r\n        text-decoration: none;\r\n        margin: 5px 2px;\r\n        border-radius: 50%;\r\n      }\r\n      \r\n      .fa:hover {\r\n          opacity: 1.5;\r\n          transform: rotateX(25deg);\r\n          text-decoration: none;\r\n          color: rgb(201, 198, 198)\r\n      }\r\n      \r\n      .fa-facebook {\r\n        background: #3B5998;\r\n        color: white;\r\n        margin: 0px 10px;\r\n      }\r\n      \r\n      .fa-twitter {\r\n        background: #55ACEE;\r\n        color: white;\r\n        margin: 0px 10px;\r\n      }\r\n      \r\n      .fa-google {\r\n        background: #dd4b39;\r\n        color: white;\r\n        margin: 0px 10px;\r\n      }\r\n      \r\n      .fa-linkedin {\r\n        background: #007bb5;\r\n        color: white;\r\n        margin: 0px 10px;\r\n      }\r\n      \r\n      .fa-instagram {\r\n        color: white;\r\n        margin: 0px 10px;\r\n        background: linear-gradient(\r\n          to bottom,\r\n          rgb(80, 145, 189) 0%,\r\n          rgb(214, 71, 183) 100%\r\n        );\r\n      }\r\n      \r\n      .fa-snapchat-ghost {\r\n        background: #fffc00;\r\n        margin: 0px 10px;\r\n        color: white;\r\n        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;\r\n      }\r\n      \r\n      .fa-skype {\r\n        background: #00aff0;\r\n        color: white;\r\n        margin: 0px 10px;\r\n      }\r\n\r\n      .directory1-menu {\r\n        width: 100%;\r\n        justify-content: space-between;\r\n      }\r\n      \r\n  .menu-item1 {\r\n    height: 240px;\r\n    border: 0.5px solid rgb(229, 199, 199);\r\n    display: flex;\r\n    flex: 1 1 auto;\r\n    flex-wrap: wrap;\r\n    overflow: hidden;\r\n  }\r\n\r\n  .menu-item1:hover {\r\n    cursor: pointer;\r\n  }\r\n\r\n  .menu-item1:hover .background-image1 {\r\n    background-size: cover;\r\n    transform: scale(1.1);\r\n    transition: transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);\r\n  }\r\n\r\n  .menu-item1 .content1 {\r\n    margin-top: 150px ;\r\n  }\r\n\r\n  .menu-item1.large1 .content1 {\r\n    margin-top: 285px ;\r\n  }\r\n\r\n  .menu-item1:hover .content1{\r\n    opacity: 0.7;\r\n    text-align: center;\r\n  }\r\n\r\n  .menu-item1.large1:hover .content1{\r\n    opacity: 0.7;\r\n  }\r\n\r\n  .menu-item1.large1 {\r\n    height: 380px;\r\n  }\r\n  \r\n  .menu-item1:first-child {\r\n    margin-right: 7.5px;\r\n  }\r\n  \r\n  .menu-item1:last-child {\r\n    margin-left: 7.5px;\r\n  }\r\n  \r\n    .content1 {\r\n      display: inline-flex;\r\n      align-items: center;\r\n      text-align: center;\r\n      opacity: 0.75;\r\n      display: block;\r\n      flex-direction: column;\r\n      justify-content: center;\r\n      border:0px solid white;\r\n      background: linear-gradient(\r\n          to right,\r\n          rgb(205, 202, 202) 100%,\r\n          rgb(241, 250, 249) 0%\r\n          \r\n      )\r\n  }\r\n      .title1 {\r\n        font-weight: bolder;\r\n        margin-top: 20px;\r\n        font-size: 22px;\r\n        color: #201818;\r\n      }\r\n  \r\n     .subtitle1 {\r\n        font-weight: lighter;\r\n        font-size: 17px;\r\n      }\r\n    \r\n  .background-image1 {\r\n      height: 100%;\r\n      width: 100%;\r\n      background-position: center;\r\n      background-size: cover;\r\n  } \r\n\r\n  .title2{\r\n    font-family: \"Henny Penny, cursive\";\r\n    font-size: large;\r\n  } ", "",{"version":3,"sources":["webpack://src/components/styles.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB;;EAEF;MACI,eAAe;MACf,mBAAmB;MACnB;IACF;;IAEA;QACI,aAAa;QACb,oBAAoB;QACpB,8BAA8B;MAChC;;MAEA;QACE,kBAAkB;IACtB;;IAEA;QACI,mBAAmB;QACnB,YAAY;QACZ,yBAAyB;QACzB,gBAAgB;QAChB,0BAA0B;QAC1B,oCAAoC;IACxC;;IAEA;QACI;YACI,UAAU;QACd;QACA;YACI,YAAY;QAChB;MACF;;MAEA;QACE,aAAa;QACb,eAAe;QACf,WAAW;QACX,kBAAkB;QAClB,qBAAqB;QACrB,eAAe;QACf,kBAAkB;MACpB;;MAEA;UACI,YAAY;UACZ,yBAAyB;UACzB,qBAAqB;UACrB;MACJ;;MAEA;QACE,mBAAmB;QACnB,YAAY;QACZ,gBAAgB;MAClB;;MAEA;QACE,mBAAmB;QACnB,YAAY;QACZ,gBAAgB;MAClB;;MAEA;QACE,mBAAmB;QACnB,YAAY;QACZ,gBAAgB;MAClB;;MAEA;QACE,mBAAmB;QACnB,YAAY;QACZ,gBAAgB;MAClB;;MAEA;QACE,YAAY;QACZ,gBAAgB;QAChB;;;;SAIC;MACH;;MAEA;QACE,mBAAmB;QACnB,gBAAgB;QAChB,YAAY;QACZ,iEAAiE;MACnE;;MAEA;QACE,mBAAmB;QACnB,YAAY;QACZ,gBAAgB;MAClB;;MAEA;QACE,WAAW;QACX,8BAA8B;MAChC;;EAEJ;IACE,aAAa;IACb,sCAAsC;IACtC,aAAa;IACb,cAAc;IACd,eAAe;IACf,gBAAgB;EAClB;;EAEA;IACE,eAAe;EACjB;;EAEA;IACE,sBAAsB;IACtB,qBAAqB;IACrB,6DAA6D;EAC/D;;EAEA;IACE,kBAAkB;EACpB;;EAEA;IACE,kBAAkB;EACpB;;EAEA;IACE,YAAY;IACZ,kBAAkB;EACpB;;EAEA;IACE,YAAY;EACd;;EAEA;IACE,aAAa;EACf;;EAEA;IACE,mBAAmB;EACrB;;EAEA;IACE,kBAAkB;EACpB;;IAEE;MACE,oBAAoB;MACpB,mBAAmB;MACnB,kBAAkB;MAClB,aAAa;MACb,cAAc;MACd,sBAAsB;MACtB,uBAAuB;MACvB,sBAAsB;MACtB;;;;;;EAMJ;MACI;QACE,mBAAmB;QACnB,gBAAgB;QAChB,eAAe;QACf,cAAc;MAChB;;KAED;QACG,oBAAoB;QACpB,eAAe;MACjB;;EAEJ;MACI,YAAY;MACZ,WAAW;MACX,2BAA2B;MAC3B,sBAAsB;EAC1B;;EAEA;IACE,mCAAmC;IACnC,gBAAgB;EAClB","sourcesContent":[".collection-preview {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin-bottom: 30px;\r\n    }\r\n  \r\n  .title {\r\n      font-size: 28px;\r\n      margin-bottom: 25px;\r\n      background-color: rgb(238, 199, 222)\r\n    }\r\n  \r\n    .preview1 {\r\n        display: flex;\r\n        margin-bottom: 100px;\r\n        justify-content: space-between;\r\n      }\r\n  \r\n      .onHovering{\r\n        visibility: hidden;\r\n    }\r\n    \r\n    .select:hover .onHovering{\r\n        visibility: visible;\r\n        width: 150px;\r\n        background-color: hotpink;\r\n        margin-left: 5px;\r\n        animation:  parthudi 0.2s ;\r\n        background-color: rgb(225, 243, 225);\r\n    }\r\n    \r\n    @keyframes parthudi {\r\n        0% {\r\n            width: 0px;        \r\n        }\r\n        100% {\r\n            width: 150px;\r\n        }\r\n      } \r\n  \r\n      .fa {\r\n        padding: 20px;\r\n        font-size: 30px;\r\n        width: 30px;\r\n        text-align: center;\r\n        text-decoration: none;\r\n        margin: 5px 2px;\r\n        border-radius: 50%;\r\n      }\r\n      \r\n      .fa:hover {\r\n          opacity: 1.5;\r\n          transform: rotateX(25deg);\r\n          text-decoration: none;\r\n          color: rgb(201, 198, 198)\r\n      }\r\n      \r\n      .fa-facebook {\r\n        background: #3B5998;\r\n        color: white;\r\n        margin: 0px 10px;\r\n      }\r\n      \r\n      .fa-twitter {\r\n        background: #55ACEE;\r\n        color: white;\r\n        margin: 0px 10px;\r\n      }\r\n      \r\n      .fa-google {\r\n        background: #dd4b39;\r\n        color: white;\r\n        margin: 0px 10px;\r\n      }\r\n      \r\n      .fa-linkedin {\r\n        background: #007bb5;\r\n        color: white;\r\n        margin: 0px 10px;\r\n      }\r\n      \r\n      .fa-instagram {\r\n        color: white;\r\n        margin: 0px 10px;\r\n        background: linear-gradient(\r\n          to bottom,\r\n          rgb(80, 145, 189) 0%,\r\n          rgb(214, 71, 183) 100%\r\n        );\r\n      }\r\n      \r\n      .fa-snapchat-ghost {\r\n        background: #fffc00;\r\n        margin: 0px 10px;\r\n        color: white;\r\n        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;\r\n      }\r\n      \r\n      .fa-skype {\r\n        background: #00aff0;\r\n        color: white;\r\n        margin: 0px 10px;\r\n      }\r\n\r\n      .directory1-menu {\r\n        width: 100%;\r\n        justify-content: space-between;\r\n      }\r\n      \r\n  .menu-item1 {\r\n    height: 240px;\r\n    border: 0.5px solid rgb(229, 199, 199);\r\n    display: flex;\r\n    flex: 1 1 auto;\r\n    flex-wrap: wrap;\r\n    overflow: hidden;\r\n  }\r\n\r\n  .menu-item1:hover {\r\n    cursor: pointer;\r\n  }\r\n\r\n  .menu-item1:hover .background-image1 {\r\n    background-size: cover;\r\n    transform: scale(1.1);\r\n    transition: transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);\r\n  }\r\n\r\n  .menu-item1 .content1 {\r\n    margin-top: 150px ;\r\n  }\r\n\r\n  .menu-item1.large1 .content1 {\r\n    margin-top: 285px ;\r\n  }\r\n\r\n  .menu-item1:hover .content1{\r\n    opacity: 0.7;\r\n    text-align: center;\r\n  }\r\n\r\n  .menu-item1.large1:hover .content1{\r\n    opacity: 0.7;\r\n  }\r\n\r\n  .menu-item1.large1 {\r\n    height: 380px;\r\n  }\r\n  \r\n  .menu-item1:first-child {\r\n    margin-right: 7.5px;\r\n  }\r\n  \r\n  .menu-item1:last-child {\r\n    margin-left: 7.5px;\r\n  }\r\n  \r\n    .content1 {\r\n      display: inline-flex;\r\n      align-items: center;\r\n      text-align: center;\r\n      opacity: 0.75;\r\n      display: block;\r\n      flex-direction: column;\r\n      justify-content: center;\r\n      border:0px solid white;\r\n      background: linear-gradient(\r\n          to right,\r\n          rgb(205, 202, 202) 100%,\r\n          rgb(241, 250, 249) 0%\r\n          \r\n      )\r\n  }\r\n      .title1 {\r\n        font-weight: bolder;\r\n        margin-top: 20px;\r\n        font-size: 22px;\r\n        color: #201818;\r\n      }\r\n  \r\n     .subtitle1 {\r\n        font-weight: lighter;\r\n        font-size: 17px;\r\n      }\r\n    \r\n  .background-image1 {\r\n      height: 100%;\r\n      width: 100%;\r\n      background-position: center;\r\n      background-size: cover;\r\n  } \r\n\r\n  .title2{\r\n    font-family: \"Henny Penny, cursive\";\r\n    font-size: large;\r\n  } "],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./src/App.css":
+/*!*********************!*\
+  !*** ./src/App.css ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!../node_modules/postcss-loader/src??postcss!./App.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+
+if (true) {
+  if (!content.locals || module.hot.invalidate) {
+    var isEqualLocals = function isEqualLocals(a, b, isNamedExport) {
+  if (!a && b || a && !b) {
+    return false;
+  }
+
+  var p;
+
+  for (p in a) {
+    if (isNamedExport && p === 'default') {
+      // eslint-disable-next-line no-continue
+      continue;
+    }
+
+    if (a[p] !== b[p]) {
+      return false;
+    }
+  }
+
+  for (p in b) {
+    if (isNamedExport && p === 'default') {
+      // eslint-disable-next-line no-continue
+      continue;
+    }
+
+    if (!a[p]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+    var oldLocals = content.locals;
+
+    module.hot.accept(
+      /*! !../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!../node_modules/postcss-loader/src??postcss!./App.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css",
+      function () {
+        content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!../node_modules/postcss-loader/src??postcss!./App.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css");
+
+              content = content.__esModule ? content.default : content;
+
+              if (typeof content === 'string') {
+                content = [[module.i, content, '']];
+              }
+
+              if (!isEqualLocals(oldLocals, content.locals)) {
+                module.hot.invalidate();
+
+                return;
+              }
+
+              oldLocals = content.locals;
+
+              update(content);
+      }
+    )
+  }
+
+  module.hot.dispose(function() {
+    update();
+  });
+}
+
+module.exports = content.locals || {};
+
+/***/ }),
+
+/***/ "./src/App.js":
+/*!********************!*\
+  !*** ./src/App.js ***!
+  \********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(__react_refresh_utils__, __react_refresh_error_overlay__) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Layout */ "./src/components/Layout.jsx");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__);
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+__webpack_require__.$Refresh$.setup(module.i);
+
+var _jsxFileName = "C:\\Users\\User1\\Desktop\\MERN STACK\\MERN\\HumansWear\\Humans Wear Frontend\\src\\App.js",
+    _s = __webpack_require__.$Refresh$.signature();
+
+
+
+
+
+
+ // Lazy loading loads the components only when required
+
+
+const HomePage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c = () => Promise.all(/*! import() */[__webpack_require__.e(3), __webpack_require__.e(10), __webpack_require__.e(12)]).then(__webpack_require__.bind(null, /*! ./pages/Homepage */ "./src/pages/Homepage.jsx")));
+_c2 = HomePage;
+const SignInAndSignUp = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c3 = () => Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(4), __webpack_require__.e(13), __webpack_require__.e(5), __webpack_require__.e(19)]).then(__webpack_require__.bind(null, /*! ./pages/Login */ "./src/pages/Login.jsx")));
+_c4 = SignInAndSignUp;
+const ShopPage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c5 = () => Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(18)]).then(__webpack_require__.bind(null, /*! ./pages/Shop/shop */ "./src/pages/Shop/shop.jsx")));
+_c6 = ShopPage;
+const HatsPage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c7 = () => Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(1), __webpack_require__.e(21)]).then(__webpack_require__.bind(null, /*! ./pages/Hats */ "./src/pages/Hats.jsx")));
+_c8 = HatsPage;
+const SneakersPage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c9 = () => Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(1), __webpack_require__.e(24)]).then(__webpack_require__.bind(null, /*! ./pages/Sneakers */ "./src/pages/Sneakers.jsx")));
+_c10 = SneakersPage;
+const JacketsPage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c11 = () => Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(1), __webpack_require__.e(22)]).then(__webpack_require__.bind(null, /*! ./pages/Jackets */ "./src/pages/Jackets.jsx")));
+_c12 = JacketsPage;
+const WomensPage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c13 = () => Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(1), __webpack_require__.e(25)]).then(__webpack_require__.bind(null, /*! ./pages/Womens */ "./src/pages/Womens.jsx")));
+_c14 = WomensPage;
+const MensPage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c15 = () => Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(1), __webpack_require__.e(23)]).then(__webpack_require__.bind(null, /*! ./pages/Mens */ "./src/pages/Mens.jsx")));
+_c16 = MensPage;
+const ShowSingleImage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c17 = () => Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3), __webpack_require__.e(8), __webpack_require__.e(15), __webpack_require__.e(1), __webpack_require__.e(16)]).then(__webpack_require__.bind(null, /*! ./pages/showSingleImage/singleImage */ "./src/pages/showSingleImage/singleImage.jsx")));
+_c18 = ShowSingleImage;
+const Bag = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c19 = () => Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(6), __webpack_require__.e(26)]).then(__webpack_require__.bind(null, /*! ./pages/Bag */ "./src/pages/Bag.jsx")));
+_c20 = Bag;
+const Address = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c21 = () => Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(4), __webpack_require__.e(3), __webpack_require__.e(8), __webpack_require__.e(7), __webpack_require__.e(17), __webpack_require__.e(6), __webpack_require__.e(5), __webpack_require__.e(9), __webpack_require__.e(20)]).then(__webpack_require__.bind(null, /*! ./pages/Address */ "./src/pages/Address.jsx")));
+_c22 = Address;
+const WishList = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c23 = () => Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(28)]).then(__webpack_require__.bind(null, /*! ./pages/WishList */ "./src/pages/WishList.jsx")));
+_c24 = WishList;
+const Payment = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c25 = () => Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(4), __webpack_require__.e(7), __webpack_require__.e(11), __webpack_require__.e(6), __webpack_require__.e(5), __webpack_require__.e(9), __webpack_require__.e(14)]).then(__webpack_require__.bind(null, /*! ./pages/Payment */ "./src/pages/Payment.jsx")));
+_c26 = Payment;
+const Profile = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(_c27 = () => __webpack_require__.e(/*! import() */ 27).then(__webpack_require__.t.bind(null, /*! ./pages/Profile */ "./src/pages/Profile.jsx", 7)));
+_c28 = Profile;
+
+const App = () => {
+  _s();
+
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_5__["useDispatch"])();
+
+  const loader = props => {
+    // props.onLoad ? onLoad() : onComplete();
+    return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Backdrop"], {
+      sx: {
+        color: '#fff',
+        zIndex: theme => theme.zIndex.drawer + 100000000
+      },
+      open: true,
+      style: {
+        zIndex: "1"
+      },
+      children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Box"], {
+        pt: 10,
+        pb: 20,
+        children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["CircularProgress"], {
+          color: "secondary"
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 34,
+          columnNumber: 14
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 33,
+        columnNumber: 11
+      }, undefined)
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 7
+    }, undefined);
+  }; // const onLoad = () => {
+  //   dispatch({ type: "loading" , payload: {loading: true}}); 
+  // }
+  // const onComplete = () => {
+  //   dispatch({ type: "loading" , payload: {loading: false}});
+  // }
+
+
+  const routes = () => {
+    return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], {
+      children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/",
+        exact: true,
+        render: props => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(HomePage, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 53,
+            columnNumber: 15
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 52,
+          columnNumber: 13
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 51,
+        columnNumber: 11
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/shop",
+        exact: true,
+        render: () => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(ShopPage, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 59,
+            columnNumber: 17
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 58,
+          columnNumber: 13
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 57,
+        columnNumber: 11
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/login",
+        exact: true,
+        render: () => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(SignInAndSignUp, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 65,
+            columnNumber: 17
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 64,
+          columnNumber: 13
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 63,
+        columnNumber: 11
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/shop/hats",
+        render: () => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(HatsPage, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 15
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 71,
+          columnNumber: 13
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 70,
+        columnNumber: 11
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/shop/sneakers",
+        render: () => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(SneakersPage, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 78,
+            columnNumber: 17
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 77,
+          columnNumber: 15
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 76,
+        columnNumber: 11
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/shop/jackets",
+        render: () => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(JacketsPage, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 84,
+            columnNumber: 15
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 83,
+          columnNumber: 13
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 82,
+        columnNumber: 11
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/shop/womens",
+        render: () => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(WomensPage, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 90,
+            columnNumber: 15
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 89,
+          columnNumber: 13
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 88,
+        columnNumber: 11
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/shop/mens",
+        render: () => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(MensPage, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 95,
+            columnNumber: 15
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 94,
+          columnNumber: 13
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 93,
+        columnNumber: 11
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/shop/product/:name/:id",
+        exact: true,
+        render: () => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(ShowSingleImage, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 101,
+            columnNumber: 15
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 100,
+          columnNumber: 13
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 99,
+        columnNumber: 11
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/checkout/cart",
+        exact: true,
+        render: () => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(Bag, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 107,
+            columnNumber: 17
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 106,
+          columnNumber: 15
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 105,
+        columnNumber: 13
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/checkout/address",
+        exact: true,
+        render: () => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(Address, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 113,
+            columnNumber: 17
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 112,
+          columnNumber: 15
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 111,
+        columnNumber: 13
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/whistlist",
+        exact: true,
+        render: () => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(WishList, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 119,
+            columnNumber: 17
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 118,
+          columnNumber: 15
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 117,
+        columnNumber: 13
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/checkout/payment",
+        exact: true,
+        render: () => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(Payment, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 125,
+            columnNumber: 17
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 124,
+          columnNumber: 15
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 123,
+        columnNumber: 13
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "*",
+        render: () => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: loader(),
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(HomePage, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 137,
+            columnNumber: 17
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 136,
+          columnNumber: 15
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 135,
+        columnNumber: 13
+      }, undefined)]
+    }, void 0, true, {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 7
+    }, undefined);
+  };
+
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: routes()
+  }, void 0, false, {
+    fileName: _jsxFileName,
+    lineNumber: 144,
+    columnNumber: 5
+  }, undefined);
+};
+
+_s(App, "rgTLoBID190wEKCp9+G8W6F7A5M=", false, function () {
+  return [react_redux__WEBPACK_IMPORTED_MODULE_5__["useDispatch"]];
+});
+
+_c29 = App;
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+var _c, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c10, _c11, _c12, _c13, _c14, _c15, _c16, _c17, _c18, _c19, _c20, _c21, _c22, _c23, _c24, _c25, _c26, _c27, _c28, _c29;
+
+__webpack_require__.$Refresh$.register(_c, "HomePage$React.lazy");
+__webpack_require__.$Refresh$.register(_c2, "HomePage");
+__webpack_require__.$Refresh$.register(_c3, "SignInAndSignUp$React.lazy");
+__webpack_require__.$Refresh$.register(_c4, "SignInAndSignUp");
+__webpack_require__.$Refresh$.register(_c5, "ShopPage$React.lazy");
+__webpack_require__.$Refresh$.register(_c6, "ShopPage");
+__webpack_require__.$Refresh$.register(_c7, "HatsPage$React.lazy");
+__webpack_require__.$Refresh$.register(_c8, "HatsPage");
+__webpack_require__.$Refresh$.register(_c9, "SneakersPage$React.lazy");
+__webpack_require__.$Refresh$.register(_c10, "SneakersPage");
+__webpack_require__.$Refresh$.register(_c11, "JacketsPage$React.lazy");
+__webpack_require__.$Refresh$.register(_c12, "JacketsPage");
+__webpack_require__.$Refresh$.register(_c13, "WomensPage$React.lazy");
+__webpack_require__.$Refresh$.register(_c14, "WomensPage");
+__webpack_require__.$Refresh$.register(_c15, "MensPage$React.lazy");
+__webpack_require__.$Refresh$.register(_c16, "MensPage");
+__webpack_require__.$Refresh$.register(_c17, "ShowSingleImage$React.lazy");
+__webpack_require__.$Refresh$.register(_c18, "ShowSingleImage");
+__webpack_require__.$Refresh$.register(_c19, "Bag$React.lazy");
+__webpack_require__.$Refresh$.register(_c20, "Bag");
+__webpack_require__.$Refresh$.register(_c21, "Address$React.lazy");
+__webpack_require__.$Refresh$.register(_c22, "Address");
+__webpack_require__.$Refresh$.register(_c23, "WishList$React.lazy");
+__webpack_require__.$Refresh$.register(_c24, "WishList");
+__webpack_require__.$Refresh$.register(_c25, "Payment$React.lazy");
+__webpack_require__.$Refresh$.register(_c26, "Payment");
+__webpack_require__.$Refresh$.register(_c27, "Profile$React.lazy");
+__webpack_require__.$Refresh$.register(_c28, "Profile");
+__webpack_require__.$Refresh$.register(_c29, "App");
+
+const currentExports = __react_refresh_utils__.getModuleExports(module.i);
+__react_refresh_utils__.registerExportsForReactRefresh(currentExports, module.i);
+
+if (true) {
+  const isHotUpdate = !!module.hot.data;
+  const prevExports = isHotUpdate ? module.hot.data.prevExports : null;
+
+  if (__react_refresh_utils__.isReactRefreshBoundary(currentExports)) {
+    module.hot.dispose(
+      /**
+       * A callback to performs a full refresh if React has unrecoverable errors,
+       * and also caches the to-be-disposed module.
+       * @param {*} data A hot module data object from Webpack HMR.
+       * @returns {void}
+       */
+      function hotDisposeCallback(data) {
+        // We have to mutate the data object to get data registered and cached
+        data.prevExports = currentExports;
+      }
+    );
+    module.hot.accept(
+      /**
+       * An error handler to allow self-recovering behaviours.
+       * @param {Error} error An error occurred during evaluation of a module.
+       * @returns {void}
+       */
+      function hotErrorHandler(error) {
+        if (
+          typeof __react_refresh_error_overlay__ !== 'undefined' &&
+          __react_refresh_error_overlay__
+        ) {
+          __react_refresh_error_overlay__.handleRuntimeError(error);
+        }
+
+        if (typeof __react_refresh_test__ !== 'undefined' && __react_refresh_test__) {
+          if (window.onHotAcceptError) {
+            window.onHotAcceptError(error.message);
+          }
+        }
+
+        __webpack_require__.c[module.i].hot.accept(hotErrorHandler);
+      }
+    );
+
+    if (isHotUpdate) {
+      if (
+        __react_refresh_utils__.isReactRefreshBoundary(prevExports) &&
+        __react_refresh_utils__.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)
+      ) {
+        module.hot.invalidate();
+      } else {
+        __react_refresh_utils__.enqueueUpdate(
+          /**
+           * A function to dismiss the error overlay after performing React refresh.
+           * @returns {void}
+           */
+          function updateCallback() {
+            if (
+              typeof __react_refresh_error_overlay__ !== 'undefined' &&
+              __react_refresh_error_overlay__
+            ) {
+              __react_refresh_error_overlay__.clearRuntimeErrors();
+            }
+          }
+        );
+      }
+    }
+  } else {
+    if (isHotUpdate && __react_refresh_utils__.isReactRefreshBoundary(prevExports)) {
+      module.hot.invalidate();
+    }
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js"), __webpack_require__(/*! ./node_modules/react-dev-utils/refreshOverlayInterop.js */ "./node_modules/react-dev-utils/refreshOverlayInterop.js")))
+
+/***/ }),
+
+/***/ "./src/Store/index.js":
+/*!****************************!*\
+  !*** ./src/Store/index.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(__react_refresh_utils__, __react_refresh_error_overlay__) {/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+__webpack_require__.$Refresh$.setup(module.i);
+
+
+const defaultState = {
+  totalAmount: 0,
+  products: [],
+  whishList: [],
+  loading: false
+};
+
+const reducerFunc = function () {
+  let state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { ...defaultState
+  };
+  let action = arguments.length > 1 ? arguments[1] : undefined;
+
+  if (action.type === "totalAmount") {
+    return {
+      totalAmount: action.payload.price
+    };
+  }
+
+  if (action.type === "addProducts") {
+    const products = [...state.products];
+    products.push(action.payload.product);
+    return {
+      products: products
+    };
+  }
+
+  if (action.type === "addWhishlist") {
+    const products = [...state.whishList];
+    products.push(action.payload.whishList);
+    return {
+      whishList: products
+    };
+  }
+
+  if (action.type === "loading") {
+    return {
+      loading: action.payload.loading
+    };
+  }
+};
+
+const store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(reducerFunc);
+/* harmony default export */ __webpack_exports__["default"] = (store);
+
+const currentExports = __react_refresh_utils__.getModuleExports(module.i);
+__react_refresh_utils__.registerExportsForReactRefresh(currentExports, module.i);
+
+if (true) {
+  const isHotUpdate = !!module.hot.data;
+  const prevExports = isHotUpdate ? module.hot.data.prevExports : null;
+
+  if (__react_refresh_utils__.isReactRefreshBoundary(currentExports)) {
+    module.hot.dispose(
+      /**
+       * A callback to performs a full refresh if React has unrecoverable errors,
+       * and also caches the to-be-disposed module.
+       * @param {*} data A hot module data object from Webpack HMR.
+       * @returns {void}
+       */
+      function hotDisposeCallback(data) {
+        // We have to mutate the data object to get data registered and cached
+        data.prevExports = currentExports;
+      }
+    );
+    module.hot.accept(
+      /**
+       * An error handler to allow self-recovering behaviours.
+       * @param {Error} error An error occurred during evaluation of a module.
+       * @returns {void}
+       */
+      function hotErrorHandler(error) {
+        if (
+          typeof __react_refresh_error_overlay__ !== 'undefined' &&
+          __react_refresh_error_overlay__
+        ) {
+          __react_refresh_error_overlay__.handleRuntimeError(error);
+        }
+
+        if (typeof __react_refresh_test__ !== 'undefined' && __react_refresh_test__) {
+          if (window.onHotAcceptError) {
+            window.onHotAcceptError(error.message);
+          }
+        }
+
+        __webpack_require__.c[module.i].hot.accept(hotErrorHandler);
+      }
+    );
+
+    if (isHotUpdate) {
+      if (
+        __react_refresh_utils__.isReactRefreshBoundary(prevExports) &&
+        __react_refresh_utils__.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)
+      ) {
+        module.hot.invalidate();
+      } else {
+        __react_refresh_utils__.enqueueUpdate(
+          /**
+           * A function to dismiss the error overlay after performing React refresh.
+           * @returns {void}
+           */
+          function updateCallback() {
+            if (
+              typeof __react_refresh_error_overlay__ !== 'undefined' &&
+              __react_refresh_error_overlay__
+            ) {
+              __react_refresh_error_overlay__.clearRuntimeErrors();
+            }
+          }
+        );
+      }
+    }
+  } else {
+    if (isHotUpdate && __react_refresh_utils__.isReactRefreshBoundary(prevExports)) {
+      module.hot.invalidate();
+    }
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js"), __webpack_require__(/*! ./node_modules/react-dev-utils/refreshOverlayInterop.js */ "./node_modules/react-dev-utils/refreshOverlayInterop.js")))
+
+/***/ }),
+
+/***/ "./src/assets/HumansWear.png":
+/*!***********************************!*\
+  !*** ./src/assets/HumansWear.png ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "static/media/HumansWear.10399840.png");
+
+/***/ }),
+
+/***/ "./src/audio/cartoon.mp3":
+/*!*******************************!*\
+  !*** ./src/audio/cartoon.mp3 ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "static/media/cartoon.9128c99b.mp3");
+
+/***/ }),
+
+/***/ "./src/components/Header.jsx":
+/*!***********************************!*\
+  !*** ./src/components/Header.jsx ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(__react_refresh_utils__, __react_refresh_error_overlay__) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _LocalStorageItems_Cart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./LocalStorageItems/Cart */ "./src/components/LocalStorageItems/Cart.jsx");
+/* harmony import */ var _LocalStorageItems_Wishlist__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./LocalStorageItems/Wishlist */ "./src/components/LocalStorageItems/Wishlist.jsx");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/index.js");
+/* harmony import */ var _mui_icons_material_LoginOutlined__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/icons-material/LoginOutlined */ "./node_modules/@mui/icons-material/LoginOutlined.js");
+/* harmony import */ var _mui_icons_material_LoginOutlined__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_mui_icons_material_LoginOutlined__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _mui_icons_material_LogoutOutlined__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/icons-material/LogoutOutlined */ "./node_modules/@mui/icons-material/LogoutOutlined.js");
+/* harmony import */ var _mui_icons_material_LogoutOutlined__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_mui_icons_material_LogoutOutlined__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _LocalStorageItems_User__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./LocalStorageItems/User */ "./src/components/LocalStorageItems/User.jsx");
+/* harmony import */ var _mui_material_Toolbar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material/Toolbar */ "./node_modules/@mui/material/Toolbar/index.js");
+/* harmony import */ var _mui_material_IconButton__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material/IconButton */ "./node_modules/@mui/material/IconButton/index.js");
+/* harmony import */ var _mui_material_Menu__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material/Menu */ "./node_modules/@mui/material/Menu/index.js");
+/* harmony import */ var _mui_icons_material_Menu__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/icons-material/Menu */ "./node_modules/@mui/icons-material/Menu.js");
+/* harmony import */ var _mui_icons_material_Menu__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_mui_icons_material_Menu__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material/MenuItem */ "./node_modules/@mui/material/MenuItem/index.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _assets_HumansWear_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../assets/HumansWear.png */ "./src/assets/HumansWear.png");
+/* harmony import */ var _NavLink__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./NavLink */ "./src/components/NavLink.jsx");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__);
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+__webpack_require__.$Refresh$.setup(module.i);
+
+var _jsxFileName = "C:\\Users\\User1\\Desktop\\MERN STACK\\MERN\\HumansWear\\Humans Wear Frontend\\src\\components\\Header.jsx",
+  _s = __webpack_require__.$Refresh$.signature();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const useStyle = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
+  adjustSizing: {
+    padding: "30px 40px"
+  },
+  logoContainer: {
+    "&:hover": {
+      transform: "scale(1.1)"
+    }
+  },
+  title: {
+    fontFamily: "Henny Penny , cursive",
+    fontSize: "3rem"
+  },
+  headerText: {
+    color: "black",
+    fontWeight: "bold",
+    "&:hover": {
+      color: "green"
+    }
+  },
+  headerIcons: {
+    color: "grey",
+    "&:hover": {
+      color: "green"
+    }
+  },
+  adjustMargin: {
+    marginLeft: "20rem"
+  },
+  [theme.breakpoints.up("md")]: {
+    marginLeft: "5rem"
+  },
+  [theme.breakpoints.down("sm")]: {
+    title: {
+      fontSize: "25px",
+      letterSpacing: "3px"
+    }
+  }
+}));
+const pages = [{
+  name: 'Mens',
+  to: "/shop/mens"
+}, {
+  name: 'Womens',
+  to: "/shop/womens"
+}];
+const HeaderCompo = () => {
+  _s();
+  const classes = useStyle();
+  const [anchorElNav, setAnchorElNav] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(null);
+  const [cartitems, setCartItems] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("0");
+  const [wishlistitems, setWishListItems] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("0");
+  const [user, setUser] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({});
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    const user = Object(_LocalStorageItems_User__WEBPACK_IMPORTED_MODULE_8__["getUser"])();
+    const itemsFromCart = Object(_LocalStorageItems_Cart__WEBPACK_IMPORTED_MODULE_3__["itemTotal"])();
+    const itemssFromWishList = Object(_LocalStorageItems_Wishlist__WEBPACK_IMPORTED_MODULE_4__["wishListItemTotal"])();
+    setUser(user);
+    setCartItems(itemsFromCart);
+    setWishListItems(itemssFromWishList);
+  }, [cartitems, wishlistitems, user.is_authorized]);
+  const handleOpenNavMenu = event => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Paper"], {
+    elevation: 0,
+    style: {
+      position: "fixed",
+      top: "0px",
+      width: "100%",
+      zIndex: "1"
+    },
+    children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_material_Toolbar__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      disableGutters: true,
+      children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+        sx: {
+          display: {
+            xs: 'flex',
+            md: 'none'
+          }
+        },
+        children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_material_IconButton__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          size: "large",
+          "aria-label": "account of current user",
+          "aria-controls": "menu-appbar",
+          "aria-haspopup": "true",
+          onClick: handleOpenNavMenu,
+          color: "inherit",
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_icons_material_Menu__WEBPACK_IMPORTED_MODULE_12___default.a, {}, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 96,
+            columnNumber: 25
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 88,
+          columnNumber: 21
+        }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_material_Menu__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          id: "menu-appbar",
+          anchorEl: anchorElNav,
+          anchorOrigin: {
+            vertical: 'bottom',
+            horizontal: 'left'
+          },
+          keepMounted: true,
+          transformOrigin: {
+            vertical: 'top',
+            horizontal: 'left'
+          },
+          open: Boolean(anchorElNav),
+          onClose: handleCloseNavMenu,
+          sx: {
+            display: {
+              xs: 'block',
+              md: 'none'
+            }
+          },
+          children: pages.map(page => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_13__["default"], {
+            onClick: handleCloseNavMenu,
+            children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
+              textAlign: "center",
+              children: page.name
+            }, void 0, false, {
+              fileName: _jsxFileName,
+              lineNumber: 119,
+              columnNumber: 29
+            }, undefined)
+          }, page.name, false, {
+            fileName: _jsxFileName,
+            lineNumber: 118,
+            columnNumber: 25
+          }, undefined))
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 99,
+          columnNumber: 21
+        }, undefined)]
+      }, void 0, true, {
+        fileName: _jsxFileName,
+        lineNumber: 87,
+        columnNumber: 17
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+        sx: {
+          flexGrow: {
+            xs: '1',
+            md: '0.2'
+          },
+          display: {
+            xs: 'flex'
+          }
+        },
+        children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_NavLink__WEBPACK_IMPORTED_MODULE_16__["default"], {
+          size: "small",
+          to: "/",
+          sx: {
+            display: {
+              xs: 'none',
+              md: 'flex'
+            }
+          },
+          src: _assets_HumansWear_png__WEBPACK_IMPORTED_MODULE_15__["default"],
+          alt: "HumansWear",
+          width: "90px",
+          img: "yes"
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 126,
+          columnNumber: 21
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 125,
+        columnNumber: 17
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+        sx: {
+          flexGrow: {
+            xs: '1',
+            md: '1.5'
+          },
+          display: {
+            xs: 'none',
+            md: 'flex'
+          }
+        },
+        children: pages.map(page => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_NavLink__WEBPACK_IMPORTED_MODULE_16__["default"], {
+          size: "large",
+          to: `${page.to}`,
+          name: `${page.name}`,
+          variant: "body1",
+          style: {
+            color: "black",
+            fontWeight: "bold",
+            letterSpacing: "1px"
+          },
+          sx: {
+            textDecoration: 'none'
+          }
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 136,
+          columnNumber: 25
+        }, undefined))
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 134,
+        columnNumber: 17
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])("center", {
+        children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+          sx: {
+            flexGrow: {
+              xs: '1',
+              md: '1.0'
+            },
+            display: {
+              xs: 'flex'
+            }
+          },
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
+            variant: "h4",
+            color: "secondary",
+            noWrap: true,
+            style: {
+              fontFamily: "Henny Penny , cursive"
+            },
+            children: "The Humans Wear"
+          }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 142,
+            columnNumber: 25
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 141,
+          columnNumber: 21
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 140,
+        columnNumber: 17
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+        sx: {
+          display: {
+            xs: 'none',
+            md: 'flex'
+          }
+        },
+        children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+          className: classes.adjustMargin,
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["BottomNavigation"], {
+            showLabels: true,
+            children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["BottomNavigationAction"], {
+              label: "Bag",
+              className: classes.headerText,
+              icon: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
+                badgeContent: cartitems,
+                color: "error",
+                children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
+                  to: "/checkout/cart",
+                  className: classes.headerIcons,
+                  children: ["  ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_icons__WEBPACK_IMPORTED_MODULE_5__["AddShoppingCartOutlined"], {}, void 0, false, {
+                    fileName: _jsxFileName,
+                    lineNumber: 155,
+                    columnNumber: 96
+                  }, undefined), " "]
+                }, void 0, true, {
+                  fileName: _jsxFileName,
+                  lineNumber: 155,
+                  columnNumber: 33
+                }, undefined)
+              }, void 0, false, {
+                fileName: _jsxFileName,
+                lineNumber: 154,
+                columnNumber: 102
+              }, undefined)
+            }, void 0, false, {
+              fileName: _jsxFileName,
+              lineNumber: 154,
+              columnNumber: 29
+            }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["BottomNavigationAction"], {
+              label: "Whishlist",
+              className: classes.headerText,
+              icon: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
+                badgeContent: wishlistitems,
+                color: "error",
+                children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
+                  to: "/whistlist",
+                  className: classes.headerIcons,
+                  children: [" ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_icons__WEBPACK_IMPORTED_MODULE_5__["FavoriteBorderOutlined"], {}, void 0, false, {
+                    fileName: _jsxFileName,
+                    lineNumber: 158,
+                    columnNumber: 91
+                  }, undefined), " "]
+                }, void 0, true, {
+                  fileName: _jsxFileName,
+                  lineNumber: 158,
+                  columnNumber: 33
+                }, undefined)
+              }, void 0, false, {
+                fileName: _jsxFileName,
+                lineNumber: 157,
+                columnNumber: 108
+              }, undefined)
+            }, void 0, false, {
+              fileName: _jsxFileName,
+              lineNumber: 157,
+              columnNumber: 29
+            }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["BottomNavigationAction"], {
+              label: "Shop",
+              className: classes.headerText,
+              icon: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
+                to: "/shop",
+                className: classes.headerIcons,
+                children: [" ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_icons__WEBPACK_IMPORTED_MODULE_5__["StorefrontOutlined"], {}, void 0, false, {
+                  fileName: _jsxFileName,
+                  lineNumber: 160,
+                  columnNumber: 157
+                }, undefined), " "]
+              }, void 0, true, {
+                fileName: _jsxFileName,
+                lineNumber: 160,
+                columnNumber: 104
+              }, undefined)
+            }, void 0, false, {
+              fileName: _jsxFileName,
+              lineNumber: 160,
+              columnNumber: 29
+            }, undefined), !lodash__WEBPACK_IMPORTED_MODULE_14___default.a.isEmpty(user) && user.is_authorized ? /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["BottomNavigationAction"], {
+              label: "Logout",
+              className: classes.headerText,
+              icon: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
+                to: "/login",
+                className: classes.headerIcons,
+                children: [" ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_icons_material_LogoutOutlined__WEBPACK_IMPORTED_MODULE_7___default.a, {
+                  onClick: () => Object(_LocalStorageItems_User__WEBPACK_IMPORTED_MODULE_8__["removeUser"])()
+                }, void 0, false, {
+                  fileName: _jsxFileName,
+                  lineNumber: 162,
+                  columnNumber: 163
+                }, undefined), " "]
+              }, void 0, true, {
+                fileName: _jsxFileName,
+                lineNumber: 162,
+                columnNumber: 109
+              }, undefined)
+            }, void 0, false, {
+              fileName: _jsxFileName,
+              lineNumber: 162,
+              columnNumber: 33
+            }, undefined) : /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["BottomNavigationAction"], {
+              label: "Login",
+              className: classes.headerText,
+              icon: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
+                to: "/login",
+                className: classes.headerIcons,
+                children: [" ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_17__["jsxDEV"])(_mui_icons_material_LoginOutlined__WEBPACK_IMPORTED_MODULE_6___default.a, {}, void 0, false, {
+                  fileName: _jsxFileName,
+                  lineNumber: 164,
+                  columnNumber: 159
+                }, undefined), " "]
+              }, void 0, true, {
+                fileName: _jsxFileName,
+                lineNumber: 164,
+                columnNumber: 105
+              }, undefined)
+            }, void 0, false, {
+              fileName: _jsxFileName,
+              lineNumber: 164,
+              columnNumber: 29
+            }, undefined)]
+          }, void 0, true, {
+            fileName: _jsxFileName,
+            lineNumber: 153,
+            columnNumber: 25
+          }, undefined)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 152,
+          columnNumber: 21
+        }, undefined)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 151,
+        columnNumber: 17
+      }, undefined)]
+    }, void 0, true, {
+      fileName: _jsxFileName,
+      lineNumber: 86,
+      columnNumber: 13
+    }, undefined)
+  }, void 0, false, {
+    fileName: _jsxFileName,
+    lineNumber: 85,
+    columnNumber: 9
+  }, undefined);
+};
+_s(HeaderCompo, "fGOeRmAtWlsahaUKHbZFnhflMbk=", false, function () {
+  return [useStyle];
+});
+_c = HeaderCompo;
+/* harmony default export */ __webpack_exports__["default"] = (_c2 = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(HeaderCompo));
+var _c, _c2;
+__webpack_require__.$Refresh$.register(_c, "HeaderCompo");
+__webpack_require__.$Refresh$.register(_c2, "%default%");
+
+const currentExports = __react_refresh_utils__.getModuleExports(module.i);
+__react_refresh_utils__.registerExportsForReactRefresh(currentExports, module.i);
+
+if (true) {
+  const isHotUpdate = !!module.hot.data;
+  const prevExports = isHotUpdate ? module.hot.data.prevExports : null;
+
+  if (__react_refresh_utils__.isReactRefreshBoundary(currentExports)) {
+    module.hot.dispose(
+      /**
+       * A callback to performs a full refresh if React has unrecoverable errors,
+       * and also caches the to-be-disposed module.
+       * @param {*} data A hot module data object from Webpack HMR.
+       * @returns {void}
+       */
+      function hotDisposeCallback(data) {
+        // We have to mutate the data object to get data registered and cached
+        data.prevExports = currentExports;
+      }
+    );
+    module.hot.accept(
+      /**
+       * An error handler to allow self-recovering behaviours.
+       * @param {Error} error An error occurred during evaluation of a module.
+       * @returns {void}
+       */
+      function hotErrorHandler(error) {
+        if (
+          typeof __react_refresh_error_overlay__ !== 'undefined' &&
+          __react_refresh_error_overlay__
+        ) {
+          __react_refresh_error_overlay__.handleRuntimeError(error);
+        }
+
+        if (typeof __react_refresh_test__ !== 'undefined' && __react_refresh_test__) {
+          if (window.onHotAcceptError) {
+            window.onHotAcceptError(error.message);
+          }
+        }
+
+        __webpack_require__.c[module.i].hot.accept(hotErrorHandler);
+      }
+    );
+
+    if (isHotUpdate) {
+      if (
+        __react_refresh_utils__.isReactRefreshBoundary(prevExports) &&
+        __react_refresh_utils__.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)
+      ) {
+        module.hot.invalidate();
+      } else {
+        __react_refresh_utils__.enqueueUpdate(
+          /**
+           * A function to dismiss the error overlay after performing React refresh.
+           * @returns {void}
+           */
+          function updateCallback() {
+            if (
+              typeof __react_refresh_error_overlay__ !== 'undefined' &&
+              __react_refresh_error_overlay__
+            ) {
+              __react_refresh_error_overlay__.clearRuntimeErrors();
+            }
+          }
+        );
+      }
+    }
+  } else {
+    if (isHotUpdate && __react_refresh_utils__.isReactRefreshBoundary(prevExports)) {
+      module.hot.invalidate();
+    }
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js"), __webpack_require__(/*! ./node_modules/react-dev-utils/refreshOverlayInterop.js */ "./node_modules/react-dev-utils/refreshOverlayInterop.js")))
+
+/***/ }),
+
+/***/ "./src/components/Layout.jsx":
+/*!***********************************!*\
+  !*** ./src/components/Layout.jsx ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(__react_refresh_utils__, __react_refresh_error_overlay__) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./src/components/Header.jsx");
+/* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/footer */ "./src/components/footer.jsx");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var aos_dist_aos_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! aos/dist/aos.css */ "./node_modules/aos/dist/aos.css");
+/* harmony import */ var aos_dist_aos_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(aos_dist_aos_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__);
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+__webpack_require__.$Refresh$.setup(module.i);
+
+var _jsxFileName = "C:\\Users\\User1\\Desktop\\MERN STACK\\MERN\\HumansWear\\Humans Wear Frontend\\src\\components\\Layout.jsx",
+    _s = __webpack_require__.$Refresh$.signature();
+
+
+
+
+
+
+
+
+const useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["makeStyles"])(theme => ({
+  [theme.breakpoints.down("sm")]: {
+    adjustSizing: {
+      width: "520px"
+    }
+  }
+}));
+const Layout = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(_c = _s(props => {
+  _s();
+
+  const classes = useStyles();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    aos__WEBPACK_IMPORTED_MODULE_4___default.a.init({
+      duration: 1000
+    });
+  }, []);
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+    children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {}, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 25,
+      columnNumber: 13
+    }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Box"], {
+      mb: 15
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 26,
+      columnNumber: 13
+    }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Box"], {
+      mt: 5,
+      mb: 20,
+      children: props.children
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 17
+    }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Box"], {
+      className: classes.adjustSizing,
+      children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Divider"], {}, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 33,
+        columnNumber: 17
+      }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_components_footer__WEBPACK_IMPORTED_MODULE_2__["default"], {}, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 34,
+        columnNumber: 17
+      }, undefined)]
+    }, void 0, true, {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 13
+    }, undefined)]
+  }, void 0, true, {
+    fileName: _jsxFileName,
+    lineNumber: 24,
+    columnNumber: 9
+  }, undefined);
+}, "OAQf9SHEQQsOOZKjohcuI3tGtQ0=", false, function () {
+  return [useStyles];
+}));
+_c2 = Layout;
+/* harmony default export */ __webpack_exports__["default"] = (Layout);
+
+var _c, _c2;
+
+__webpack_require__.$Refresh$.register(_c, "Layout$memo");
+__webpack_require__.$Refresh$.register(_c2, "Layout");
+
+const currentExports = __react_refresh_utils__.getModuleExports(module.i);
+__react_refresh_utils__.registerExportsForReactRefresh(currentExports, module.i);
+
+if (true) {
+  const isHotUpdate = !!module.hot.data;
+  const prevExports = isHotUpdate ? module.hot.data.prevExports : null;
+
+  if (__react_refresh_utils__.isReactRefreshBoundary(currentExports)) {
+    module.hot.dispose(
+      /**
+       * A callback to performs a full refresh if React has unrecoverable errors,
+       * and also caches the to-be-disposed module.
+       * @param {*} data A hot module data object from Webpack HMR.
+       * @returns {void}
+       */
+      function hotDisposeCallback(data) {
+        // We have to mutate the data object to get data registered and cached
+        data.prevExports = currentExports;
+      }
+    );
+    module.hot.accept(
+      /**
+       * An error handler to allow self-recovering behaviours.
+       * @param {Error} error An error occurred during evaluation of a module.
+       * @returns {void}
+       */
+      function hotErrorHandler(error) {
+        if (
+          typeof __react_refresh_error_overlay__ !== 'undefined' &&
+          __react_refresh_error_overlay__
+        ) {
+          __react_refresh_error_overlay__.handleRuntimeError(error);
+        }
+
+        if (typeof __react_refresh_test__ !== 'undefined' && __react_refresh_test__) {
+          if (window.onHotAcceptError) {
+            window.onHotAcceptError(error.message);
+          }
+        }
+
+        __webpack_require__.c[module.i].hot.accept(hotErrorHandler);
+      }
+    );
+
+    if (isHotUpdate) {
+      if (
+        __react_refresh_utils__.isReactRefreshBoundary(prevExports) &&
+        __react_refresh_utils__.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)
+      ) {
+        module.hot.invalidate();
+      } else {
+        __react_refresh_utils__.enqueueUpdate(
+          /**
+           * A function to dismiss the error overlay after performing React refresh.
+           * @returns {void}
+           */
+          function updateCallback() {
+            if (
+              typeof __react_refresh_error_overlay__ !== 'undefined' &&
+              __react_refresh_error_overlay__
+            ) {
+              __react_refresh_error_overlay__.clearRuntimeErrors();
+            }
+          }
+        );
+      }
+    }
+  } else {
+    if (isHotUpdate && __react_refresh_utils__.isReactRefreshBoundary(prevExports)) {
+      module.hot.invalidate();
+    }
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js"), __webpack_require__(/*! ./node_modules/react-dev-utils/refreshOverlayInterop.js */ "./node_modules/react-dev-utils/refreshOverlayInterop.js")))
+
+/***/ }),
+
+/***/ "./src/components/LocalStorageItems/Cart.jsx":
+/*!***************************************************!*\
+  !*** ./src/components/LocalStorageItems/Cart.jsx ***!
+  \***************************************************/
+/*! exports provided: addItem, itemTotal, getCart, updateCart, removeItemCart */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(__react_refresh_utils__, __react_refresh_error_overlay__) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addItem", function() { return addItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "itemTotal", function() { return itemTotal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCart", function() { return getCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateCart", function() { return updateCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeItemCart", function() { return removeItemCart; });
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+__webpack_require__.$Refresh$.setup(module.i);
+
+const addItem = (item, next) => {
+  let bag = [];
+
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("bag")) {
+      bag = JSON.parse(localStorage.getItem('bag'));
+    }
+  }
+
+  bag.push({ ...item,
+    count: 0
+  });
+  bag && bag.map(p => p.id == item.id ? p.count++ : p); // REMOVES DUPLICATES FROM ARRAY !!
+  //Array.from() ---- this will create a new array,
+  //new Set(bag) ---- this will store items in that array
+  //this below whole will remove the duplicates from the array if exists;
+
+  bag = Array.from(new Set(bag.map(p => p.id))).map(id => {
+    return bag.find(p => p.id === id);
+  });
+  localStorage.setItem("bag", JSON.stringify(bag));
+  next();
+};
+const itemTotal = () => {
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("bag")) {
+      return JSON.parse(localStorage.getItem('bag')).length;
+    }
+  }
+
+  return 0;
+};
+const getCart = () => {
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("bag")) {
+      const cart = JSON.parse(localStorage.getItem('bag'));
+
+      if (cart == null || cart == undefined || cart.length == 0) {
+        return [];
+      } else {
+        return cart;
+      }
+    }
+  }
+
+  return [];
+};
+const updateCart = (id, count) => {
+  let bag = [];
+
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("bag")) {
+      bag = JSON.parse(localStorage.getItem('bag'));
+    }
+  }
+
+  bag.map((product, i) => {
+    if (product.id == id) {
+      bag[i].count = count;
+    }
+  });
+  localStorage.setItem("bag", JSON.stringify(bag));
+  window.location.reload();
+};
+const removeItemCart = id => {
+  let bag = [];
+
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("bag")) {
+      bag = JSON.parse(localStorage.getItem('bag'));
+    }
+  }
+
+  bag.map((product, i) => {
+    if (product.id === id) {
+      bag.splice(i, 1);
+    }
+  });
+  localStorage.setItem("bag", JSON.stringify(bag)); // window.location.reload();
+
+  return bag;
+};
+
+const currentExports = __react_refresh_utils__.getModuleExports(module.i);
+__react_refresh_utils__.registerExportsForReactRefresh(currentExports, module.i);
+
+if (true) {
+  const isHotUpdate = !!module.hot.data;
+  const prevExports = isHotUpdate ? module.hot.data.prevExports : null;
+
+  if (__react_refresh_utils__.isReactRefreshBoundary(currentExports)) {
+    module.hot.dispose(
+      /**
+       * A callback to performs a full refresh if React has unrecoverable errors,
+       * and also caches the to-be-disposed module.
+       * @param {*} data A hot module data object from Webpack HMR.
+       * @returns {void}
+       */
+      function hotDisposeCallback(data) {
+        // We have to mutate the data object to get data registered and cached
+        data.prevExports = currentExports;
+      }
+    );
+    module.hot.accept(
+      /**
+       * An error handler to allow self-recovering behaviours.
+       * @param {Error} error An error occurred during evaluation of a module.
+       * @returns {void}
+       */
+      function hotErrorHandler(error) {
+        if (
+          typeof __react_refresh_error_overlay__ !== 'undefined' &&
+          __react_refresh_error_overlay__
+        ) {
+          __react_refresh_error_overlay__.handleRuntimeError(error);
+        }
+
+        if (typeof __react_refresh_test__ !== 'undefined' && __react_refresh_test__) {
+          if (window.onHotAcceptError) {
+            window.onHotAcceptError(error.message);
+          }
+        }
+
+        __webpack_require__.c[module.i].hot.accept(hotErrorHandler);
+      }
+    );
+
+    if (isHotUpdate) {
+      if (
+        __react_refresh_utils__.isReactRefreshBoundary(prevExports) &&
+        __react_refresh_utils__.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)
+      ) {
+        module.hot.invalidate();
+      } else {
+        __react_refresh_utils__.enqueueUpdate(
+          /**
+           * A function to dismiss the error overlay after performing React refresh.
+           * @returns {void}
+           */
+          function updateCallback() {
+            if (
+              typeof __react_refresh_error_overlay__ !== 'undefined' &&
+              __react_refresh_error_overlay__
+            ) {
+              __react_refresh_error_overlay__.clearRuntimeErrors();
+            }
+          }
+        );
+      }
+    }
+  } else {
+    if (isHotUpdate && __react_refresh_utils__.isReactRefreshBoundary(prevExports)) {
+      module.hot.invalidate();
+    }
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js"), __webpack_require__(/*! ./node_modules/react-dev-utils/refreshOverlayInterop.js */ "./node_modules/react-dev-utils/refreshOverlayInterop.js")))
+
+/***/ }),
+
+/***/ "./src/components/LocalStorageItems/User.jsx":
+/*!***************************************************!*\
+  !*** ./src/components/LocalStorageItems/User.jsx ***!
+  \***************************************************/
+/*! exports provided: userRegistration, getUser, removeUser */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(__react_refresh_utils__, __react_refresh_error_overlay__) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userRegistration", function() { return userRegistration; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUser", function() { return getUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeUser", function() { return removeUser; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+__webpack_require__.$Refresh$.setup(module.i);
+
+
+const userRegistration = data => {
+  if (typeof window !== 'undefined') {
+    const user = localStorage.setItem('user', JSON.stringify(data));
+    return user;
+  }
+};
+const getUser = () => {
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("user")) {
+      const user = JSON.parse(localStorage.getItem('user'));
+      return lodash__WEBPACK_IMPORTED_MODULE_0___default.a.isEmpty(user) ? {} : user;
+    }
+  }
+  return {};
+};
+const removeUser = () => {
+  if (typeof window !== 'undefined') {
+    const user = localStorage.removeItem('user');
+    // window.location.reload();
+    return user;
+  }
+};
+
+const currentExports = __react_refresh_utils__.getModuleExports(module.i);
+__react_refresh_utils__.registerExportsForReactRefresh(currentExports, module.i);
+
+if (true) {
+  const isHotUpdate = !!module.hot.data;
+  const prevExports = isHotUpdate ? module.hot.data.prevExports : null;
+
+  if (__react_refresh_utils__.isReactRefreshBoundary(currentExports)) {
+    module.hot.dispose(
+      /**
+       * A callback to performs a full refresh if React has unrecoverable errors,
+       * and also caches the to-be-disposed module.
+       * @param {*} data A hot module data object from Webpack HMR.
+       * @returns {void}
+       */
+      function hotDisposeCallback(data) {
+        // We have to mutate the data object to get data registered and cached
+        data.prevExports = currentExports;
+      }
+    );
+    module.hot.accept(
+      /**
+       * An error handler to allow self-recovering behaviours.
+       * @param {Error} error An error occurred during evaluation of a module.
+       * @returns {void}
+       */
+      function hotErrorHandler(error) {
+        if (
+          typeof __react_refresh_error_overlay__ !== 'undefined' &&
+          __react_refresh_error_overlay__
+        ) {
+          __react_refresh_error_overlay__.handleRuntimeError(error);
+        }
+
+        if (typeof __react_refresh_test__ !== 'undefined' && __react_refresh_test__) {
+          if (window.onHotAcceptError) {
+            window.onHotAcceptError(error.message);
+          }
+        }
+
+        __webpack_require__.c[module.i].hot.accept(hotErrorHandler);
+      }
+    );
+
+    if (isHotUpdate) {
+      if (
+        __react_refresh_utils__.isReactRefreshBoundary(prevExports) &&
+        __react_refresh_utils__.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)
+      ) {
+        module.hot.invalidate();
+      } else {
+        __react_refresh_utils__.enqueueUpdate(
+          /**
+           * A function to dismiss the error overlay after performing React refresh.
+           * @returns {void}
+           */
+          function updateCallback() {
+            if (
+              typeof __react_refresh_error_overlay__ !== 'undefined' &&
+              __react_refresh_error_overlay__
+            ) {
+              __react_refresh_error_overlay__.clearRuntimeErrors();
+            }
+          }
+        );
+      }
+    }
+  } else {
+    if (isHotUpdate && __react_refresh_utils__.isReactRefreshBoundary(prevExports)) {
+      module.hot.invalidate();
+    }
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js"), __webpack_require__(/*! ./node_modules/react-dev-utils/refreshOverlayInterop.js */ "./node_modules/react-dev-utils/refreshOverlayInterop.js")))
+
+/***/ }),
+
+/***/ "./src/components/LocalStorageItems/Wishlist.jsx":
+/*!*******************************************************!*\
+  !*** ./src/components/LocalStorageItems/Wishlist.jsx ***!
+  \*******************************************************/
+/*! exports provided: wishListAddItems, wishListItemTotal, wishListGetItems, wishListUpdateItem, wishListRemoveItem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(__react_refresh_utils__, __react_refresh_error_overlay__) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wishListAddItems", function() { return wishListAddItems; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wishListItemTotal", function() { return wishListItemTotal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wishListGetItems", function() { return wishListGetItems; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wishListUpdateItem", function() { return wishListUpdateItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wishListRemoveItem", function() { return wishListRemoveItem; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+__webpack_require__.$Refresh$.setup(module.i);
+
+
+const wishListAddItems = (item, next) => {
+  let wishlist = [];
+
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("wishlist")) {
+      wishlist = JSON.parse(localStorage.getItem('wishlist'));
+    }
+  }
+
+  wishlist.push({ ...item,
+    count: 0
+  });
+  wishlist && wishlist.map(p => p.id == item.id ? p.count++ : p); // REMOVES DUPLICATES FROM ARRAY !!
+  //Array.from() ---- this will create a new array,
+  //new Set(wishlist) ---- this will store items in that array
+  //this below whole will remove the duplicates from the array if exists;
+
+  wishlist = Array.from(new Set(wishlist.map(p => p.id))).map(id => {
+    return wishlist.find(p => p.id === id);
+  });
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  next();
+};
+const wishListItemTotal = () => {
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("wishlist")) {
+      return JSON.parse(localStorage.getItem('wishlist')).length;
+    }
+  }
+
+  return 0;
+};
+const wishListGetItems = () => {
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("wishlist")) {
+      const cart = JSON.parse(localStorage.getItem('wishlist'));
+
+      if (cart == null || cart == undefined || cart.length == 0) {
+        return [];
+      } else {
+        return cart;
+      }
+    }
+  }
+
+  return [];
+};
+const wishListUpdateItem = (id, count) => {
+  let wishlist = [];
+
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("wishlist")) {
+      wishlist = JSON.parse(localStorage.getItem('wishlist'));
+    }
+  }
+
+  wishlist.map((product, i) => {
+    if (product.id == id) {
+      wishlist[i].count = count;
+    }
+  });
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  window.location.reload();
+};
+const wishListRemoveItem = id => {
+  console.log("id : ", id);
+  let wishlist = [];
+
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("wishlist")) {
+      wishlist = JSON.parse(localStorage.getItem('wishlist'));
+    }
+  }
+
+  wishlist.map((product, i) => {
+    if (product.id === id) {
+      wishlist.splice(i, 1);
+    }
+  });
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  return wishlist;
+};
+
+const currentExports = __react_refresh_utils__.getModuleExports(module.i);
+__react_refresh_utils__.registerExportsForReactRefresh(currentExports, module.i);
+
+if (true) {
+  const isHotUpdate = !!module.hot.data;
+  const prevExports = isHotUpdate ? module.hot.data.prevExports : null;
+
+  if (__react_refresh_utils__.isReactRefreshBoundary(currentExports)) {
+    module.hot.dispose(
+      /**
+       * A callback to performs a full refresh if React has unrecoverable errors,
+       * and also caches the to-be-disposed module.
+       * @param {*} data A hot module data object from Webpack HMR.
+       * @returns {void}
+       */
+      function hotDisposeCallback(data) {
+        // We have to mutate the data object to get data registered and cached
+        data.prevExports = currentExports;
+      }
+    );
+    module.hot.accept(
+      /**
+       * An error handler to allow self-recovering behaviours.
+       * @param {Error} error An error occurred during evaluation of a module.
+       * @returns {void}
+       */
+      function hotErrorHandler(error) {
+        if (
+          typeof __react_refresh_error_overlay__ !== 'undefined' &&
+          __react_refresh_error_overlay__
+        ) {
+          __react_refresh_error_overlay__.handleRuntimeError(error);
+        }
+
+        if (typeof __react_refresh_test__ !== 'undefined' && __react_refresh_test__) {
+          if (window.onHotAcceptError) {
+            window.onHotAcceptError(error.message);
+          }
+        }
+
+        __webpack_require__.c[module.i].hot.accept(hotErrorHandler);
+      }
+    );
+
+    if (isHotUpdate) {
+      if (
+        __react_refresh_utils__.isReactRefreshBoundary(prevExports) &&
+        __react_refresh_utils__.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)
+      ) {
+        module.hot.invalidate();
+      } else {
+        __react_refresh_utils__.enqueueUpdate(
+          /**
+           * A function to dismiss the error overlay after performing React refresh.
+           * @returns {void}
+           */
+          function updateCallback() {
+            if (
+              typeof __react_refresh_error_overlay__ !== 'undefined' &&
+              __react_refresh_error_overlay__
+            ) {
+              __react_refresh_error_overlay__.clearRuntimeErrors();
+            }
+          }
+        );
+      }
+    }
+  } else {
+    if (isHotUpdate && __react_refresh_utils__.isReactRefreshBoundary(prevExports)) {
+      module.hot.invalidate();
+    }
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js"), __webpack_require__(/*! ./node_modules/react-dev-utils/refreshOverlayInterop.js */ "./node_modules/react-dev-utils/refreshOverlayInterop.js")))
+
+/***/ }),
+
+/***/ "./src/components/NavLink.jsx":
+/*!************************************!*\
+  !*** ./src/components/NavLink.jsx ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(__react_refresh_utils__, __react_refresh_error_overlay__) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mui_material_IconButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/material/IconButton */ "./node_modules/@mui/material/IconButton/index.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__);
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+__webpack_require__.$Refresh$.setup(module.i);
+
+var _jsxFileName = "C:\\Users\\User1\\Desktop\\MERN STACK\\MERN\\HumansWear\\Humans Wear Frontend\\src\\components\\NavLink.jsx";
+
+
+
+
+
+
+const NavigationLink = props => {
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(_mui_material_IconButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    size: props.size,
+    children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["NavLink"], {
+      to: props.to,
+      sx: props.sx,
+      style: {
+        textDecoration: 'none'
+      },
+      children: props.img === "yes" ? /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("img", {
+        src: props.src,
+        alt: props.alt,
+        width: props.width
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 11,
+        columnNumber: 21
+      }, undefined) : /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
+        variant: props.variant,
+        color: props.color,
+        sx: props.textSx,
+        style: props.style,
+        children: props.name
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 13,
+        columnNumber: 21
+      }, undefined)
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 13
+    }, undefined)
+  }, void 0, false, {
+    fileName: _jsxFileName,
+    lineNumber: 8,
+    columnNumber: 9
+  }, undefined);
+};
+
+_c = NavigationLink;
+/* harmony default export */ __webpack_exports__["default"] = (NavigationLink);
+
+var _c;
+
+__webpack_require__.$Refresh$.register(_c, "NavigationLink");
+
+const currentExports = __react_refresh_utils__.getModuleExports(module.i);
+__react_refresh_utils__.registerExportsForReactRefresh(currentExports, module.i);
+
+if (true) {
+  const isHotUpdate = !!module.hot.data;
+  const prevExports = isHotUpdate ? module.hot.data.prevExports : null;
+
+  if (__react_refresh_utils__.isReactRefreshBoundary(currentExports)) {
+    module.hot.dispose(
+      /**
+       * A callback to performs a full refresh if React has unrecoverable errors,
+       * and also caches the to-be-disposed module.
+       * @param {*} data A hot module data object from Webpack HMR.
+       * @returns {void}
+       */
+      function hotDisposeCallback(data) {
+        // We have to mutate the data object to get data registered and cached
+        data.prevExports = currentExports;
+      }
+    );
+    module.hot.accept(
+      /**
+       * An error handler to allow self-recovering behaviours.
+       * @param {Error} error An error occurred during evaluation of a module.
+       * @returns {void}
+       */
+      function hotErrorHandler(error) {
+        if (
+          typeof __react_refresh_error_overlay__ !== 'undefined' &&
+          __react_refresh_error_overlay__
+        ) {
+          __react_refresh_error_overlay__.handleRuntimeError(error);
+        }
+
+        if (typeof __react_refresh_test__ !== 'undefined' && __react_refresh_test__) {
+          if (window.onHotAcceptError) {
+            window.onHotAcceptError(error.message);
+          }
+        }
+
+        __webpack_require__.c[module.i].hot.accept(hotErrorHandler);
+      }
+    );
+
+    if (isHotUpdate) {
+      if (
+        __react_refresh_utils__.isReactRefreshBoundary(prevExports) &&
+        __react_refresh_utils__.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)
+      ) {
+        module.hot.invalidate();
+      } else {
+        __react_refresh_utils__.enqueueUpdate(
+          /**
+           * A function to dismiss the error overlay after performing React refresh.
+           * @returns {void}
+           */
+          function updateCallback() {
+            if (
+              typeof __react_refresh_error_overlay__ !== 'undefined' &&
+              __react_refresh_error_overlay__
+            ) {
+              __react_refresh_error_overlay__.clearRuntimeErrors();
+            }
+          }
+        );
+      }
+    }
+  } else {
+    if (isHotUpdate && __react_refresh_utils__.isReactRefreshBoundary(prevExports)) {
+      module.hot.invalidate();
+    }
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js"), __webpack_require__(/*! ./node_modules/react-dev-utils/refreshOverlayInterop.js */ "./node_modules/react-dev-utils/refreshOverlayInterop.js")))
+
+/***/ }),
+
+/***/ "./src/components/footer.jsx":
+/*!***********************************!*\
+  !*** ./src/components/footer.jsx ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(__react_refresh_utils__, __react_refresh_error_overlay__) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var use_sound__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! use-sound */ "./node_modules/use-sound/dist/use-sound.esm.js");
+/* harmony import */ var _audio_cartoon_mp3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../audio/cartoon.mp3 */ "./src/audio/cartoon.mp3");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var react_fast_marquee__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-fast-marquee */ "./node_modules/react-fast-marquee/dist/index.js");
+/* harmony import */ var react_fast_marquee__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_fast_marquee__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/styles.css */ "./src/components/styles.css");
+/* harmony import */ var _components_styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_styles_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__);
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+__webpack_require__.$Refresh$.setup(module.i);
+
+var _jsxFileName = "C:\\Users\\User1\\Desktop\\MERN STACK\\MERN\\HumansWear\\Humans Wear Frontend\\src\\components\\footer.jsx",
+    _s = __webpack_require__.$Refresh$.signature();
+
+
+
+
+
+
+
+
+const linkNameButton = [{
+  link: "https://www.facebook.com/parth.parmar.3745496",
+  className: "fa fa-facebook"
+}, {
+  link: "https://twitter.com",
+  className: "fa fa-twitter"
+}, {
+  link: "https://www.google.com/search/contributions",
+  className: "fa fa-google"
+}, {
+  link: "https://www.linkedin.com/in/parth-parmar-903136177",
+  className: "fa fa-linkedin"
+}, {
+  link: "https://www.instagram.com/parth__thehuman",
+  className: "fa fa-instagram"
+}, {
+  link: "https://www.snapchat.com",
+  className: "fa fa-snapchat-ghost"
+}, {
+  link: "https://secure.skype.com/portal/overview",
+  className: "fa fa-skype"
+}];
+const NameValue = [{
+  name: "Creator",
+  value: "Parth Parmar"
+}, {
+  name: "Email",
+  value: "parmarparth597@gmail.com"
+}, {
+  name: "Mobile Number",
+  value: "8320416824"
+}];
+const Boot = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.memo(_c = _s(() => {
+  _s();
+
+  const [play, {
+    stop
+  }] = Object(use_sound__WEBPACK_IMPORTED_MODULE_1__["default"])(_audio_cartoon_mp3__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    volume: 0.5
+  });
+  const [, setIsHovering] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+    maxWidth: "l",
+    style: {
+      backgroundColor: "rgb(218, 223, 227)"
+    },
+    children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Box"], {
+      style: {
+        left: "10px"
+      },
+      className: "multicolortext",
+      children: NameValue && NameValue.map(nameVal => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
+        variant: "h6",
+        style: {
+          fontFamily: "Henny Penny , cursive"
+        },
+        children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("light", {
+          children: [" ", nameVal.name, " "]
+        }, void 0, true, {
+          fileName: _jsxFileName,
+          lineNumber: 32,
+          columnNumber: 25
+        }, undefined), " : ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("strong", {
+          children: [" ", nameVal.value, " "]
+        }, void 0, true, {
+          fileName: _jsxFileName,
+          lineNumber: 32,
+          columnNumber: 59
+        }, undefined)]
+      }, void 0, true, {
+        fileName: _jsxFileName,
+        lineNumber: 31,
+        columnNumber: 21
+      }, undefined))
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 13
+    }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Box"], {
+      className: "text-center center-block adjustSizing",
+      style: {
+        marginTop: "3rem"
+      },
+      children: linkNameButton && linkNameButton.map(linkButton => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("a", {
+        onMouseEnter: () => {
+          setIsHovering(true);
+          play();
+        },
+        onMouseLeave: () => {
+          setIsHovering(false);
+          stop();
+        },
+        href: `${linkButton.link}`,
+        className: `${linkButton.className}`
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 39,
+        columnNumber: 21
+      }, undefined))
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 13
+    }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Box"], {
+      mt: 5
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 13
+    }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_fast_marquee__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("p", {
+        children: [" Download the ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("b", {
+          children: " Humans Wear App "
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 47,
+          columnNumber: 34
+        }, undefined), " and get extra \u20B9300 off. Use code: HWAPP300 "]
+      }, void 0, true, {
+        fileName: _jsxFileName,
+        lineNumber: 47,
+        columnNumber: 17
+      }, undefined)
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 46,
+      columnNumber: 13
+    }, undefined)]
+  }, void 0, true, {
+    fileName: _jsxFileName,
+    lineNumber: 28,
+    columnNumber: 9
+  }, undefined);
+}, "CROyK0ueaagS5RjjVuP6FQl3OnA=", false, function () {
+  return [use_sound__WEBPACK_IMPORTED_MODULE_1__["default"]];
+}));
+_c2 = Boot;
+/* harmony default export */ __webpack_exports__["default"] = (Boot);
+
+var _c, _c2;
+
+__webpack_require__.$Refresh$.register(_c, "Boot$React.memo");
+__webpack_require__.$Refresh$.register(_c2, "Boot");
+
+const currentExports = __react_refresh_utils__.getModuleExports(module.i);
+__react_refresh_utils__.registerExportsForReactRefresh(currentExports, module.i);
+
+if (true) {
+  const isHotUpdate = !!module.hot.data;
+  const prevExports = isHotUpdate ? module.hot.data.prevExports : null;
+
+  if (__react_refresh_utils__.isReactRefreshBoundary(currentExports)) {
+    module.hot.dispose(
+      /**
+       * A callback to performs a full refresh if React has unrecoverable errors,
+       * and also caches the to-be-disposed module.
+       * @param {*} data A hot module data object from Webpack HMR.
+       * @returns {void}
+       */
+      function hotDisposeCallback(data) {
+        // We have to mutate the data object to get data registered and cached
+        data.prevExports = currentExports;
+      }
+    );
+    module.hot.accept(
+      /**
+       * An error handler to allow self-recovering behaviours.
+       * @param {Error} error An error occurred during evaluation of a module.
+       * @returns {void}
+       */
+      function hotErrorHandler(error) {
+        if (
+          typeof __react_refresh_error_overlay__ !== 'undefined' &&
+          __react_refresh_error_overlay__
+        ) {
+          __react_refresh_error_overlay__.handleRuntimeError(error);
+        }
+
+        if (typeof __react_refresh_test__ !== 'undefined' && __react_refresh_test__) {
+          if (window.onHotAcceptError) {
+            window.onHotAcceptError(error.message);
+          }
+        }
+
+        __webpack_require__.c[module.i].hot.accept(hotErrorHandler);
+      }
+    );
+
+    if (isHotUpdate) {
+      if (
+        __react_refresh_utils__.isReactRefreshBoundary(prevExports) &&
+        __react_refresh_utils__.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)
+      ) {
+        module.hot.invalidate();
+      } else {
+        __react_refresh_utils__.enqueueUpdate(
+          /**
+           * A function to dismiss the error overlay after performing React refresh.
+           * @returns {void}
+           */
+          function updateCallback() {
+            if (
+              typeof __react_refresh_error_overlay__ !== 'undefined' &&
+              __react_refresh_error_overlay__
+            ) {
+              __react_refresh_error_overlay__.clearRuntimeErrors();
+            }
+          }
+        );
+      }
+    }
+  } else {
+    if (isHotUpdate && __react_refresh_utils__.isReactRefreshBoundary(prevExports)) {
+      module.hot.invalidate();
+    }
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js"), __webpack_require__(/*! ./node_modules/react-dev-utils/refreshOverlayInterop.js */ "./node_modules/react-dev-utils/refreshOverlayInterop.js")))
+
+/***/ }),
+
+/***/ "./src/components/styles.css":
+/*!***********************************!*\
+  !*** ./src/components/styles.css ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!../../node_modules/postcss-loader/src??postcss!./styles.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/styles.css");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+
+if (true) {
+  if (!content.locals || module.hot.invalidate) {
+    var isEqualLocals = function isEqualLocals(a, b, isNamedExport) {
+  if (!a && b || a && !b) {
+    return false;
+  }
+
+  var p;
+
+  for (p in a) {
+    if (isNamedExport && p === 'default') {
+      // eslint-disable-next-line no-continue
+      continue;
+    }
+
+    if (a[p] !== b[p]) {
+      return false;
+    }
+  }
+
+  for (p in b) {
+    if (isNamedExport && p === 'default') {
+      // eslint-disable-next-line no-continue
+      continue;
+    }
+
+    if (!a[p]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+    var oldLocals = content.locals;
+
+    module.hot.accept(
+      /*! !../../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!../../node_modules/postcss-loader/src??postcss!./styles.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/styles.css",
+      function () {
+        content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!../../node_modules/postcss-loader/src??postcss!./styles.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/styles.css");
+
+              content = content.__esModule ? content.default : content;
+
+              if (typeof content === 'string') {
+                content = [[module.i, content, '']];
+              }
+
+              if (!isEqualLocals(oldLocals, content.locals)) {
+                module.hot.invalidate();
+
+                return;
+              }
+
+              oldLocals = content.locals;
+
+              update(content);
+      }
+    )
+  }
+
+  module.hot.dispose(function() {
+    update();
+  });
+}
+
+module.exports = content.locals || {};
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(__react_refresh_utils__, __react_refresh_error_overlay__) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App */ "./src/App.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _Store_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Store/index */ "./src/Store/index.js");
+/* harmony import */ var _registerServiceWorker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./registerServiceWorker */ "./src/registerServiceWorker.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__);
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+__webpack_require__.$Refresh$.setup(module.i);
+
+var _jsxFileName = "C:\\Users\\User1\\Desktop\\MERN STACK\\MERN\\HumansWear\\Humans Wear Frontend\\src\\index.js";
+
+
+
+
+
+
+
+
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxDEV"])(react_redux__WEBPACK_IMPORTED_MODULE_4__["Provider"], {
+  store: _Store_index__WEBPACK_IMPORTED_MODULE_5__["default"],
+  children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], {
+    children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxDEV"])(_App__WEBPACK_IMPORTED_MODULE_3__["default"], {}, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 16
+    }, undefined)
+  }, void 0, false, {
+    fileName: _jsxFileName,
+    lineNumber: 12,
+    columnNumber: 11
+  }, undefined)
+}, void 0, false, {
+  fileName: _jsxFileName,
+  lineNumber: 11,
+  columnNumber: 6
+}, undefined), document.getElementById('root'));
+Object(_registerServiceWorker__WEBPACK_IMPORTED_MODULE_6__["default"])();
+
+const currentExports = __react_refresh_utils__.getModuleExports(module.i);
+__react_refresh_utils__.registerExportsForReactRefresh(currentExports, module.i);
+
+if (true) {
+  const isHotUpdate = !!module.hot.data;
+  const prevExports = isHotUpdate ? module.hot.data.prevExports : null;
+
+  if (__react_refresh_utils__.isReactRefreshBoundary(currentExports)) {
+    module.hot.dispose(
+      /**
+       * A callback to performs a full refresh if React has unrecoverable errors,
+       * and also caches the to-be-disposed module.
+       * @param {*} data A hot module data object from Webpack HMR.
+       * @returns {void}
+       */
+      function hotDisposeCallback(data) {
+        // We have to mutate the data object to get data registered and cached
+        data.prevExports = currentExports;
+      }
+    );
+    module.hot.accept(
+      /**
+       * An error handler to allow self-recovering behaviours.
+       * @param {Error} error An error occurred during evaluation of a module.
+       * @returns {void}
+       */
+      function hotErrorHandler(error) {
+        if (
+          typeof __react_refresh_error_overlay__ !== 'undefined' &&
+          __react_refresh_error_overlay__
+        ) {
+          __react_refresh_error_overlay__.handleRuntimeError(error);
+        }
+
+        if (typeof __react_refresh_test__ !== 'undefined' && __react_refresh_test__) {
+          if (window.onHotAcceptError) {
+            window.onHotAcceptError(error.message);
+          }
+        }
+
+        __webpack_require__.c[module.i].hot.accept(hotErrorHandler);
+      }
+    );
+
+    if (isHotUpdate) {
+      if (
+        __react_refresh_utils__.isReactRefreshBoundary(prevExports) &&
+        __react_refresh_utils__.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)
+      ) {
+        module.hot.invalidate();
+      } else {
+        __react_refresh_utils__.enqueueUpdate(
+          /**
+           * A function to dismiss the error overlay after performing React refresh.
+           * @returns {void}
+           */
+          function updateCallback() {
+            if (
+              typeof __react_refresh_error_overlay__ !== 'undefined' &&
+              __react_refresh_error_overlay__
+            ) {
+              __react_refresh_error_overlay__.clearRuntimeErrors();
+            }
+          }
+        );
+      }
+    }
+  } else {
+    if (isHotUpdate && __react_refresh_utils__.isReactRefreshBoundary(prevExports)) {
+      module.hot.invalidate();
+    }
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js"), __webpack_require__(/*! ./node_modules/react-dev-utils/refreshOverlayInterop.js */ "./node_modules/react-dev-utils/refreshOverlayInterop.js")))
+
+/***/ }),
+
+/***/ "./src/registerServiceWorker.js":
+/*!**************************************!*\
+  !*** ./src/registerServiceWorker.js ***!
+  \**************************************/
+/*! exports provided: default, unregister */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(__react_refresh_utils__, __react_refresh_error_overlay__) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return register; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unregister", function() { return unregister; });
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+__webpack_require__.$Refresh$.setup(module.i);
+
+// In production, we register a service worker to serve assets from local cache.
+// This lets the app load faster on subsequent visits in production, and gives
+// it offline capabilities. However, it also means that developers (and users)
+// will only see deployed updates on the "N+1" visit to a page, since previously
+// cached resources are updated in the background.
+// To learn more about the benefits of this model, read https://goo.gl/KwvDNy.
+// This link also includes instructions on opting out of this behavior.
+const isLocalhost = Boolean(window.location.hostname === 'localhost' || // [::1] is the IPv6 localhost address.
+window.location.hostname === '[::1]' || // 127.0.0.1/8 is considered localhost for IPv4.
+window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
+function register() {
+  if (false) {}
+}
+
+function registerValidSW(swUrl) {
+  navigator.serviceWorker.register(swUrl).then(registration => {
+    registration.onupdatefound = () => {
+      const installingWorker = registration.installing;
+
+      installingWorker.onstatechange = () => {
+        if (installingWorker.state === 'installed') {
+          if (navigator.serviceWorker.controller) {
+            // At this point, the old content will have been purged and
+            // the fresh content will have been added to the cache.
+            // It's the perfect time to display a "New content is
+            // available; please refresh." message in your web app.
+            console.log('New content is available; please refresh.');
+          } else {
+            // At this point, everything has been precached.
+            // It's the perfect time to display a
+            // "Content is cached for offline use." message.
+            console.log('Content is cached for offline use.');
+          }
+        }
+      };
+    };
+  }).catch(error => {
+    console.error('Error during service worker registration:', error);
+  });
+}
+
+function checkValidServiceWorker(swUrl) {
+  // Check if the service worker can be found. If it can't reload the page.
+  fetch(swUrl).then(response => {
+    // Ensure service worker exists, and that we really are getting a JS file.
+    if (response.status === 404 || response.headers.get('content-type').indexOf('javascript') === -1) {
+      // No service worker found. Probably a different app. Reload the page.
+      navigator.serviceWorker.ready.then(registration => {
+        registration.unregister().then(() => {
+          window.location.reload();
+        });
+      });
+    } else {
+      // Service worker found. Proceed as normal.
+      registerValidSW(swUrl);
+    }
+  }).catch(() => {
+    console.log('No internet connection found. App is running in offline mode.');
+  });
+}
+
+function unregister() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready.then(registration => {
+      registration.unregister();
+    });
+  }
+}
+
+const currentExports = __react_refresh_utils__.getModuleExports(module.i);
+__react_refresh_utils__.registerExportsForReactRefresh(currentExports, module.i);
+
+if (true) {
+  const isHotUpdate = !!module.hot.data;
+  const prevExports = isHotUpdate ? module.hot.data.prevExports : null;
+
+  if (__react_refresh_utils__.isReactRefreshBoundary(currentExports)) {
+    module.hot.dispose(
+      /**
+       * A callback to performs a full refresh if React has unrecoverable errors,
+       * and also caches the to-be-disposed module.
+       * @param {*} data A hot module data object from Webpack HMR.
+       * @returns {void}
+       */
+      function hotDisposeCallback(data) {
+        // We have to mutate the data object to get data registered and cached
+        data.prevExports = currentExports;
+      }
+    );
+    module.hot.accept(
+      /**
+       * An error handler to allow self-recovering behaviours.
+       * @param {Error} error An error occurred during evaluation of a module.
+       * @returns {void}
+       */
+      function hotErrorHandler(error) {
+        if (
+          typeof __react_refresh_error_overlay__ !== 'undefined' &&
+          __react_refresh_error_overlay__
+        ) {
+          __react_refresh_error_overlay__.handleRuntimeError(error);
+        }
+
+        if (typeof __react_refresh_test__ !== 'undefined' && __react_refresh_test__) {
+          if (window.onHotAcceptError) {
+            window.onHotAcceptError(error.message);
+          }
+        }
+
+        __webpack_require__.c[module.i].hot.accept(hotErrorHandler);
+      }
+    );
+
+    if (isHotUpdate) {
+      if (
+        __react_refresh_utils__.isReactRefreshBoundary(prevExports) &&
+        __react_refresh_utils__.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)
+      ) {
+        module.hot.invalidate();
+      } else {
+        __react_refresh_utils__.enqueueUpdate(
+          /**
+           * A function to dismiss the error overlay after performing React refresh.
+           * @returns {void}
+           */
+          function updateCallback() {
+            if (
+              typeof __react_refresh_error_overlay__ !== 'undefined' &&
+              __react_refresh_error_overlay__
+            ) {
+              __react_refresh_error_overlay__.clearRuntimeErrors();
+            }
+          }
+        );
+      }
+    }
+  } else {
+    if (isHotUpdate && __react_refresh_utils__.isReactRefreshBoundary(prevExports)) {
+      module.hot.invalidate();
+    }
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js"), __webpack_require__(/*! ./node_modules/react-dev-utils/refreshOverlayInterop.js */ "./node_modules/react-dev-utils/refreshOverlayInterop.js")))
+
+/***/ }),
+
+/***/ 1:
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** multi (webpack)/hot/dev-server.js ./node_modules/@pmmmwh/react-refresh-webpack-plugin/client/ReactRefreshEntry.js ./node_modules/react-dev-utils/webpackHotDevClient.js ./src/index.js ***!
+  \**********************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! C:\Users\User1\Desktop\MERN STACK\MERN\HumansWear\Humans Wear Frontend\node_modules\webpack\hot\dev-server.js */"./node_modules/webpack/hot/dev-server.js");
+__webpack_require__(/*! C:\Users\User1\Desktop\MERN STACK\MERN\HumansWear\Humans Wear Frontend\node_modules\@pmmmwh\react-refresh-webpack-plugin\client\ReactRefreshEntry.js */"./node_modules/@pmmmwh/react-refresh-webpack-plugin/client/ReactRefreshEntry.js");
+__webpack_require__(/*! C:\Users\User1\Desktop\MERN STACK\MERN\HumansWear\Humans Wear Frontend\node_modules\react-dev-utils\webpackHotDevClient.js */"./node_modules/react-dev-utils/webpackHotDevClient.js");
+module.exports = __webpack_require__(/*! C:\Users\User1\Desktop\MERN STACK\MERN\HumansWear\Humans Wear Frontend\src\index.js */"./src/index.js");
+
+
+/***/ })
+
+},[[1,"runtime-main","vendors~main"]]]);
+//# sourceMappingURL=main.chunk.js.map

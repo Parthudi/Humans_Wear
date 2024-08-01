@@ -7,13 +7,16 @@ import "aos/dist/aos.css";
 
 const useStyles = makeStyles(theme => ({
     adjustSizing: {
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center',
         opacity: "0.8",
         display: "flex",
     },
     [theme.breakpoints.down("sm")]: {
         adjustSizing: {
             display: "block",
-            width: "500px"
+            // width: "500px"
         }
     }
 }));
@@ -26,19 +29,9 @@ const SignInAndSignUp = React.memo(() => {
       }, []);
 
     return(
-            <Container>
+            <Container className={classes.adjustSizing} mt={10}>
                 <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500">
-                    <Box mt={10} className={classes.adjustSizing}>
-                        <Grid container spacing={10}>
-                            <Grid item xs={12} sm={6} md={6}>
-                                <SignIn />
-                            </Grid>
-
-                            <Grid item xs={12} sm={6} md={6}>
-                                <SignUp />
-                            </Grid>
-                        </Grid>
-                    </Box>
+                        <SignIn />
                 </div>
             </Container>
     )

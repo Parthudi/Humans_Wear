@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Button} from "@material-ui/core";
+import {Button, Box, Typography, Container} from "@material-ui/core";
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import IconButton from '@mui/material/IconButton';
@@ -15,14 +15,24 @@ import { withRouter } from 'react-router';
 import AlertMessage from './AlertMessage.jsx';
 import {makeStyles, Card} from "@material-ui/core";
 import {SigninSchema} from "./FormValidations";
+import loginImg from "../assets/login.png";
 import _ from "lodash";
+import { flexbox } from '@mui/system';
 
 const useStyles = makeStyles(theme =>({
     fillBackground: {
+        height: "50rem",
+        width: "25rem",
         backgroundColor: "white",
         boxShadow: "10px 5px 10px grey",
-        borderRadius: "10px",
         padding: "20px"
+    },
+    fontSize: {
+        fontSize: "12px"
+    },
+    termsOfUse: {
+        color: "#f50057",
+        fontWeight: "600"
     }
 }));
 
@@ -116,22 +126,34 @@ const SignIn = React.memo((props) =>  {
                             helperText = {errors.password}/>
                     </FormControl>
 
+                    <span className={classes.fontSize}> By Continuing, I agree to the <span className={classes.termsOfUse}>Terms of Use</span> & <span className={classes.termsOfUse}>Privacy Policy</span> </span>
+                    
                     <Button variant="contained" disabled={email === "" || password === "" || !_.isEmpty(SigninSchema(values))} size="medium" color="primary" onClick={(e) => handleOnSubmit(e)}> SIGN IN </Button>
+                
+                    <span className={classes.fontSize}> Have trouble logging In ? <span className={classes.termsOfUse}> Get help </span></span>
                 </Stack>
+                <Box display="flex" justifyContent="flex-end">
+                    <span className={[classes.signup, classes.termsOfUse].join(' ')}> Sign Up </span>
+                </Box>
             </form>
         )
     }
 
     return (
-        <Card className={classes.fillBackground}>
-            {error !== "" && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={error} />}
-            {showsuccessalert && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message={message} />}
-            {showerroralert && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={message} />}
+        <Container className={classes.fillBackground}>
+                <img src={loginImg} alt="Login" width="100%" />
 
-            <h1><b> I already have an account </b></h1>
-            <span> Signin with your email & password </span>
-            {formData()}
-        </Card>
+            <Box mt={5}>
+                {error !== "" && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={error} />}
+                {showsuccessalert && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message={message} />}
+                {showerroralert && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={message} />}
+
+                <h2><b> Login </b></h2>
+                <span> Signin with your email & password </span>
+                {formData()}
+            </Box>      
+        </Container>
+        
         )       
   });
 

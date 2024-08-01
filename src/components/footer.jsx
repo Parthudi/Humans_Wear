@@ -18,7 +18,7 @@ const NameValue = [{name: "Creator", value: "Parth Parmar"},
             {name: "Mobile Number", value: "8320416824"}];
 
 
-const Boot = React.memo(() => {
+const Boot = () => {
     const [play, { stop }] = useSound(
         cartoon,
         { volume: 0.5 }
@@ -48,7 +48,7 @@ const Boot = React.memo(() => {
             </Marquee>
         </Container>
     )
-});
+}
 
   
 export default Boot
