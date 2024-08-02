@@ -12,16 +12,28 @@ import AlertMessage from "./AlertMessage";
 import Stack from '@mui/material/Stack';
 import {RegisterUser} from "./ApiCalls";
 import {Form_Validation} from "./FormValidations";
-import footware from "../assets/footware.png";
 import _ from "lodash";
+import loginImg from "../assets/login.png";
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme =>({
-    fillBackground: {
+    Signup: {
         backgroundColor: "white",
         boxShadow: "10px 5px 10px grey",
         borderRadius: "10px",
-        padding: "20px"
-    }
+        padding: "20px",
+        width: "30rem",
+        height: "60rem"
+    },
+    signin: {
+        color: "#f50057",
+        marginTop: "5px", 
+        fontWeight: "600",
+        textDecoration: 'none',
+        '&:hover': {
+          textDecoration: 'none',
+        },
+      },
 }));
 
 const Signup = React.memo(() =>  {
@@ -29,8 +41,6 @@ const Signup = React.memo(() =>  {
     const [showsuccessalert, setShowSuccessAlert] = useState(false);
     const [showerroralert, setShowErrorAlert] = useState(false);
     const [message, setMessage] = useState("");
-    const [fileresource, setFileResource] = useState("");
-    const [file, setFile] = useState("");
     const [values, setValues] = useState({
         username: '',
         email: '',
@@ -92,26 +102,9 @@ const Signup = React.memo(() =>  {
         setValues({...values, [event.target.name] : event.target.value});
         setErrors(Form_Validation(values));
     }
-    
-    const handleOnFileChange = (e) => {
-        setFile(e.target.files[0]);
-        const fileData = e.target.files[0];
-        const reader = new FileReader();
-        reader.readAsDataURL(fileData);
-        reader.onload = (e) => {
-            setFileResource(reader.result);
-            console.log(reader.result);
-        }
-    }
 
     const showSignupForm = () => {
         return( 
-            // <div>
-            //     { fileresource && fileresource.length > 0 && (
-            //         <span>
-            //             <img className="imag" src={fileresource} alt="file damaged" style={{height:"60px", width:"70px", borderRadius: "50%"}} />
-            //         </span>
-            //     )}
             <form autoComplete="off" >
                 <Stack spacing={3}>
                     <InputField
@@ -186,32 +179,24 @@ const Signup = React.memo(() =>  {
                             </Select> 
                         </FormControl>
                     </Box>
-                    {/* <input type='file' name='file' onChange={(e) => handleOnFileChange(e)} /> */}
                     <Button type="submit" variant="contained" color="secondary" disabled={email === "" || password === "" || username ==="" || confirmpassword === "" || !_.isEmpty(Form_Validation(values))} onClick={(e) => handleOnSubmit(e)} fullWidth> <b> Sign Up </b> </Button>
                 </Stack>
+                <Box display="flex" justifyContent="flex-end">
+                    <Link to="/login" className={classes.signin}> Sign In </Link>
+                </Box>
             </form>
     )}
 
-          // style={{backgroundImage: 'transparent url('+fileresource+')', backgroundSize: "cover"}}
-        /* style={{backgroundImage: 'transparent url('+footware+')', backgroundSize: "cover", opacity: "0.6"}} */
-
     return(
-        <Fragment>
-            <Card className={classes.fillBackground}>
+            <Card className={classes.Signup}>
+                <img src={loginImg} alt="SignUp" width="100%"/>
                 {error !== "" && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={error} />}
                 {showsuccessalert && <AlertMessage shouldDisplay={"dontShow"} severity="success" pinCodeInvalid={false} message={message} />}
                 {showerroralert && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={message} />}
 
-                <h1><b> I dont have an account </b></h1>
-                <span> Sign up with your email & password </span>
-                {/* {fileresource && fileresource.length > 0 && (
-                    <center>
-                        <img className="imag" src={fileresource} alt="file damaged" style={{height:"15rem", width:"70%", justifyContent:"center" ,backgroundImage: 'transparent url('+footware+')', backgroundSize: "cover", borderRadius:"50%"}} />
-                    </center>
-                )} */}
+                <h2><b> Register </b></h2>
                 {showSignupForm()}
             </Card>
-        </Fragment>
         )
     });
 

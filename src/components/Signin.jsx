@@ -17,16 +17,23 @@ import {makeStyles, Card} from "@material-ui/core";
 import {SigninSchema} from "./FormValidations";
 import loginImg from "../assets/login.png";
 import _ from "lodash";
-import { flexbox } from '@mui/system';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme =>({
-    fillBackground: {
+    Signin: {
         height: "50rem",
         width: "25rem",
         backgroundColor: "white",
         boxShadow: "10px 5px 10px grey",
         padding: "20px"
     },
+    signup: {
+        color: 'inherit',
+        textDecoration: 'none',
+        '&:hover': {
+          textDecoration: 'none',
+        },
+      },
     fontSize: {
         fontSize: "12px"
     },
@@ -133,15 +140,15 @@ const SignIn = React.memo((props) =>  {
                     <span className={classes.fontSize}> Have trouble logging In ? <span className={classes.termsOfUse}> Get help </span></span>
                 </Stack>
                 <Box display="flex" justifyContent="flex-end">
-                    <span className={[classes.signup, classes.termsOfUse].join(' ')}> Sign Up </span>
+                    <Link to="/signup" className={classes.signup}> <span className={classes.termsOfUse}> Sign Up </span> </Link>
                 </Box>
             </form>
         )
     }
 
     return (
-        <Container className={classes.fillBackground}>
-                <img src={loginImg} alt="Login" width="100%" />
+        <Container className={classes.Signin}>
+            <img src={loginImg} alt="Login" width="100%" />
 
             <Box mt={5}>
                 {error !== "" && <AlertMessage shouldDisplay={"dontShow"} severity="error" pinCodeInvalid={true} message={error} />}

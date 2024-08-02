@@ -7,8 +7,9 @@ import {useDispatch} from "react-redux";
 
 // Lazy loading loads the components only when required
 const HomePage = React.lazy(() => import("./pages/Homepage"))
-const SignInAndSignUp = React.lazy(() => import('./pages/Login'))
-const  ShopPage = React.lazy(() => import('./pages/Shop/shop'))
+const SignIn = React.lazy(() => import('./pages/Login'))
+const SignUp = React.lazy(() => import('./pages/Register'))
+const ShopPage = React.lazy(() => import('./pages/Shop/shop'))
 const HatsPage = React.lazy(() => import("./pages/Hats"))
 const SneakersPage = React.lazy(() => import("./pages/Sneakers"))
 const JacketsPage = React.lazy(() => import("./pages/Jackets"))
@@ -37,14 +38,6 @@ const App = () => {
     )
   };
 
-  // const onLoad = () => {
-  //   dispatch({ type: "loading" , payload: {loading: true}}); 
-  // }
-
-  // const onComplete = () => {
-  //   dispatch({ type: "loading" , payload: {loading: false}});
-  // }
-
   const routes = () => {
     return(
       <Switch>
@@ -62,10 +55,15 @@ const App = () => {
 
           <Route path='/login' exact render={() => (
             <Suspense fallback= {loader()}>
-                <SignInAndSignUp /> 
+                <SignIn /> 
             </Suspense>
-          )} />    
-          
+          )} />   
+
+           <Route path='/signup' exact render={() => (
+            <Suspense fallback= {loader()}>
+                <SignUp /> 
+            </Suspense>
+          )} />  
     
           <Route path='/shop/hats' render={() => (
             <Suspense fallback= {loader()}>

@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import SignIn from '../components/Signin'
-import {Container, makeStyles} from "@material-ui/core";
+import SignUp from '../components/Signup'
+import {Box,Container,Grid, makeStyles} from "@material-ui/core";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -19,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const Login = React.memo(() => {
+const Register = React.memo(() => {
     const classes = useStyles();
 
     useEffect(() => {
@@ -29,10 +30,10 @@ const Login = React.memo(() => {
     return(
             <Container className={classes.adjustSizing} mt={10}>
                 <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500">
-                    <SignIn />
+                    <SignUp />
                 </div>
             </Container>
     )
 });
 
-export default Login
+export default Register

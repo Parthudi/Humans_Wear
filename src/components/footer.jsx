@@ -28,7 +28,7 @@ const Boot = () => {
         <Container maxWidth="l" style={{backgroundColor: "rgb(218, 223, 227)"}}>
             <Box style={{left: "10px"}} className="multicolortext">
                 {NameValue && NameValue.map(nameVal => (
-                    <Typography variant="h6" style={{fontFamily: "Henny Penny , cursive"}}>
+                    <Typography key={nameVal.name} variant="h6" style={{fontFamily: "Henny Penny , cursive"}}>
                         <light> {nameVal.name} </light> : <strong> {nameVal.value} </strong>
                     </Typography>
                 ))}
@@ -36,7 +36,7 @@ const Boot = () => {
 
             <Box className="text-center center-block adjustSizing" style={{marginTop: "3rem"}}>
                 {linkNameButton && linkNameButton.map((linkButton) => (
-                    <a  onMouseEnter={() => {setIsHovering(true); play()}} 
+                    <a key={linkButton.link} onMouseEnter={() => {setIsHovering(true); play()}} 
                         onMouseLeave={() => { setIsHovering(false); stop()}} 
                         href={`${linkButton.link}`} 
                         className={`${linkButton.className}`} /> ))}

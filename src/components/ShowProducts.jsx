@@ -32,10 +32,10 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "red",
         color: "white",
         justifyContent: "center",
-        "&:hover": {
-            backgroundColor: "red",
-            color: "white"
-        }
+        // "&:hover": {
+        //     backgroundColor: "red",
+        //     color: "white"
+        // }
     },
     wishList: {
         backgroundColor: "rgb(230, 25, 110)",
@@ -164,7 +164,7 @@ const CartItem = React.memo(({showQuantity = false, showBag = false, whishlist =
                     </Box>
                 </CardContent>
                 <CardActions className={classes.showButtonCenter}>
-                   {whishlist && <Button size="medium" className={classes.wishList} style={{visibility: show ? "visible" : "hidden"}} fullWidth={true} onClick={() => addToWishList()} startIcon={<FavoriteBorderOutlined />}> Move To WishList </Button>} 
+                   {whishlist && <Button size="medium" className={classes.wishList} style={{visibility: "visible"}} fullWidth={true} onClick={() => addToWishList()} startIcon={<FavoriteBorderOutlined />}> Move To WishList </Button>} 
                    {showBag && <Button size="medium" style={{display: showBag ? "inherit" : "none"}} className={classes.success} fullWidth={true} onClick={() => addItemsFromWhishListToBag()}> Move To Bag </Button>}
                    {showQuantity && <Button size="medium" style={{display: showQuantity ? "inherit" : "none"}} className={classes.fail} fullWidth={true} onClick={() => removeItemFromBag()}> Remove From Bag </Button>}
                 </CardActions>

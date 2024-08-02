@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import SHOP_DATA from './ShopData'
 import CollectionPreview from '../../components/collectionpreview/collectionpreview'
 import {Container, makeStyles} from "@material-ui/core";

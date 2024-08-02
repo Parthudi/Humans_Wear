@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {Badge, Box, Typography, makeStyles,BottomNavigation, BottomNavigationAction,Paper} from "@material-ui/core";
+import {Badge, Box, Typography, makeStyles,BottomNavigation, BottomNavigationAction,Paper, Avatar, Divider, ListItemIcon} from "@material-ui/core";
 import {NavLink, withRouter} from 'react-router-dom';
 import {itemTotal} from "./LocalStorageItems/Cart";
 import {wishListItemTotal} from "./LocalStorageItems/Wishlist";
 import {AddShoppingCartOutlined, FavoriteBorderOutlined, StorefrontOutlined} from "@material-ui/icons";
+import PermIdentityRoundedIcon from '@mui/icons-material/PermIdentityRounded';
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import {getUser,removeUser} from "./LocalStorageItems/User"; 
@@ -15,6 +16,7 @@ import MenuItem from '@mui/material/MenuItem';
 import _ from "lodash";
 import HumansWear from "../assets/HumansWear.png"
 import NavigationLink from "./NavLink";
+import LogoutOutlined from '@mui/icons-material/LogoutOutlined';
 
 const useStyle = makeStyles((theme) => ({
         adjustSizing: {
@@ -64,6 +66,18 @@ const HeaderCompo = () => {
     const [cartitems, setCartItems] = useState("0");
     const [wishlistitems, setWishListItems] = useState("0"); 
     const [user, setUser] = useState({});
+    const [profileOpen, setProfileOpen] = useState(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const handleMouseEnter = (event) => {
+        setProfileOpen(event.currentTarget);
+        setIsMenuOpen(true);
+    };
+  
+    const handleMouseLeave = () => {
+        setIsMenuOpen(false);
+        setProfileOpen(null);
+    };
 
     useEffect(() => {
         const user = getUser();
@@ -133,7 +147,7 @@ const HeaderCompo = () => {
 
                 <Box sx={{ flexGrow: {xs: '1', md:'1.5'}, display: { xs: 'none', md: 'flex' } }}>
                     {pages.map((page) => (
-                        <NavigationLink size={"large"} to={`${page.to}`} name={`${page.name}`} variant={"body1"} style={{color: "black", fontWeight:"bold", letterSpacing:"1px"}} sx={{textDecoration: 'none'}} />
+                        <NavigationLink key={`${page.name}`} size={"large"} to={`${page.to}`} name={`${page.name}`} variant={"body1"} style={{color: "black", fontWeight:"bold", letterSpacing:"1px"}} sx={{textDecoration: 'none'}} />
                     ))} 
                 </Box>
 
@@ -151,6 +165,49 @@ const HeaderCompo = () => {
                 <Box sx={{display: { xs: 'none', md: 'flex' }}}>
                     <Box className={classes.adjustMargin}>
                         <BottomNavigation showLabels>
+                        <BottomNavigationAction 
+          label="Profile" 
+          onMouseEnter={handleMouseEnter} 
+          aria-controls="account-menu" 
+          aria-haspopup="true" 
+          className={classes.headerText} 
+          icon={
+            <Badge>
+              <NavLink to="/checkout/cart" className={classes.headerIcons}>
+                <PermIdentityRoundedIcon /> 
+              </NavLink>
+            </Badge>
+          } 
+        />
+
+{isMenuOpen && (
+        <Menu  
+          id="account-menu"
+          anchorEl={profileOpen}
+          open={isMenuOpen}
+          onClose={handleMouseLeave}
+          transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+          anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+          MenuListProps={{
+            onMouseLeave: handleMouseLeave,
+          }}
+        >
+          <MenuItem onClick={handleMouseLeave}>
+            <Avatar /> Profile
+          </MenuItem>
+          <MenuItem onClick={handleMouseLeave}>
+            <Avatar /> My account
+          </MenuItem>
+          <Divider />
+          <MenuItem onClick={handleMouseLeave}>
+            <ListItemIcon>
+              <LogoutOutlined fontSize="small" />
+            </ListItemIcon>
+            Logout
+          </MenuItem>
+        </Menu>
+      )}
+
                             <BottomNavigationAction label="Bag" className={classes.headerText} icon={<Badge badgeContent={cartitems} color="error">
                                 <NavLink to="/checkout/cart" className={classes.headerIcons}>  <AddShoppingCartOutlined /> </NavLink>
                             </Badge>} />

@@ -33,7 +33,7 @@ const Layout = memo((props) => {
                 <Divider />
                 <Footer />
                 </Box>
-            </React.Fragment>
+        </React.Fragment>
     )
 });
 
