@@ -2,6 +2,16 @@
     background-image: linear-gradient(#efecf9,  #fbdddc);
 };
 
+body {
+    overflow: auto; /* Allows scrolling */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Hides scrollbar for Chrome, Safari, Opera, and Brave */
+}
+
 a {
     text-decoration: none;
     color: black;

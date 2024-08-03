@@ -139,7 +139,7 @@ const App = () => {
     )
 }
   return(
-    <Layout  sx={{ minHeight: '100vh' }}>
+    <Layout sx={{ minHeight: '100vh' }}>
         {routes()}
     </Layout>
   )
