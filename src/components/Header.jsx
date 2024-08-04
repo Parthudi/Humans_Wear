@@ -77,14 +77,6 @@ const HeaderCompo = () => {
       setAnchorEl(null);
     };
 
-    // const handleOnClickProfile = () => {
-    //     setIsMenuOpen(!isMenuOpen)
-    // }
-
-    // useEffect(() => {
-
-    // }, [isMenuOpen, profileOpen])
-
     useEffect(() => {
         const user = getUser();
         const itemsFromCart = itemTotal();
@@ -188,7 +180,7 @@ const HeaderCompo = () => {
                                     MenuListProps={{
                                         'aria-labelledby': 'basic-button',
                                     }}>
-                                        {<ProfileDropdown />}
+                                        {<ProfileDropdown  clickEvent={handleClose} />}
                                 </Menu>
 
                             <BottomNavigationAction label="Bag" className={classes.headerText} icon={<Badge badgeContent={cartitems} color="error">
@@ -198,10 +190,10 @@ const HeaderCompo = () => {
                                 <NavLink to="/whistlist" className={classes.headerIcons}> <FavoriteBorderOutlined /> </NavLink>
                             </Badge>} />
                             <BottomNavigationAction label="Shop" className={classes.headerText} icon={ <NavLink to="/shop" className={classes.headerIcons}> <StorefrontOutlined /> </NavLink>} />
-                            {!_.isEmpty(user) && user.is_authorized ? 
-                                <BottomNavigationAction label="Logout" className={classes.headerText} icon={<NavLink to="/login" className={classes.headerIcons}> <LogoutOutlinedIcon onClick={() => removeUser()} /> </NavLink>} /> 
+                            {/* {!_.isEmpty(user) && user.is_authorized ? 
+                                <BottomNavigationAction label="Logout" className={classes.headerText} icon={<NavLink to="/" className={classes.headerIcons}> <LogoutOutlinedIcon onClick={() => removeUser()} /> </NavLink>} /> 
                                 :
-                            <BottomNavigationAction label="Login" className={classes.headerText} icon={ <NavLink to="/login" className={classes.headerIcons}> <LoginOutlinedIcon /> </NavLink>} /> }
+                            <BottomNavigationAction label="Login" className={classes.headerText} icon={ <NavLink to="/login" className={classes.headerIcons}> <LoginOutlinedIcon /> </NavLink>} /> } */}
                         </BottomNavigation>
                     </Box>
                 </Box>

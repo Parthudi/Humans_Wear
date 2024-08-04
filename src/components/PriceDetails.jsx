@@ -34,7 +34,7 @@ const PriceDetails = React.memo((props) => {
             currentProduct *= prod.count;
             newAmount += currentProduct;
         });
-        dispatch({ type: "totalAmount" , payload: {price: newAmount}});
+        dispatch({ type: "TOTAL_AMOUNT" , payload: {price: newAmount}});
         return newAmount;
     }
 

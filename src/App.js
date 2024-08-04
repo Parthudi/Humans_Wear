@@ -3,7 +3,7 @@ import {Route,Switch} from 'react-router-dom'
 import {CircularProgress,Backdrop,Box} from '@material-ui/core';
 import Layout from "./components/Layout";
 import './App.css'
-import {useDispatch} from "react-redux";
+import PrivateRoute from './components/PrivateRoute';
 
 // Lazy loading loads the components only when required
 const HomePage = React.lazy(() => import("./pages/Homepage"))
@@ -21,9 +21,9 @@ const Address = React.lazy(() => import("./pages/Address"))
 const WishList = React.lazy(() => import("./pages/WishList"))
 const Payment = React.lazy(() => import("./pages/Payment"))
 const Profile = React.lazy(() => import("./pages/Profile"))
+const Orders = React.lazy(() => import("./pages/Orders"))
 
 const App = () => {
-  const dispatch = useDispatch();
   const loader = (props) => {
     // props.onLoad ? onLoad() : onComplete();
     return(
@@ -94,33 +94,55 @@ const App = () => {
             </Suspense>
             )}/>
 
-          <Route path='/shop/product/:name/:id' exact render={() => (
+            <PrivateRoute 
+              path='/shop/product/:name/:id' 
+              exact 
+              component={() => (
+                <Suspense fallback={loader()}>
+                  <ShowSingleImage />
+                </Suspense>
+              )}
+            />
+{/* 
+          <Route path='/shop/product/:name/:id' element={<ComponentWrapper />} exact render={() => (
             <Suspense fallback= {loader()}>
               <ShowSingleImage /> 
             </Suspense>
-            )}/>
+            )}/> */}
             
-            <Route path='/checkout/cart' exact render={() => (
+            <PrivateRoute path='/checkout/cart' exact component={() => (
               <Suspense fallback= {loader()}>
                 <Bag /> 
               </Suspense>
             )}/>
 
-            <Route path='/checkout/address' exact render={() => (
+            <PrivateRoute path='/checkout/address' exact component={() => (
               <Suspense fallback= {loader()}>
                 <Address /> 
               </Suspense>
             )}/>
 
-            <Route path='/whistlist' exact render={() => (
+            <PrivateRoute path='/whistlist' exact component={() => (
               <Suspense fallback= {loader()}>
                 <WishList /> 
               </Suspense>
             )}/>
 
-            <Route path='/checkout/payment' exact render={() => (
+            <PrivateRoute path='/checkout/payment' exact component={() => (
               <Suspense fallback= {loader()}>
                 <Payment /> 
+              </Suspense>
+            )}/>
+
+            <PrivateRoute path='/my/orders' exact component={() => (
+              <Suspense fallback= {loader()}>
+                <Orders /> 
+              </Suspense>
+            )}/>
+
+            <PrivateRoute path="/my/profile/edit" exact component={() => (
+              <Suspense fallback= {loader()}>
+                <Profile /> 
               </Suspense>
             )}/>
 
@@ -139,7 +161,7 @@ const App = () => {
     )
 }
   return(
-    <Layout sx={{ minHeight: '100vh' }}>
+    <Layout>
         {routes()}
     </Layout>
   )

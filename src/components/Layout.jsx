@@ -1,7 +1,7 @@
 import React, {useEffect, memo} from "react";
 import Header from "./Header";
 import Footer from "../components/footer";
-import {Divider,Box,makeStyles, Container} from "@material-ui/core"; 
+import {Divider,Box,makeStyles} from "@material-ui/core"; 
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -23,12 +23,9 @@ const Layout = memo((props) => {
     return(
         <React.Fragment>
             <Header />
-            <Box mb={15}/>
-            <Container sx={{ minHeight: '80vh' }}>
-                <Box mt={5} mb={20}>
-                    {props.children}
-                </Box>
-            </Container>
+            <Box mt={15} sx={{ minHeight: '100vh' }}>
+                {props.children}
+            </Box>
             <Box className={classes.adjustSizing}>
                 <Divider />
                 <Footer />
