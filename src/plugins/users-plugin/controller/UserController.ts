@@ -2,8 +2,6 @@ import  {Request, Response} from "express";
 import UserOperator from "../operator/UserOperator";
 import RequestValidator from "../lib/RequestValidator";
 import ResponseHandler from "../lib/ResponseHandler";
-import config from "../config/index";
-import Token from "../lib/TokenHelper";
 import _ from "lodash";
 
 export default class UserController {
@@ -26,6 +24,18 @@ export default class UserController {
       await RequestValidator.LoginUser(data);
       const result = await UserOperator.loginUser(data);
       return ResponseHandler.sendSuccess(res, result, 201);
+    }catch(error){
+      console.log(error);
+      return ResponseHandler.sendError(res, error);
+    }
+  }
+
+  static async GetUser(req: Request, res: Response) {
+    try{
+      const data = req.params || {};
+      await RequestValidator.GetUser(data);
+      const result = await UserOperator.getUser(data);
+      return ResponseHandler.sendSuccess(res, result, 200);
     }catch(error){
       console.log(error);
       return ResponseHandler.sendError(res, error);

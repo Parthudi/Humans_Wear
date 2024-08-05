@@ -10,7 +10,7 @@ export default class DBConnection {
                 useNewUrlParser: true,
                 useFindAndModify: true,
                 useCreateIndex: true,
-                useUnifiedTopology: true
+                useUnifiedTopology: true,
             }).then((db) => {
                 console.log("DbConnected successfull");
                 resolve(db);

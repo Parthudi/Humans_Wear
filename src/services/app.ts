@@ -10,7 +10,9 @@ import appConfig from "../config/appConfig";
 import MAPPInit from "./MAPPInit";
 
 import {MAPP as UserRoutes } from "../plugins/users-plugin/index";
-import {MAPP as ProductRoutes} from "../plugins/payment-plugin/index";
+import {MAPP as PaymentRoutes} from "../plugins/payment-plugin/index";
+import {MAPP as ProductRoutes} from "../plugins/products-plugin/index";
+
 
 DBConnection.connect(appConfig.get("database:mongodb:db"))
   .then(async (result) => {
@@ -28,8 +30,9 @@ DBConnection.connect(appConfig.get("database:mongodb:db"))
     app.use(morgan("dev"));
     app.use(bodyParser.json({limit: "50mb"}));
 
-    app.use("/v1/users", UserRoutes);
-    app.use("/v1/payment", ProductRoutes);
+    app.use("/v1/user", UserRoutes);
+    app.use("/v1/payment", PaymentRoutes);
+    app.use("/v1/product", ProductRoutes);
 
     app.get("/", (req, res) => {
       res.status(200).send("<H1>Welcome to Humans Wear Server By Parth Parmar</H1>");
