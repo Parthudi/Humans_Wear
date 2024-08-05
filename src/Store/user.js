@@ -5,10 +5,11 @@ const defaultState = {
 
 const userReducer = (state = defaultState, action) => {
     switch(action.type) {
-        case "totalAmount":
+        case "ADD_USER":
             return {
-                ...state,  // Spread the existing state to preserve other properties
-                totalAmount: action.payload.price
+                ...state,
+                user: action.payload.user,
+                isAuthenticated: action.payload.user.is_authorized || false
             };
         case "addProducts":
             return {

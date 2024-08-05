@@ -1,9 +1,8 @@
-import {API} from "../config";
-import React from "react";
+import {USERAPI} from "../config";
 
 export const RegisterUser = (data) => {
     try{
-        return fetch(`${API}/register`, {
+        return fetch(`${USERAPI}/register`, {
             method: "POST",
             headers: {
                     "Content-Type": "application/json",
@@ -18,7 +17,7 @@ export const RegisterUser = (data) => {
 
 export const LoginUser = (data) => {
     try{
-        return fetch(`${API}/login`, {
+        return fetch(`${USERAPI}/login`, {
             method: "POST",
             headers: {
                     "Content-Type": "application/json",
@@ -31,9 +30,24 @@ export const LoginUser = (data) => {
     }  
 };
 
+export const getUser = (userId, token) => {
+    try{
+        return fetch(`${USERAPI}/${userId}`, {
+            method: "GET",
+            headers: {
+                    "Content-Type": "application/json",
+                    "Authorization" :  `Bearer ${token}`,
+                }
+        }).then(response => response.json());
+    }catch(error) {               
+        console.log(error);
+        return {message: error};
+    }  
+};
+
 export const CreateAddress = (data) => {
     try{
-        return fetch(`${API}/address`, {
+        return fetch(`${USERAPI}/address`, {
             method: "POST",
             headers: {
                     "Content-Type": "application/json",
@@ -48,7 +62,7 @@ export const CreateAddress = (data) => {
 
 export const getAddress = (userId, token) => {
     try{
-        return fetch(`${API}/address/${userId}`, {
+        return fetch(`${USERAPI}/address/${userId}`, {
             method: "GET",
             headers: {
                     "Content-Type": "application/json",
@@ -63,7 +77,7 @@ export const getAddress = (userId, token) => {
 
 export const deleteAddress = (addressId) => {
     try{
-        return fetch(`${API}/address/${addressId}`, {
+        return fetch(`${USERAPI}/address/${addressId}`, {
             method: "DELETE",
             headers: {
                     "Content-Type": "application/json",

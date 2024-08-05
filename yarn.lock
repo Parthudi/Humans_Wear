@@ -10822,14 +10822,14 @@
   "resolved" "https://registry.npmjs.org/redux-thunk/-/redux-thunk-3.1.0.tgz"
   "version" "3.1.0"
 
-"redux@^4 || ^5.0.0-beta.0", "redux@^4.2.0":
+"redux@^4 || ^5.0.0-beta.0", "redux@^4.2.0", "redux@^5.0.0":
   "integrity" "sha512-oSBmcKKIuIR4ME29/AeNUnl5L+hvBq7OaJWzaptTQJAntaPvxIJqfnjbaEiCzzaIz+XmVILfqAM3Ob0aXLPfjA=="
   "resolved" "https://registry.npmjs.org/redux/-/redux-4.2.0.tgz"
   "version" "4.2.0"
   dependencies:
     "@babel/runtime" "^7.9.2"
 
-"redux@^5.0.0", "redux@^5.0.1":
+"redux@^5.0.1":
   "integrity" "sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w=="
   "resolved" "https://registry.npmjs.org/redux/-/redux-5.0.1.tgz"
   "version" "5.0.1"

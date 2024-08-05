@@ -1,10 +1,11 @@
 import React from 'react';
+import UserDashboard from '../components/UserDashboard';
 
 const Orders = () => {
     return(
-        <div>
-            Orders
-        </div>
+        <UserDashboard>
+            <h6> MY ORDERS </h6>
+        </UserDashboard>
     )
 }
 

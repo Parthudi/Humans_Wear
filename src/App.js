@@ -20,8 +20,11 @@ const Bag = React.lazy(() => import("./pages/Bag"))
 const Address = React.lazy(() => import("./pages/Address"))
 const WishList = React.lazy(() => import("./pages/WishList"))
 const Payment = React.lazy(() => import("./pages/Payment"))
+const EditProfile = React.lazy(() => import("./pages/Editprofile"))
 const Profile = React.lazy(() => import("./pages/Profile"))
+const Dashboard = React.lazy(() => import("./pages/Dashboard"))
 const Orders = React.lazy(() => import("./pages/Orders"))
+const Addresses = React.lazy(() => import("./pages/Addresses"))
 
 const App = () => {
   const loader = (props) => {
@@ -88,6 +91,7 @@ const App = () => {
               <WomensPage /> 
             </Suspense>
             )}/>
+
           <Route path='/shop/mens' render={() => (
             <Suspense fallback= {loader()}>
               <MensPage /> 
@@ -140,11 +144,33 @@ const App = () => {
               </Suspense>
             )}/>
 
-            <PrivateRoute path="/my/profile/edit" exact component={() => (
+            <PrivateRoute path="/my/address" exact component={() => (
+              <Suspense fallback= {loader()}>
+                <Addresses /> 
+              </Suspense>
+            )}/>
+
+            <PrivateRoute path="/my/profile" exact component={() => (
               <Suspense fallback= {loader()}>
                 <Profile /> 
               </Suspense>
             )}/>
+
+            <PrivateRoute path="/my/profile/edit" exact component={() => (
+              <Suspense fallback= {loader()}>
+                <EditProfile /> 
+              </Suspense>
+            )}/>
+
+            <PrivateRoute 
+              path='/my/dashboard' 
+              exact 
+              component={() => (
+                <Suspense fallback={loader()}>
+                  <Dashboard />
+                </Suspense>
+              )}
+            />
 
           {/* <Route path='*' render={() => {
             return <h1> 404 Error Page Not Found </h1>

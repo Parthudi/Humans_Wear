@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import {Divider,Box,makeStyles} from "@material-ui/core"; 
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { getUser } from "./ApiCalls";
 
 const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
@@ -15,9 +16,10 @@ const useStyles = makeStyles((theme) => ({
 
 const Layout = memo((props) => {
     const classes = useStyles();
+    // const totalPrice = useSelector((state) => state.totalAmount);
 
     useEffect(() => {
-        Aos.init({duration: 1000});
+        Aos.init({duration: 1000});        
       }, []);
     
     return(

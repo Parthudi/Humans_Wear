@@ -9,8 +9,6 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import InputFields from "./InputFields";
-import {LoginUser} from "./ApiCalls";
-import {userRegistration} from "./LocalStorageItems/User";
 import { withRouter } from 'react-router';
 import AlertMessage from './AlertMessage.jsx';
 import {makeStyles, Card} from "@material-ui/core";
@@ -18,6 +16,9 @@ import {SigninSchema} from "./FormValidations";
 import loginImg from "../assets/login.png";
 import _ from "lodash";
 import { Link } from 'react-router-dom';
+import { LoginUser } from './ApiCalls';
+import { useDispatch } from 'react-redux';
+import { userRegistration } from './LocalStorageItems/User';
 
 const useStyles = makeStyles(theme =>({
     Signin: {
@@ -44,6 +45,7 @@ const useStyles = makeStyles(theme =>({
 }));
 
 const SignIn = React.memo((props) =>  {
+    const dispatch = useDispatch()
     const classes = useStyles();
     const [values, setValues] = useState({
         email: "",
@@ -73,10 +75,8 @@ const SignIn = React.memo((props) =>  {
                     setMessage(`Login Failed  ${data.message}`);
                     return;
                 }else{
-                    console.log(data.data.user);    
                     await userRegistration(data.data.user);
                     props.history.push("/");
-                    window.location.reload();
                 }   
             });
         }catch(error) {

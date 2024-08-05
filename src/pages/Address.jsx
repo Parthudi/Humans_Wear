@@ -3,7 +3,6 @@ import {makeStyles,Typography,Container,Divider,Button,Grid,Card,Box,TextField,F
 import ModalCompo from "../components/Modal";
 import {CloseOutlined} from "@material-ui/icons";
 import InputField from "../components/InputFields";
-// import {addAddress, getAddress} from "../components/LocalStorageItems/Address";
 import {getUser} from "../components/LocalStorageItems/User";
 import RadioOption from "../components/RadioOption";
 import AddressImages from "../components/AddressImages";
@@ -89,7 +88,6 @@ const Address = React.memo(() => {
     });
 
     useEffect(() => {
-        // const fetchedAddress = getAddress();
         const cartProducts =  getCart();
         const user = getUser();
         const address = getUserAddress(user._id, user.token);
