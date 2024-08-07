@@ -101,7 +101,6 @@ export default class UsersOperator {
     return new Promise(async (resolve, reject) => {
       try{
         const address = await AddressDataObject.FindAll(data.id);
-        console.log(`PARTHHERE :- ${address}`);
         if(address.length == 0){
           reject({message: "No Address Found", code: 400});
         }else{

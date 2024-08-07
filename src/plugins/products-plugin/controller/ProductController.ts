@@ -1,16 +1,16 @@
 import  {Request, Response} from "express";
-import UserOperator from "../operator/UserOperator";
+import ProductOperator from "../operator/ProductOperator";
 import RequestValidator from "../lib/RequestValidator";
 import ResponseHandler from "../lib/ResponseHandler";
 import _ from "lodash";
 
 export default class ProductController {
 
-  static async RegisterUser(req: Request, res: Response) {
+  static async addProductsToWishList(req: Request, res: Response) {
     try{
       const data = req.body || {};
-      await RequestValidator.RegisterUser(data);
-      const result = await UserOperator.createUser(data);
+      await RequestValidator.Product(data);
+      const result = await ProductOperator.addProduct(data);
       return ResponseHandler.sendSuccess(res, result, 201);
     }catch(error){
       console.log(error);
