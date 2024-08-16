@@ -13,7 +13,7 @@ export default class ProductOperator {
             await wishlist.save();
             resolve({wishlist});
           }
-          resolve({product})
+          resolve({product});
       }catch(error) {
         console.log("error : --- ", error);
         reject(error);
