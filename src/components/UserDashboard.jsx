@@ -42,8 +42,6 @@ const UserDashboard = React.memo((props) => {
     const classes = useStyle()
     const [user, setUser] = useState({});
 
-    console.log(location.pathname)
-
     useEffect(() => {
         const user = getUser();
         setUser(user);
@@ -92,14 +90,17 @@ const UserDashboard = React.memo((props) => {
 
                 <Grid container>
                     <Grid item xs={2}>
-                        {accountTitle()}
+                        <Grid container>
+                            <Grid item xs={11}>
+                                {accountTitle()}
+                            </Grid>
+                            <Grid item xs={1}>
+                                <Divider orientation="vertical" />
+                            </Grid>
+                        </Grid>
                     </Grid>
             
-                    <Grid item xs={1}>
-                        <Divider orientation="vertical" />
-                    </Grid>
-            
-                    <Grid item xs={9}>
+                    <Grid item xs={10}>
                         {props.children}
                     </Grid>
                 </Grid>

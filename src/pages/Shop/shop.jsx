@@ -5,7 +5,7 @@ import {Container, makeStyles} from "@material-ui/core";
 import {withRouter } from 'react-router-dom'
 
 const useStyle = makeStyles((theme) => ({
-    butt: {
+    loadMore: {
         fontFamily:"cursive",
         transform: "rotate(-90deg)",
         borderRadius: "10px",
@@ -25,7 +25,7 @@ const useStyle = makeStyles((theme) => ({
             width: 500,
             padding: theme.spacing(1,1),
         },
-        butt: {
+        loadMore: {
             right: "-410px",
         }
     }
@@ -58,7 +58,7 @@ const ShopPage = React.memo((props) =>  {
         return(collections.map((collection, i) => {
             return(
                 <div key={collection.id}>
-                    <button className={classes.butt} onClick={() => clickHandler(i)}> Load More </button> 
+                    <button className={classes.loadMore} onClick={() => clickHandler(i)}> Load More </button> 
                     <CollectionPreview key={i}  title={collection.title} items={collection.items} clicked={() => props.history.push("/shop/product")}/>             
                 </div>
             )
