@@ -1,15 +1,36 @@
-// import { Box, Divider, Grid, Typography, Button, makeStyles } from "@mui/material";
-import {Box,Grid, makeStyles, Divider, Typography, Button} from "@material-ui/core";
 import React, { useEffect, useState} from "react";
+import {Box, Grid, makeStyles, Divider, Typography, Button} from "@material-ui/core";
 import { getUser } from "../components/LocalStorageItems/User";
 import UserDashboard from "../components/UserDashboard";
+import {NavLink} from 'react-router-dom';
 
 const useStyles = makeStyles(({
     editProfileButton: {
         backgroundColor: "rgb(230, 25, 110)",
         color: "white",
-        marginBottom: "5rem"
-    }
+        marginBottom: "5rem",
+
+        "&:hover": {
+            backgroundColor: "rgb(230, 25, 110)",
+            textDecoration: "none"
+        }
+    },
+    nonActiveLink: {
+        textDecoration: "none",
+
+        "&:hover": {
+            color: "black",
+            textDecoration: "none"
+        }
+    },
+    activeLink: {
+        fontWeight: "600",
+        color: "red",
+        "&:hover": {
+            color: "red",
+            textDecoration: "none"
+        }
+    },
 }))
 
 const Profile = React.memo(() => {
@@ -51,7 +72,9 @@ const Profile = React.memo(() => {
                 </Grid>
             </Grid>
             
-            <Button className={classes.editProfileButton} fullWidth="true" variant="contained"> Edit </Button>
+            <NavLink to="/my/profile/edit" className={classes.nonActiveLink} activeClassName={classes.activeLink}> 
+                <Button className={classes.editProfileButton} fullWidth="true" variant="contained"> EDIT </Button>
+            </NavLink>
         </Box>
         )
     }
